@@ -1,0 +1,1166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="description"
+content="Create an affiliate channel with the right partners, clear incentives and a structure that supports sustainable growth.">
+
+<meta name="theme-color" content="#090a0d">
+
+<title>Affiliate Marketing | V DO MARKETING</title>
+
+<link rel="icon" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+/* =========================================================
+   AFFILIATE MARKETING — SERVICE PAGE
+   ========================================================= */
+
+/*
+   MOBILE SCROLL FIX
+   Do not lock vertical overflow on the entire page.
+*/
+
+.service-page{
+    overflow-x:hidden;
+    overflow-y:visible;
+    min-height:100%;
+    touch-action:pan-y;
+    -webkit-overflow-scrolling:touch;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.service-hero{
+    padding:150px 0 95px;
+}
+
+.service-hero-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);
+    gap:80px;
+    align-items:center;
+}
+
+.service-number{
+    display:block;
+    font-family:'DM Mono',monospace;
+    font-size:11px;
+    letter-spacing:2px;
+    color:var(--orange);
+    margin-bottom:22px;
+}
+
+.service-hero h1{
+    max-width:850px;
+    font-size:clamp(52px,8vw,108px);
+    line-height:.92;
+    letter-spacing:-.055em;
+    margin:0 0 25px;
+}
+
+.service-hero h1 em{
+    font-style:normal;
+    color:var(--orange);
+}
+
+.service-intro{
+    max-width:620px;
+    color:rgba(255,255,255,.62);
+    font-size:16px;
+    line-height:1.8;
+    margin:0 0 30px;
+}
+
+.service-hero-actions{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+
+/* =========================================================
+   HERO VISUAL
+   ========================================================= */
+
+.service-visual{
+    min-height:430px;
+    border:1px solid rgba(255,255,255,.16);
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    padding:42px;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 75%,
+            rgba(242,68,29,.16) 0,
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(242,68,29,.07),
+            rgba(255,255,255,.015) 55%,
+            rgba(242,68,29,.04)
+        );
+}
+
+.service-visual::before{
+    content:"";
+    width:34px;
+    height:34px;
+
+    position:absolute;
+    top:38px;
+    left:38px;
+
+    border:3px solid var(--orange);
+
+    transform:rotate(45deg);
+}
+
+.service-visual::after{
+    content:"";
+    position:absolute;
+
+    width:60px;
+    height:2px;
+
+    background:var(--orange);
+
+    top:54px;
+    left:25px;
+
+    transform:rotate(45deg);
+}
+
+.service-visual h2{
+    position:relative;
+    z-index:1;
+
+    font-size:clamp(38px,5vw,70px);
+    line-height:.9;
+    letter-spacing:-.05em;
+
+    margin:0;
+}
+
+.service-visual h2 span{
+    color:var(--orange);
+}
+
+
+/* =========================================================
+   THINKING
+   ========================================================= */
+
+.service-intro-section{
+    padding:85px 0;
+}
+
+.service-intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:90px;
+    align-items:start;
+}
+
+.section-label{
+    font-family:'DM Mono',monospace;
+    font-size:11px;
+    letter-spacing:2px;
+    color:var(--orange);
+}
+
+.service-intro-grid h2{
+    font-size:clamp(38px,5vw,68px);
+    line-height:1;
+    letter-spacing:-.045em;
+    margin:18px 0 0;
+}
+
+.service-intro-grid h2 span{
+    color:var(--orange);
+}
+
+.service-copy{
+    padding-top:8px;
+}
+
+.service-copy p{
+    color:rgba(255,255,255,.58);
+    line-height:1.9;
+    margin:0 0 20px;
+}
+
+
+/* =========================================================
+   WHAT'S INCLUDED
+   ========================================================= */
+
+.included-section{
+    padding:85px 0 100px;
+}
+
+.included-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:30px;
+    margin-bottom:42px;
+}
+
+.included-header h2{
+    font-size:clamp(38px,5vw,66px);
+    line-height:.95;
+    letter-spacing:-.045em;
+    margin:14px 0 0;
+}
+
+.included-header h2 em{
+    font-style:normal;
+    color:var(--orange);
+}
+
+.included-header p{
+    max-width:330px;
+    color:rgba(255,255,255,.45);
+    font-size:13px;
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   INCLUDED GRID
+   ========================================================= */
+
+.included-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    border-top:1px solid rgba(255,255,255,.12);
+}
+
+.included-item{
+    min-height:230px;
+    padding:30px 35px 32px 0;
+    border-bottom:1px solid rgba(255,255,255,.12);
+    position:relative;
+}
+
+.included-item:nth-child(odd){
+    padding-right:50px;
+    border-right:1px solid rgba(255,255,255,.12);
+}
+
+.included-item:nth-child(even){
+    padding-left:50px;
+}
+
+.included-item-number{
+    display:block;
+    font-family:'DM Mono',monospace;
+    font-size:10px;
+    letter-spacing:1.5px;
+    color:var(--orange);
+    margin-bottom:30px;
+}
+
+.included-item h3{
+    font-size:24px;
+    letter-spacing:-.025em;
+    margin:0 0 13px;
+}
+
+.included-item p{
+    max-width:500px;
+    color:rgba(255,255,255,.48);
+    line-height:1.7;
+    font-size:14px;
+    margin:0;
+}
+
+
+/* =========================================================
+   APPROACH
+   ========================================================= */
+
+.approach-section{
+    padding:90px 0;
+}
+
+.approach-top{
+    max-width:850px;
+    margin-bottom:50px;
+}
+
+.approach-top h2{
+    font-size:clamp(42px,6vw,76px);
+    line-height:.95;
+    letter-spacing:-.05em;
+    margin:15px 0 0;
+}
+
+.approach-top h2 span{
+    color:var(--orange);
+}
+
+.approach-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.approach-card{
+    border:1px solid rgba(255,255,255,.12);
+    padding:35px;
+    min-height:250px;
+}
+
+.approach-card .section-label{
+    font-size:10px;
+}
+
+.approach-card h3{
+    font-size:25px;
+    line-height:1.15;
+    letter-spacing:-.025em;
+    margin:18px 0 15px;
+}
+
+.approach-card p{
+    color:rgba(255,255,255,.5);
+    line-height:1.75;
+    margin:0;
+}
+
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.service-cta{
+    padding:25px 0 0;
+}
+
+.service-cta-box{
+    border:1px solid rgba(255,255,255,.12);
+    padding:50px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.service-cta-box h2{
+    font-size:clamp(36px,5vw,62px);
+    line-height:.95;
+    letter-spacing:-.045em;
+    margin:14px 0 0;
+    max-width:750px;
+}
+
+.service-cta-box h2 em{
+    font-style:normal;
+    color:var(--orange);
+}
+
+.service-cta-box p{
+    max-width:550px;
+    color:rgba(255,255,255,.5);
+    line-height:1.7;
+    margin:18px 0 0;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+    /*
+       FORCE NORMAL VERTICAL TOUCH SCROLLING
+    */
+
+    html{
+        overflow-x:hidden;
+        overflow-y:auto;
+        height:auto;
+        min-height:100%;
+        touch-action:pan-y;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    body{
+        overflow-x:hidden;
+        overflow-y:auto;
+        height:auto;
+        min-height:100%;
+        touch-action:pan-y;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .service-page{
+        overflow-x:hidden;
+        overflow-y:visible;
+        height:auto;
+        min-height:100%;
+        touch-action:pan-y;
+        -webkit-overflow-scrolling:touch;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .service-hero{
+        padding:120px 0 65px;
+    }
+
+    .service-hero-grid{
+        grid-template-columns:1fr;
+        gap:42px;
+    }
+
+    .service-number{
+        margin-bottom:18px;
+    }
+
+    .service-hero h1{
+        font-size:clamp(48px,14vw,72px);
+        line-height:.94;
+    }
+
+    .service-intro{
+        font-size:15px;
+        line-height:1.75;
+        margin-bottom:25px;
+    }
+
+    .service-visual{
+        min-height:320px;
+        padding:28px;
+    }
+
+    .service-visual::before{
+        top:28px;
+        left:28px;
+    }
+
+    .service-visual::after{
+        top:44px;
+        left:15px;
+    }
+
+    .service-visual h2{
+        font-size:48px;
+    }
+
+
+    /* =====================================================
+       THINKING
+       ===================================================== */
+
+    .service-intro-section{
+        padding:62px 0;
+    }
+
+    .service-intro-grid{
+        grid-template-columns:1fr;
+        gap:38px;
+    }
+
+    .service-intro-grid h2{
+        font-size:clamp(38px,11vw,58px);
+    }
+
+    .service-copy{
+        padding-top:0;
+    }
+
+
+    /* =====================================================
+       INCLUDED
+       ===================================================== */
+
+    .included-section{
+        padding:62px 0 70px;
+    }
+
+    .included-header{
+        display:block;
+        margin-bottom:32px;
+    }
+
+    .included-header h2{
+        font-size:clamp(40px,11vw,58px);
+    }
+
+    .included-header p{
+        margin-top:20px;
+    }
+
+    .included-grid{
+        grid-template-columns:1fr;
+    }
+
+    .included-item,
+    .included-item:nth-child(odd),
+    .included-item:nth-child(even){
+        min-height:auto;
+        padding:25px 0;
+        border-right:0;
+    }
+
+    .included-item-number{
+        margin-bottom:20px;
+    }
+
+    .included-item h3{
+        font-size:21px;
+    }
+
+
+    /* =====================================================
+       APPROACH
+       ===================================================== */
+
+    .approach-section{
+        padding:65px 0;
+    }
+
+    .approach-top{
+        margin-bottom:35px;
+    }
+
+    .approach-top h2{
+        font-size:clamp(42px,12vw,60px);
+    }
+
+    .approach-grid{
+        grid-template-columns:1fr;
+    }
+
+    .approach-card{
+        min-height:auto;
+        padding:28px 24px;
+    }
+
+
+    /* =====================================================
+       CTA
+       ===================================================== */
+
+    .service-cta{
+        padding-top:10px;
+    }
+
+    .service-cta-box{
+        display:block;
+        padding:32px 24px;
+    }
+
+    .service-cta-box h2{
+        font-size:clamp(38px,11vw,58px);
+    }
+
+    .service-cta-box .btn{
+        margin-top:28px;
+    }
+
+}
+
+
+/* =========================================================
+   TOUCH DEVICE SAFETY
+   ========================================================= */
+
+@media (hover:none) and (pointer:coarse){
+
+    html,
+    body,
+    .service-page{
+        touch-action:pan-y;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    html,
+    body{
+        scroll-behavior:auto;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="service-page">
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="site-header">
+
+<div class="wrap nav">
+
+<a class="logo logo-image" href="../index.html">
+
+<img
+src="../assets/vdo-logo.png"
+alt="V DO MARKETING — U do Business, V do Marketing">
+
+</a>
+
+<button class="menu-toggle" aria-label="Open menu">
+☰
+</button>
+
+<nav class="nav-links">
+
+<a data-nav href="../index.html#services">
+Services
+</a>
+
+<a data-nav href="../about.html">
+About
+</a>
+
+<a class="nav-cta" href="../contact.html">
+Let’s talk
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN
+     ========================================================= -->
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="service-hero">
+
+<div class="wrap">
+
+<div class="service-hero-grid">
+
+<div>
+
+<span class="service-number">
+SERVICE 07 / V DO MARKETING
+</span>
+
+<h1>
+Affiliate
+<em>Marketing</em>
+</h1>
+
+<p class="service-intro">
+Partnerships designed to grow together. Create an affiliate channel
+with the right partners, clear incentives and a structure that
+supports sustainable growth.
+</p>
+
+<div class="service-hero-actions">
+
+<a class="btn primary" href="../contact.html">
+Talk about your project
+</a>
+
+</div>
+
+</div>
+
+
+<div class="service-visual reveal">
+
+<h2>
+GROW<br>
+<span>TOGETHER.</span>
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     THE THINKING
+     ========================================================= -->
+
+<section class="service-intro-section">
+
+<div class="wrap">
+
+<div class="service-intro-grid">
+
+<div>
+
+<span class="section-label">
+THE THINKING
+</span>
+
+<h2>
+Grow through relationships that <span>make sense.</span>
+</h2>
+
+</div>
+
+
+<div class="service-copy">
+
+<p>
+Affiliate marketing can extend your reach through partners who
+have a genuine reason to recommend what you offer.
+</p>
+
+<p>
+We shape the work around your business, your audience and
+the outcome that matters — not a one-size-fits-all checklist.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     WHAT'S INCLUDED
+     ========================================================= -->
+
+<section class="included-section">
+
+<div class="wrap">
+
+<div class="included-header">
+
+<div>
+
+<span class="section-label">
+WHAT'S INCLUDED
+</span>
+
+<h2>
+Thoughtful from<br>
+<em>start to finish.</em>
+</h2>
+
+</div>
+
+<p>
+A considered affiliate structure built around the right
+partners, incentives and measurable growth.
+</p>
+
+</div>
+
+
+<div class="included-grid">
+
+
+<!-- 01 -->
+
+<article class="included-item reveal">
+
+<span class="included-item-number">
+01 / PROGRAMME STRATEGY
+</span>
+
+<h3>
+Programme strategy and setup
+</h3>
+
+<p>
+Build the foundation of your affiliate programme around your
+goals, audience, offer and wider marketing strategy.
+</p>
+
+</article>
+
+
+<!-- 02 -->
+
+<article class="included-item reveal">
+
+<span class="included-item-number">
+02 / PARTNER RECRUITMENT
+</span>
+
+<h3>
+Partner discovery and recruitment
+</h3>
+
+<p>
+Identify and approach relevant partners whose audience,
+content and positioning make sense for your brand.
+</p>
+
+</article>
+
+
+<!-- 03 -->
+
+<article class="included-item reveal">
+
+<span class="included-item-number">
+03 / COMMISSION PLANNING
+</span>
+
+<h3>
+Commission and offer planning
+</h3>
+
+<p>
+Create clear partner incentives and offers designed to
+encourage meaningful participation and sustainable growth.
+</p>
+
+</article>
+
+
+<!-- 04 -->
+
+<article class="included-item reveal">
+
+<span class="included-item-number">
+04 / CAMPAIGN COORDINATION
+</span>
+
+<h3>
+Campaign and link coordination
+</h3>
+
+<p>
+Keep campaigns organised with clear promotional assets,
+tracking links, timelines and partner requirements.
+</p>
+
+</article>
+
+
+<!-- 05 -->
+
+<article class="included-item reveal">
+
+<span class="included-item-number">
+05 / PARTNER MANAGEMENT
+</span>
+
+<h3>
+Partner communication
+</h3>
+
+<p>
+Maintain clear communication with partners and keep
+relationships moving through consistent coordination.
+</p>
+
+</article>
+
+
+<!-- 06 -->
+
+<article class="included-item reveal">
+
+<span class="included-item-number">
+06 / PERFORMANCE
+</span>
+
+<h3>
+Tracking and performance review
+</h3>
+
+<p>
+Monitor clicks, conversions and partner activity to understand
+what is working and where the programme can improve.
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     APPROACH
+     ========================================================= -->
+
+<section class="approach-section">
+
+<div class="wrap">
+
+<div class="approach-top">
+
+<span class="section-label">
+BUILT AROUND YOUR BUSINESS
+</span>
+
+<h2>
+The right mix of
+<span>thinking, craft and action.</span>
+</h2>
+
+</div>
+
+
+<div class="approach-grid">
+
+
+<article class="approach-card reveal">
+
+<span class="section-label">
+A CONNECTED APPROACH
+</span>
+
+<h3>
+Clear direction before we make the work.
+</h3>
+
+<p>
+We start by understanding the audience, the offer and the role
+affiliate marketing needs to play in your wider marketing ecosystem.
+</p>
+
+</article>
+
+
+<article class="approach-card reveal">
+
+<span class="section-label">
+MADE TO EVOLVE
+</span>
+
+<h3>
+Thoughtful execution. Continuous improvement.
+</h3>
+
+<p>
+We review partner performance, identify what can be stronger
+and refine the programme as your business moves forward.
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL CTA
+     ========================================================= -->
+
+<section class="service-cta">
+
+<div class="wrap">
+
+<div class="service-cta-box reveal">
+
+<div>
+
+<span class="section-label">
+LET'S MAKE SOMETHING MATTER
+</span>
+
+<h2>
+Ready to move your brand
+<em>forward?</em>
+</h2>
+
+<p>
+Bring us the ambition. We'll bring the ideas and the execution.
+</p>
+
+</div>
+
+
+<a class="btn primary" href="../contact.html">
+Start a conversation
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="footer">
+
+<div class="wrap">
+
+<div class="footer-top">
+
+<div>
+
+<a class="logo logo-image" href="../index.html">
+
+<img
+src="../assets/vdo-logo.png"
+alt="V DO MARKETING — U do Business, V do Marketing">
+
+</a>
+
+<p
+class="muted"
+style="max-width:260px;line-height:1.7;font-size:12px">
+
+Creative thinking. Considered strategy. Digital growth.
+
+</p>
+
+</div>
+
+
+<div class="footer-links">
+
+<div>
+
+<span class="eyebrow">
+EXPLORE
+</span>
+
+<a href="../about.html">
+About
+</a>
+
+<a href="../blog.html">
+Blogs & FAQ's
+</a>
+
+<a href="../contact.html">
+Contact
+</a>
+
+</div>
+
+
+<div>
+
+<span class="eyebrow">
+SERVICES
+</span>
+
+<a href="../services/website-development.html">
+Web & App Development
+</a>
+
+<a href="../services/seo.html">
+SEO (Search Engine Optimisation)
+</a>
+
+<a href="../services/social-media-management.html">
+Social Media Management
+</a>
+
+<a href="../services/paid-ads.html">
+Performance Marketing
+</a>
+
+<a href="../services/influencer-marketing.html">
+Influencer Marketing
+</a>
+
+<a href="../services/affiliate-marketing.html">
+Affiliate Marketing
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+© <span data-year></span>
+V DO MARKETING. All rights reserved.
+</span>
+
+<span>
+U DO BUSINESS&nbsp;&nbsp; • &nbsp;&nbsp;CREATIVE BY DESIGN
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<div class="page-transition"></div>
+
+
+<!-- =========================================================
+     SCRIPTS
+     ========================================================= -->
+
+<script src="../js/site-config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

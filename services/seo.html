@@ -1,0 +1,1928 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="description"
+content="Build a stronger search presence with a considered SEO strategy grounded in technical health, useful content and search intent.">
+
+<meta name="theme-color" content="#090a0d">
+
+<title>Search Engine Optimisation | V DO MARKETING</title>
+
+<link rel="icon" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+/* =========================================================
+   SEO PAGE
+========================================================= */
+
+.seo-page{
+  overflow-x:hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.seo-hero{
+  min-height:660px;
+  display:flex;
+  align-items:center;
+  padding:125px 0 65px;
+  position:relative;
+}
+
+.seo-hero::after{
+  content:"";
+  position:absolute;
+  width:460px;
+  height:460px;
+  right:-220px;
+  top:150px;
+  background:rgba(242,68,29,.07);
+  filter:blur(120px);
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.seo-hero-content{
+  max-width:900px;
+  position:relative;
+  z-index:2;
+}
+
+.seo-hero h1{
+  margin:20px 0 25px;
+  font-size:clamp(54px,8vw,105px);
+  line-height:.92;
+  letter-spacing:-.065em;
+  max-width:900px;
+}
+
+.seo-hero h1 em{
+  color:var(--orange);
+  font-style:normal;
+}
+
+.seo-hero-text{
+  max-width:610px;
+  color:rgba(255,255,255,.58);
+  font-size:15px;
+  line-height:1.85;
+  margin:0 0 32px;
+}
+
+.seo-hero-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px 28px;
+  margin-top:32px;
+
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.38);
+}
+
+.seo-hero-meta span{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.seo-hero-meta span::before{
+  content:"";
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--orange);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.seo-intro{
+  padding:70px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+.seo-intro-grid{
+  display:grid;
+  grid-template-columns:1fr 1.35fr;
+  gap:60px;
+  align-items:start;
+}
+
+.seo-intro-title{
+  margin:14px 0 0;
+  font-size:clamp(34px,5vw,61px);
+  line-height:.98;
+  letter-spacing:-.05em;
+}
+
+.seo-intro-title span{
+  color:rgba(255,255,255,.28);
+}
+
+.seo-intro-copy{
+  max-width:650px;
+  padding-top:5px;
+}
+
+.seo-intro-copy p{
+  margin:0 0 20px;
+  color:rgba(255,255,255,.53);
+  font-size:15px;
+  line-height:1.9;
+}
+
+.seo-intro-copy p:last-child{
+  margin-bottom:0;
+}
+
+
+/* =========================================================
+   SEO SERVICES
+========================================================= */
+
+.seo-services{
+  padding:0 0 60px;
+}
+
+.seo-section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:40px;
+  margin-bottom:25px;
+}
+
+.seo-section-head h2{
+  margin:14px 0 0;
+  font-size:clamp(38px,5.5vw,68px);
+  line-height:.94;
+  letter-spacing:-.055em;
+}
+
+.seo-section-note{
+  max-width:310px;
+  margin:0;
+  color:rgba(255,255,255,.38);
+  font-size:12px;
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+
+.seo-service-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.seo-service-card{
+  min-height:250px;
+  padding:30px 32px;
+  background:#090a0d;
+  position:relative;
+  overflow:hidden;
+  transition:.35s ease;
+}
+
+.seo-service-card::after{
+  content:"";
+  position:absolute;
+  width:240px;
+  height:240px;
+  right:-160px;
+  bottom:-170px;
+  background:rgba(242,68,29,.12);
+  filter:blur(65px);
+  border-radius:50%;
+  opacity:0;
+  transition:.4s ease;
+}
+
+.seo-service-card:hover{
+  background:#0d0e11;
+}
+
+.seo-service-card:hover::after{
+  opacity:1;
+}
+
+.seo-service-number{
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  letter-spacing:1px;
+  color:var(--orange);
+  margin-bottom:32px;
+}
+
+.seo-service-card h3{
+  margin:0 0 14px;
+  font-size:25px;
+  line-height:1.05;
+  letter-spacing:-.025em;
+  position:relative;
+  z-index:2;
+}
+
+.seo-service-card p{
+  max-width:430px;
+  margin:0;
+  color:rgba(255,255,255,.43);
+  font-size:12px;
+  line-height:1.8;
+  position:relative;
+  z-index:2;
+}
+
+.seo-service-list{
+  list-style:none;
+  margin:20px 0 0;
+  padding:0;
+  position:relative;
+  z-index:2;
+}
+
+.seo-service-list li{
+  position:relative;
+  padding-left:16px;
+  margin:0 0 8px;
+  color:rgba(255,255,255,.46);
+  font-size:11px;
+  line-height:1.5;
+}
+
+.seo-service-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:7px;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:var(--orange);
+}
+
+
+/* =========================================================
+   SEO WORK / SHOWCASE
+========================================================= */
+
+.seo-work{
+  padding:60px 0;
+  background:rgba(255,255,255,.018);
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.seo-work-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:40px;
+  margin-bottom:30px;
+}
+
+.seo-work-header h2{
+  margin:14px 0 0;
+  font-size:clamp(40px,5.8vw,72px);
+  line-height:.94;
+  letter-spacing:-.055em;
+}
+
+.seo-work-header h2 span{
+  color:rgba(255,255,255,.28);
+}
+
+.seo-work-header p{
+  max-width:310px;
+  margin:0;
+  color:rgba(255,255,255,.38);
+  font-size:12px;
+  line-height:1.8;
+}
+
+
+/* CASE STUDY GRID */
+
+.seo-case-grid{
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+  gap:14px;
+}
+
+.seo-case-side{
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  gap:14px;
+}
+
+.seo-case{
+  position:relative;
+  overflow:hidden;
+  min-height:450px;
+  border:1px solid rgba(255,255,255,.09);
+  background:#111216;
+  text-decoration:none;
+  color:inherit;
+}
+
+.seo-case-small{
+  min-height:218px;
+}
+
+.seo-case-visual{
+  position:absolute;
+  inset:0;
+}
+
+.seo-case-placeholder{
+  width:100%;
+  height:100%;
+  min-height:inherit;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+    radial-gradient(
+      circle at 55% 35%,
+      rgba(242,68,29,.16),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      #17181c 0%,
+      #0c0d10 100%
+    );
+}
+
+.seo-case-placeholder span{
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:2px;
+  color:rgba(255,255,255,.2);
+}
+
+.seo-case-visual::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    transparent 30%,
+    rgba(0,0,0,.92) 100%
+  );
+}
+
+.seo-case-content{
+  position:absolute;
+  left:27px;
+  right:27px;
+  bottom:27px;
+  z-index:3;
+}
+
+.seo-case-type{
+  font-family:'DM Mono',monospace;
+  font-size:8px;
+  letter-spacing:1.7px;
+  text-transform:uppercase;
+  color:var(--orange);
+  margin-bottom:8px;
+}
+
+.seo-case-content h3{
+  margin:0 0 7px;
+  font-size:30px;
+  letter-spacing:-.04em;
+}
+
+.seo-case-small .seo-case-content h3{
+  font-size:22px;
+}
+
+.seo-case-content p{
+  margin:0;
+  color:rgba(255,255,255,.4);
+  font-size:10px;
+}
+
+.seo-case-arrow{
+  position:absolute;
+  top:24px;
+  right:24px;
+  z-index:4;
+
+  width:38px;
+  height:38px;
+
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+  font-size:13px;
+
+  transition:.3s ease;
+}
+
+.seo-case:hover{
+  border-color:rgba(242,68,29,.45);
+}
+
+.seo-case:hover .seo-case-arrow{
+  background:var(--orange);
+  border-color:var(--orange);
+  transform:rotate(45deg);
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.seo-process{
+  padding:60px 0;
+}
+
+.seo-process-grid{
+  display:grid;
+  grid-template-columns:1fr 1.35fr;
+  gap:65px;
+}
+
+.seo-process-title{
+  margin:14px 0 0;
+  font-size:clamp(39px,5.5vw,68px);
+  line-height:.94;
+  letter-spacing:-.055em;
+}
+
+.seo-process-title span{
+  color:rgba(255,255,255,.28);
+}
+
+.seo-steps{
+  border-top:1px solid rgba(255,255,255,.1);
+}
+
+.seo-step{
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:20px;
+  padding:22px 0;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.seo-step-number{
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  color:var(--orange);
+  padding-top:4px;
+}
+
+.seo-step h3{
+  margin:0 0 7px;
+  font-size:19px;
+  letter-spacing:-.02em;
+}
+
+.seo-step p{
+  max-width:570px;
+  margin:0;
+  color:rgba(255,255,255,.4);
+  font-size:12px;
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   BLOG
+========================================================= */
+
+.seo-blog{
+  padding:60px 0;
+  border-top:1px solid rgba(255,255,255,.07);
+}
+
+.seo-blog-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:30px;
+  margin-bottom:25px;
+}
+
+.seo-blog-header h2{
+  margin:14px 0 0;
+  font-size:clamp(40px,5.5vw,68px);
+  line-height:.94;
+  letter-spacing:-.055em;
+}
+
+.seo-blog-header h2 span{
+  color:rgba(255,255,255,.28);
+}
+
+.seo-blog-link{
+  color:rgba(255,255,255,.5);
+  text-decoration:none;
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  padding-bottom:5px;
+  border-bottom:1px solid rgba(255,255,255,.2);
+  white-space:nowrap;
+}
+
+.seo-blog-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.seo-blog-card{
+  display:block;
+  min-height:220px;
+  padding:23px 0 0;
+  border-top:1px solid rgba(255,255,255,.14);
+  text-decoration:none;
+  color:inherit;
+  transition:.3s ease;
+}
+
+.seo-blog-card:hover{
+  border-color:var(--orange);
+  transform:translateY(-4px);
+}
+
+.seo-blog-meta{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+
+  font-family:'DM Mono',monospace;
+  font-size:8px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.28);
+
+  margin-bottom:35px;
+}
+
+.seo-blog-card h3{
+  max-width:370px;
+  margin:0 0 13px;
+  font-size:21px;
+  line-height:1.15;
+  letter-spacing:-.025em;
+}
+
+.seo-blog-card p{
+  max-width:390px;
+  margin:0;
+  color:rgba(255,255,255,.38);
+  font-size:11px;
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.seo-cta{
+  padding:60px 0 70px;
+}
+
+.seo-cta-box{
+  position:relative;
+  overflow:hidden;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:50px;
+
+  padding:50px 50px;
+
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.seo-cta-box::after{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  right:-180px;
+  bottom:-220px;
+  background:rgba(242,68,29,.1);
+  filter:blur(100px);
+  border-radius:50%;
+}
+
+.seo-cta-content{
+  position:relative;
+  z-index:2;
+}
+
+.seo-cta h2{
+  max-width:700px;
+  margin:14px 0 0;
+  font-size:clamp(39px,5.5vw,70px);
+  line-height:.94;
+  letter-spacing:-.055em;
+}
+
+.seo-cta h2 span{
+  color:var(--orange);
+}
+
+.seo-cta p{
+  max-width:500px;
+  margin:18px 0 0;
+  color:rgba(255,255,255,.4);
+  font-size:12px;
+  line-height:1.8;
+}
+
+.seo-cta-action{
+  position:relative;
+  z-index:3;
+  flex-shrink:0;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:800px){
+
+  .seo-hero{
+    min-height:600px;
+    padding:115px 0 60px;
+  }
+
+  .seo-hero h1{
+    font-size:clamp(50px,14vw,76px);
+  }
+
+  .seo-hero-text{
+    font-size:13px;
+  }
+
+  .seo-hero-meta{
+    margin-top:28px;
+    gap:14px 20px;
+  }
+
+
+  .seo-intro{
+    padding:60px 0;
+  }
+
+  .seo-intro-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+
+  .seo-services{
+    padding-bottom:60px;
+  }
+
+  .seo-section-head{
+    display:block;
+    margin-bottom:25px;
+  }
+
+  .seo-section-note{
+    margin-top:20px;
+  }
+
+
+  .seo-service-grid{
+    grid-template-columns:1fr;
+  }
+
+  .seo-service-card{
+    min-height:auto;
+    padding:27px 25px;
+  }
+
+  .seo-service-number{
+    margin-bottom:30px;
+  }
+
+
+  .seo-work{
+    padding:60px 0;
+  }
+
+  .seo-work-header{
+    display:block;
+    margin-bottom:28px;
+  }
+
+  .seo-work-header p{
+    margin-top:20px;
+  }
+
+  .seo-case-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .seo-case-side{
+    grid-template-rows:auto auto;
+    gap:12px;
+  }
+
+  .seo-case{
+    min-height:370px;
+  }
+
+  .seo-case-small{
+    min-height:270px;
+  }
+
+
+  .seo-process{
+    padding:60px 0;
+  }
+
+  .seo-process-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+
+  .seo-blog{
+    padding:60px 0;
+  }
+
+  .seo-blog-header{
+    display:block;
+    margin-bottom:25px;
+  }
+
+  .seo-blog-link{
+    display:inline-block;
+    margin-top:20px;
+  }
+
+  .seo-blog-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .seo-blog-card{
+    min-height:200px;
+  }
+
+
+  .seo-cta{
+    padding:60px 0 70px;
+  }
+
+  .seo-cta-box{
+    display:block;
+    padding:38px 25px;
+  }
+
+  .seo-cta-action{
+    margin-top:32px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="seo-page">
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+<div class="wrap nav">
+
+<a class="logo logo-image"
+href="../index.html"
+aria-label="V DO MARKETING Home">
+
+<img src="../assets/vdo-logo.png"
+alt="V DO MARKETING — U do Business, V do Marketing">
+
+</a>
+
+
+<button class="menu-toggle"
+type="button"
+aria-label="Open navigation menu"
+aria-expanded="false"
+aria-controls="primary-navigation">
+
+<span aria-hidden="true">☰</span>
+
+</button>
+
+
+<nav class="nav-links"
+id="primary-navigation"
+aria-label="Main navigation">
+
+
+<a data-nav href="../index.html#services">
+Services
+</a>
+
+<a data-nav href="../about.html">
+About
+</a>
+
+<a class="nav-cta"
+href="../contact.html">
+Let's talk
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="seo-hero">
+
+<div class="wrap">
+
+<div class="seo-hero-content reveal">
+
+<span class="eyebrow">
+SERVICE / SEARCH ENGINE OPTIMISATION
+</span>
+
+<h1>
+Be found by the
+<em>right people.</em>
+</h1>
+
+<p class="seo-hero-text">
+
+Get discovered by the people already looking for what you do.
+Build a stronger search presence with a considered SEO strategy
+grounded in technical health, useful content and search intent.
+
+</p>
+
+
+<a class="btn primary"
+href="../contact.html">
+
+Start an SEO project
+
+</a>
+
+
+<div class="seo-hero-meta">
+
+<span>
+Technical SEO
+</span>
+
+<span>
+Search Strategy
+</span>
+
+<span>
+Content
+</span>
+
+<span>
+Local SEO
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="seo-intro">
+
+<div class="wrap">
+
+<div class="seo-intro-grid">
+
+
+<div>
+
+<span class="eyebrow">
+THE APPROACH
+</span>
+
+<h2 class="seo-intro-title">
+
+Make your next customer
+<span>easier to find.</span>
+
+</h2>
+
+</div>
+
+
+<div class="seo-intro-copy">
+
+<p>
+
+SEO is a long game. We focus on the foundations
+and ongoing improvements that help the right audience
+find your business.
+
+</p>
+
+<p>
+
+Instead of chasing rankings for the sake of rankings,
+we connect technical health, search intent and useful
+content to the way your business actually needs to grow.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SEO SERVICES
+========================================================= -->
+
+<section class="seo-services">
+
+<div class="wrap">
+
+
+<div class="seo-section-head">
+
+<div>
+
+<span class="eyebrow">
+WHAT WE DO
+</span>
+
+<h2>
+
+SEO built around
+<em class="accent">
+how people search.
+</em>
+
+</h2>
+
+</div>
+
+
+<p class="seo-section-note">
+
+Focused search optimisation without
+unnecessary complexity.
+
+</p>
+
+</div>
+
+
+
+<div class="seo-service-grid">
+
+
+<!-- 01 -->
+
+<article class="seo-service-card reveal">
+
+<div class="seo-service-number">
+01 / TECHNICAL
+</div>
+
+<h3>
+Technical SEO Audits
+</h3>
+
+<p>
+
+Find and fix the technical issues that can
+hold your search visibility back.
+
+</p>
+
+<ul class="seo-service-list">
+
+<li>
+Site structure & crawlability
+</li>
+
+<li>
+Technical health checks
+</li>
+
+<li>
+Performance & indexing
+</li>
+
+</ul>
+
+</article>
+
+
+
+<!-- 02 -->
+
+<article class="seo-service-card reveal">
+
+<div class="seo-service-number">
+02 / RESEARCH
+</div>
+
+<h3>
+Keyword & Search-Intent Research
+</h3>
+
+<p>
+
+Understand what your audience is searching
+for and where your business can compete.
+
+</p>
+
+<ul class="seo-service-list">
+
+<li>
+Keyword research
+</li>
+
+<li>
+Search intent analysis
+</li>
+
+<li>
+Competitor research
+</li>
+
+</ul>
+
+</article>
+
+
+
+<!-- 03 -->
+
+<article class="seo-service-card reveal">
+
+<div class="seo-service-number">
+03 / ON-PAGE
+</div>
+
+<h3>
+On-Page Optimisation
+</h3>
+
+<p>
+
+Make your important pages clearer for both
+search engines and the people reading them.
+
+</p>
+
+<ul class="seo-service-list">
+
+<li>
+Metadata & page structure
+</li>
+
+<li>
+Content optimisation
+</li>
+
+<li>
+Internal linking
+</li>
+
+</ul>
+
+</article>
+
+
+
+<!-- 04 -->
+
+<article class="seo-service-card reveal">
+
+<div class="seo-service-number">
+04 / CONTENT
+</div>
+
+<h3>
+Content & Internal-Link Strategy
+</h3>
+
+<p>
+
+Build useful content around real questions,
+topics and opportunities in your market.
+
+</p>
+
+<ul class="seo-service-list">
+
+<li>
+Content opportunities
+</li>
+
+<li>
+Topic planning
+</li>
+
+<li>
+Internal-link architecture
+</li>
+
+</ul>
+
+</article>
+
+
+
+<!-- 05 -->
+
+<article class="seo-service-card reveal">
+
+<div class="seo-service-number">
+05 / LOCAL
+</div>
+
+<h3>
+Local SEO
+</h3>
+
+<p>
+
+Help customers in your area discover,
+understand and choose your business.
+
+</p>
+
+<ul class="seo-service-list">
+
+<li>
+Google Business Profile
+</li>
+
+<li>
+Local search foundations
+</li>
+
+<li>
+Location-focused optimisation
+</li>
+
+</ul>
+
+</article>
+
+
+
+<!-- 06 -->
+
+<article class="seo-service-card reveal">
+
+<div class="seo-service-number">
+06 / GROWTH
+</div>
+
+<h3>
+Measurement & Ongoing Refinement
+</h3>
+
+<p>
+
+SEO improves through consistent measurement,
+testing and refinement over time.
+
+</p>
+
+<ul class="seo-service-list">
+
+<li>
+Search performance tracking
+</li>
+
+<li>
+Opportunity identification
+</li>
+
+<li>
+Ongoing optimisation
+</li>
+
+</ul>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WORK SHOWCASE
+========================================================= -->
+
+<section class="seo-work">
+
+<div class="wrap">
+
+
+<div class="seo-work-header">
+
+<div>
+
+<span class="eyebrow">
+SEO WORK
+</span>
+
+<h2>
+
+Search strategy that
+<span>creates momentum.</span>
+
+</h2>
+
+</div>
+
+
+<p>
+
+Selected examples of SEO work,
+search strategy and digital growth.
+
+</p>
+
+</div>
+
+
+
+<div class="seo-case-grid">
+
+
+<!-- FEATURED -->
+
+<a href="#"
+class="seo-case reveal">
+
+<div class="seo-case-visual">
+
+<div class="seo-case-placeholder">
+
+<span>
+CASE STUDY / SEO PROJECT
+</span>
+
+</div>
+
+</div>
+
+
+<div class="seo-case-content">
+
+<div class="seo-case-type">
+SEO / SEARCH STRATEGY
+</div>
+
+<h3>
+Featured SEO Project
+</h3>
+
+<p>
+Technical SEO · Strategy · Content
+</p>
+
+</div>
+
+</a>
+
+
+
+<div class="seo-case-side">
+
+
+<!-- SECOND -->
+
+<a href="#"
+class="seo-case seo-case-small reveal">
+
+<div class="seo-case-visual">
+
+<div class="seo-case-placeholder">
+
+<span>
+SEO CASE STUDY
+</span>
+
+</div>
+
+</div>
+
+<div class="seo-case-content">
+
+<div class="seo-case-type">
+LOCAL SEO
+</div>
+
+<h3>
+Local Search Project
+</h3>
+
+<p>
+Local SEO · Search Visibility
+</p>
+
+</div>
+
+</a>
+
+
+
+<!-- THIRD -->
+
+<a href="#"
+class="seo-case seo-case-small reveal">
+
+<div class="seo-case-visual">
+
+<div class="seo-case-placeholder">
+
+<span>
+SEO CASE STUDY
+</span>
+
+</div>
+
+</div>
+
+<div class="seo-case-content">
+
+<div class="seo-case-type">
+TECHNICAL SEO
+</div>
+
+<h3>
+Technical Optimisation
+</h3>
+
+<p>
+Audit · Structure · Performance
+</p>
+
+</div>
+
+</a>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section class="seo-process">
+
+<div class="wrap">
+
+<div class="seo-process-grid">
+
+
+<div>
+
+<span class="eyebrow">
+HOW WE WORK
+</span>
+
+<h2 class="seo-process-title">
+
+A clearer SEO
+<span>process.</span>
+
+</h2>
+
+</div>
+
+
+
+<div class="seo-steps">
+
+
+<article class="seo-step reveal">
+
+<div class="seo-step-number">
+01
+</div>
+
+<div>
+
+<h3>
+Understand
+</h3>
+
+<p>
+
+We understand your business, audience,
+market and current search position before
+deciding what needs attention.
+
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="seo-step reveal">
+
+<div class="seo-step-number">
+02
+</div>
+
+<div>
+
+<h3>
+Audit & Research
+</h3>
+
+<p>
+
+We identify technical issues, search
+opportunities, competitors and the terms
+that matter to your audience.
+
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="seo-step reveal">
+
+<div class="seo-step-number">
+03
+</div>
+
+<div>
+
+<h3>
+Optimise
+</h3>
+
+<p>
+
+We improve the technical foundation,
+important pages, content structure and
+search signals.
+
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="seo-step reveal">
+
+<div class="seo-step-number">
+04
+</div>
+
+<div>
+
+<h3>
+Measure & Refine
+</h3>
+
+<p>
+
+We monitor performance, identify new
+opportunities and continue improving
+the strategy over time.
+
+</p>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BLOG
+========================================================= -->
+
+<section class="seo-blog">
+
+<div class="wrap">
+
+
+<div class="seo-blog-header">
+
+<div>
+
+<span class="eyebrow">
+FROM THE JOURNAL
+</span>
+
+<h2>
+
+Ideas on
+<span>search.</span>
+
+</h2>
+
+</div>
+
+
+<a href="../blog.html"
+class="seo-blog-link">
+
+View all articles
+
+</a>
+
+</div>
+
+
+
+<div class="seo-blog-grid">
+
+
+<a href="../blog.html"
+class="seo-blog-card reveal">
+
+<div class="seo-blog-meta">
+
+<span>
+SEO
+</span>
+
+<span>
+01
+</span>
+
+</div>
+
+<h3>
+Why ranking isn't the only thing
+that matters in SEO.
+</h3>
+
+<p>
+
+Search visibility only matters when it
+helps the right people discover and
+choose your business.
+
+</p>
+
+</a>
+
+
+
+<a href="../blog.html"
+class="seo-blog-card reveal">
+
+<div class="seo-blog-meta">
+
+<span>
+LOCAL SEO
+</span>
+
+<span>
+02
+</span>
+
+</div>
+
+<h3>
+How local SEO helps customers
+find your business.
+</h3>
+
+<p>
+
+A practical look at the search signals
+that matter when your customers are
+looking locally.
+
+</p>
+
+</a>
+
+
+
+<a href="../blog.html"
+class="seo-blog-card reveal">
+
+<div class="seo-blog-meta">
+
+<span>
+TECHNICAL SEO
+</span>
+
+<span>
+03
+</span>
+
+</div>
+
+<h3>
+The technical foundations
+every website should get right.
+</h3>
+
+<p>
+
+From crawlability to structure,
+small technical details can have
+a meaningful impact.
+
+</p>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="seo-cta">
+
+<div class="wrap">
+
+<div class="seo-cta-box reveal">
+
+
+<div class="seo-cta-content">
+
+<span class="eyebrow">
+HAVE A SEARCH GOAL?
+</span>
+
+<h2>
+
+Let's make your brand
+<span>easier to find.</span>
+
+</h2>
+
+<p>
+
+Tell us where you are now, where you want
+to be found and what you're trying to grow.
+We'll help shape the right SEO approach.
+
+</p>
+
+</div>
+
+
+<div class="seo-cta-action">
+
+<a class="btn primary"
+href="../contact.html">
+
+Start a conversation
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER — UNCHANGED
+========================================================= -->
+
+<footer class="footer">
+
+<div class="wrap">
+
+<div class="footer-top">
+
+<div>
+
+<a class="logo logo-image"
+href="../index.html">
+
+<img src="../assets/vdo-logo.png"
+alt="V DO MARKETING — U do Business, V do Marketing">
+
+</a>
+
+<p class="muted"
+style="max-width:260px;line-height:1.7;font-size:12px">
+
+Creative thinking. Considered strategy. Digital growth.
+
+</p>
+
+</div>
+
+
+<div class="footer-links">
+
+<div>
+
+<span class="eyebrow">
+EXPLORE
+</span>
+
+<a href="../about.html">
+About
+</a>
+
+<a href="../blog.html">
+Blogs & FAQ's
+</a>
+
+<a href="../contact.html">
+Contact
+</a>
+
+</div>
+
+
+<div>
+
+<span class="eyebrow">
+SERVICES
+</span>
+
+<a href="../services/website-development.html">
+Web & App Development
+</a>
+
+<a href="../services/seo.html">
+SEO (Search Engine Optimisation)
+</a>
+
+<a href="../services/social-media-management.html">
+Social Media Management
+</a>
+
+<a href="../services/paid-ads.html">
+Performance Marketing
+</a>
+
+<a href="../services/influencer-marketing.html">
+Influencer Marketing
+</a>
+
+<a href="../services/affiliate-marketing.html">
+Affiliate Marketing
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+© <span data-year></span>
+V DO MARKETING. All rights reserved.
+</span>
+
+<span>
+U DO BUSINESS&nbsp;&nbsp; • &nbsp;&nbsp;
+CREATIVE BY DESIGN
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<div class="page-transition"></div>
+
+<script src="../js/site-config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+</body>
+
+</html>

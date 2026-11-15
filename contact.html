@@ -1,0 +1,2674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | V DO MARKETING</title>
+
+    <meta name="description"
+          content="Connect with V DO MARKETING. Our teams in Australia and India are ready to discuss your next creative, digital or marketing project.">
+
+    <meta name="theme-color" content="#090a0d">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        :root {
+            --contact-bg: #090a0d;
+            --contact-panel: #111318;
+            --contact-panel-2: #15181e;
+            --contact-orange: #f2441d;
+            --contact-white: #f4f3f0;
+            --contact-muted: #999ba3;
+            --contact-line: rgba(255,255,255,.10);
+        }
+
+
+        body {
+            background: var(--contact-bg);
+            color: var(--contact-white);
+        }
+
+
+        .contact-page {
+            overflow: hidden;
+            background: var(--contact-bg);
+        }
+
+
+        .contact-wrap {
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+
+        /* =========================================
+           EYEBROW
+        ========================================= */
+
+        .contact-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            color: var(--contact-orange);
+
+            font-family: "DM Mono", monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+        .contact-eyebrow::before {
+            content: "";
+            width: 22px;
+            height: 1px;
+            background: var(--contact-orange);
+        }
+
+
+        /* =========================================
+           ALL CONTACT PAGE BUTTONS
+           Rounded like header button
+        ========================================= */
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 48px;
+            padding: 0 23px;
+
+            border: 1px solid var(--contact-orange);
+            border-radius: 999px;
+
+            background: var(--contact-orange);
+            color: #fff;
+
+            text-decoration: none;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            transition:
+                background .3s ease,
+                color .3s ease,
+                border-color .3s ease,
+                transform .3s ease;
+        }
+
+
+        .contact-btn:hover {
+            background: transparent;
+            color: var(--contact-orange);
+            border-color: var(--contact-orange);
+            transform: translateY(-2px);
+        }
+
+
+        .contact-btn-outline {
+            background: transparent;
+            border-color: rgba(255,255,255,.20);
+            color: var(--contact-white);
+        }
+
+
+        .contact-btn-outline:hover {
+            border-color: var(--contact-orange);
+            color: var(--contact-orange);
+            background: transparent;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .contact-hero {
+            position: relative;
+            min-height: 600px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 92px 0 72px;
+            isolation: isolate;
+        }
+
+
+        .contact-hero::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+
+            width: 600px;
+            height: 600px;
+
+            top: -180px;
+            right: -160px;
+
+            background: radial-gradient(
+                circle,
+                rgba(242,68,29,.15),
+                transparent 68%
+            );
+
+            filter: blur(35px);
+            pointer-events: none;
+        }
+
+
+        .contact-hero::after {
+            content: "LET'S TALK";
+
+            position: absolute;
+            z-index: -1;
+
+            right: -30px;
+            bottom: -35px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(90px, 18vw, 250px);
+            font-weight: 800;
+
+            letter-spacing: -.09em;
+            line-height: 1;
+
+            color: rgba(255,255,255,.022);
+
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+
+        .contact-hero-content {
+            max-width: 900px;
+        }
+
+
+        .contact-hero h1 {
+            max-width: 700px;
+
+            margin: 22px 0 24px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(42px, 6vw, 76px);
+            line-height: 1.02;
+            letter-spacing: -.065em;
+            font-weight: 700;
+        }
+
+
+        .contact-hero h1 > span:first-child {
+            color: var(--contact-white);
+        }
+
+
+        .contact-hero h1 .hero-line {
+            display: block;
+        }
+
+
+        .contact-hero h1 .hero-line-orange {
+            display: block;
+            color: var(--contact-orange);
+        }
+
+
+        .contact-hero-copy {
+            max-width: 540px;
+
+            color: var(--contact-muted);
+
+            font-size: 15px;
+            line-height: 1.75;
+        }
+
+
+        .contact-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 29px;
+        }
+
+
+        .contact-hero-bottom {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-top: 48px;
+
+            color: var(--contact-muted);
+
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+
+        .contact-hero-bottom span:first-child {
+            width: 28px;
+            height: 1px;
+            background: var(--contact-orange);
+        }
+
+
+        /* =========================================
+           CONTACT ROUTES
+        ========================================= */
+
+        .contact-routes {
+            padding: 72px 0;
+
+            border-top: 1px solid var(--contact-line);
+            border-bottom: 1px solid var(--contact-line);
+        }
+
+
+        .contact-section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+
+        .contact-section-heading h2 {
+            max-width: 580px;
+
+            margin: 13px 0 0;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(31px, 4vw, 48px);
+            line-height: 1.08;
+            letter-spacing: -.055em;
+        }
+
+
+        .contact-section-heading p {
+            max-width: 320px;
+
+            color: var(--contact-muted);
+
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+
+        .contact-route-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+
+        .contact-route-card {
+            position: relative;
+
+            min-height: 185px;
+            padding: 23px 21px;
+
+            border: 1px solid var(--contact-line);
+            background: var(--contact-panel);
+
+            text-decoration: none;
+            color: var(--contact-white);
+
+            transition:
+                border-color .3s ease,
+                transform .3s ease,
+                background .3s ease;
+        }
+
+
+        .contact-route-card:hover {
+            border-color: var(--contact-orange);
+            transform: translateY(-4px);
+            background: #17191f;
+        }
+
+
+        .contact-route-number {
+            color: var(--contact-orange);
+
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+        }
+
+
+        .contact-route-card h3 {
+            margin: 29px 0 9px;
+
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+
+        .contact-route-card p {
+            margin: 0;
+
+            color: var(--contact-muted);
+
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           OFFICES
+        ========================================= */
+
+        .contact-offices {
+            padding: 82px 0;
+        }
+
+
+        .contact-offices-intro {
+            max-width: 670px;
+            margin-bottom: 38px;
+        }
+
+
+        .contact-offices-intro h2 {
+            margin: 14px 0;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(35px, 5vw, 56px);
+            line-height: 1.04;
+            letter-spacing: -.06em;
+        }
+
+
+        .contact-offices-intro p {
+            max-width: 540px;
+
+            color: var(--contact-muted);
+
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+
+        .contact-office-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+
+        .contact-office-card {
+            position: relative;
+            overflow: hidden;
+
+            min-height: 395px;
+            padding: 31px;
+
+            background: var(--contact-panel);
+            border: 1px solid var(--contact-line);
+        }
+
+
+        .contact-office-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            right: -150px;
+            bottom: -160px;
+
+            border: 1px solid rgba(242,68,29,.25);
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 0 30px rgba(242,68,29,.025),
+                0 0 0 60px rgba(242,68,29,.02);
+
+            pointer-events: none;
+        }
+
+
+        .contact-office-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+
+        .contact-office-tag {
+            color: var(--contact-orange);
+
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+
+        .contact-office-symbol {
+            display: grid;
+            place-items: center;
+
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid var(--contact-line);
+            color: var(--contact-orange);
+
+            font-size: 18px;
+        }
+
+
+        .contact-office-card h3 {
+            margin: 30px 0 6px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: 34px;
+            letter-spacing: -.04em;
+        }
+
+
+        .contact-office-subtitle {
+            color: var(--contact-muted);
+            font-size: 12px;
+        }
+
+
+        .contact-office-details {
+            display: grid;
+            gap: 17px;
+            margin-top: 32px;
+        }
+
+
+        .contact-office-detail {
+            display: grid;
+            grid-template-columns: 95px 1fr;
+            gap: 13px;
+
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--contact-line);
+        }
+
+
+        .contact-office-detail span {
+            color: var(--contact-muted);
+
+            font-family: "DM Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+
+        .contact-office-detail strong,
+        .contact-office-detail a {
+            color: var(--contact-white);
+
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.6;
+
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+
+        .contact-office-detail a:hover {
+            color: var(--contact-orange);
+        }
+
+
+        .contact-map-link {
+            display: inline-flex;
+            margin-top: 20px;
+
+            color: var(--contact-orange);
+
+            font-size: 11px;
+            font-weight: 700;
+            text-decoration: none;
+
+            position: relative;
+            z-index: 1;
+        }
+
+
+        /* =========================================
+           ENQUIRY
+        ========================================= */
+
+        .contact-enquiry {
+            padding: 82px 0;
+            background: #0e1014;
+
+            border-top: 1px solid var(--contact-line);
+            border-bottom: 1px solid var(--contact-line);
+        }
+
+
+        .contact-enquiry-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 65px;
+            align-items: start;
+        }
+
+
+        .contact-enquiry-info {
+            position: sticky;
+            top: 40px;
+        }
+
+
+        .contact-enquiry-info h2 {
+            margin: 16px 0;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(37px, 5vw, 58px);
+            line-height: 1.04;
+            letter-spacing: -.06em;
+        }
+
+
+        .contact-enquiry-info h2 span {
+            color: var(--contact-orange);
+        }
+
+
+        .contact-enquiry-info > p {
+            color: var(--contact-muted);
+
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+
+        .contact-response-note {
+            display: flex;
+            gap: 13px;
+
+            margin-top: 35px;
+            padding-top: 20px;
+
+            border-top: 1px solid var(--contact-line);
+        }
+
+
+        .contact-response-icon {
+            color: var(--contact-orange);
+            font-size: 18px;
+        }
+
+
+        .contact-response-note strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 12px;
+        }
+
+
+        .contact-response-note p {
+            margin: 0;
+
+            color: var(--contact-muted);
+
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           FORM
+        ========================================= */
+
+        .contact-form {
+            padding: 34px;
+
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,.10);
+
+            color: #111318;
+        }
+
+
+        .contact-form-heading {
+            margin-bottom: 27px;
+        }
+
+
+        .contact-form-heading h3 {
+            margin: 0 0 8px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: 25px;
+            letter-spacing: -.04em;
+
+            color: #111318;
+        }
+
+
+        .contact-form-heading p {
+            margin: 0;
+
+            color: #666b73;
+
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+
+        .contact-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 16px;
+        }
+
+
+        .contact-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+
+        .contact-field-full {
+            grid-column: 1 / -1;
+        }
+
+
+        .contact-field label {
+            color: #22252b;
+
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: .5px;
+        }
+
+
+        .contact-field input,
+        .contact-field select,
+        .contact-field textarea {
+            width: 100%;
+            min-height: 48px;
+
+            padding: 12px 14px;
+
+            border: 1px solid #d9dce1;
+            border-radius: 8px;
+
+            outline: none;
+
+            background: #ffffff;
+            color: #111318;
+
+            font: inherit;
+            font-size: 12px;
+
+            transition: border-color .25s ease;
+
+            box-sizing: border-box;
+        }
+
+
+        .contact-field input:focus,
+        .contact-field select:focus,
+        .contact-field textarea:focus {
+            border-color: var(--contact-orange);
+            background: #ffffff;
+        }
+
+
+        .contact-field input::placeholder,
+        .contact-field textarea::placeholder {
+            color: #8a8f98;
+        }
+
+
+        .contact-field select {
+            color: #444851;
+        }
+
+
+        .contact-field select option {
+            background: #ffffff;
+            color: #111318;
+        }
+
+
+        .contact-field textarea {
+            min-height: 115px;
+            resize: vertical;
+        }
+
+
+        .contact-form-submit {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            flex-wrap: wrap;
+            gap: 18px;
+
+            margin-top: 23px;
+        }
+
+
+        .contact-form-submit small {
+            max-width: 240px;
+
+            color: #777b83;
+
+            font-size: 9px;
+            line-height: 1.7;
+        }
+
+
+        .contact-form-submit button {
+            min-height: 48px;
+            padding: 0 24px;
+
+            border: 1px solid var(--contact-orange);
+            border-radius: 999px;
+
+            background: var(--contact-orange);
+            color: #fff;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                background .3s ease,
+                color .3s ease,
+                transform .3s ease;
+        }
+
+
+        .contact-form-submit button:hover {
+            background: #ffffff;
+            color: var(--contact-orange);
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           PROCESS
+        ========================================= */
+
+        .contact-process {
+            padding: 82px 0;
+        }
+
+
+        .contact-process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            margin-top: 38px;
+
+            border-top: 1px solid var(--contact-line);
+            border-bottom: 1px solid var(--contact-line);
+        }
+
+
+        .contact-process-card {
+            padding: 28px 25px 32px 0;
+        }
+
+
+        .contact-process-card + .contact-process-card {
+            padding-left: 25px;
+            border-left: 1px solid var(--contact-line);
+        }
+
+
+        .contact-process-number {
+            color: var(--contact-orange);
+
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+        }
+
+
+        .contact-process-card h3 {
+            margin: 25px 0 10px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: 21px;
+            letter-spacing: -.04em;
+        }
+
+
+        .contact-process-card p {
+            max-width: 280px;
+            margin: 0;
+
+            color: var(--contact-muted);
+
+            font-size: 12px;
+            line-height: 1.75;
+        }
+
+
+        /* =========================================
+           SERVICES
+        ========================================= */
+
+        .contact-services {
+            padding: 78px 0;
+            background: #0e1014;
+
+            border-top: 1px solid var(--contact-line);
+        }
+
+
+        .contact-service-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 1px;
+            margin-top: 32px;
+
+            background: var(--contact-line);
+            border: 1px solid var(--contact-line);
+        }
+
+
+        .contact-service-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            min-height: 64px;
+            padding: 0 18px;
+
+            background: #0e1014;
+            color: var(--contact-white);
+
+            text-decoration: none;
+            font-size: 11px;
+
+            transition:
+                background .25s ease,
+                color .25s ease;
+        }
+
+
+        .contact-service-item span:last-child {
+            color: var(--contact-orange);
+            font-size: 0;
+        }
+
+
+        .contact-service-item:hover {
+            background: #191b21;
+            color: var(--contact-orange);
+        }
+
+
+        /* =========================================
+           FAQ
+        ========================================= */
+
+        .contact-faq {
+            padding: 82px 0;
+        }
+
+
+        .contact-faq-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 65px;
+        }
+
+
+        .contact-faq-intro h2 {
+            margin: 16px 0;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(35px, 5vw, 54px);
+            line-height: 1.04;
+            letter-spacing: -.06em;
+        }
+
+
+        .contact-faq-intro p {
+            color: var(--contact-muted);
+
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+
+        .contact-faq-list details {
+            border-bottom: 1px solid var(--contact-line);
+        }
+
+
+        .contact-faq-list details:first-child {
+            border-top: 1px solid var(--contact-line);
+        }
+
+
+        .contact-faq-list summary {
+            position: relative;
+
+            padding: 19px 35px 19px 0;
+
+            color: var(--contact-white);
+
+            font-size: 12px;
+            font-weight: 600;
+
+            cursor: pointer;
+            list-style: none;
+        }
+
+
+        .contact-faq-list summary::-webkit-details-marker {
+            display: none;
+        }
+
+
+        .contact-faq-list summary::after {
+            content: "+";
+
+            position: absolute;
+
+            top: 14px;
+            right: 2px;
+
+            color: var(--contact-orange);
+
+            font-size: 21px;
+            font-weight: 400;
+        }
+
+
+        .contact-faq-list details[open] summary::after {
+            content: "−";
+        }
+
+
+        .contact-faq-list details p {
+            max-width: 620px;
+
+            margin: 0;
+            padding: 0 30px 19px 0;
+
+            color: var(--contact-muted);
+
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           FINAL CTA
+        ========================================= */
+
+        .contact-final {
+            position: relative;
+            overflow: hidden;
+
+            padding: 78px 0;
+
+            background: var(--contact-orange);
+            color: #fff;
+
+            text-align: center;
+        }
+
+
+        .contact-final::before,
+        .contact-final::after {
+            content: "";
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border: 1px solid rgba(255,255,255,.18);
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+
+        .contact-final::before {
+            top: -210px;
+            left: -100px;
+
+            box-shadow:
+                0 0 0 30px rgba(255,255,255,.04),
+                0 0 0 60px rgba(255,255,255,.03);
+        }
+
+
+        .contact-final::after {
+            right: -140px;
+            bottom: -240px;
+
+            box-shadow:
+                0 0 0 30px rgba(255,255,255,.04),
+                0 0 0 60px rgba(255,255,255,.03);
+        }
+
+
+        .contact-final h2 {
+            position: relative;
+
+            max-width: 760px;
+            margin: 0 auto 17px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1;
+            letter-spacing: -.07em;
+        }
+
+
+        .contact-final p {
+            position: relative;
+
+            max-width: 500px;
+            margin: 0 auto 25px;
+
+            color: rgba(255,255,255,.85);
+
+            font-size: 12px;
+            line-height: 1.75;
+        }
+
+
+        .contact-final .contact-btn {
+            position: relative;
+
+            background: #fff;
+            border-color: #fff;
+            color: #111;
+
+            border-radius: 999px;
+        }
+
+
+        .contact-final .contact-btn:hover {
+            background: transparent;
+            color: #fff;
+            border-color: #fff;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 950px) {
+
+            .contact-route-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            .contact-enquiry-grid,
+            .contact-faq-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+
+            .contact-enquiry-info {
+                position: static;
+            }
+
+
+            .contact-service-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            .contact-section-heading {
+                display: block;
+            }
+
+
+            .contact-section-heading p {
+                margin-top: 15px;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .contact-wrap {
+                width: min(100% - 34px, 1180px);
+            }
+
+
+            /* HERO */
+
+            .contact-hero {
+                min-height: auto;
+                padding: 88px 0 62px;
+            }
+
+
+            .contact-hero h1 {
+                max-width: 100%;
+                margin-top: 18px;
+
+                font-size: clamp(38px, 12vw, 58px);
+                line-height: 1.02;
+            }
+
+
+            .contact-hero-copy {
+                font-size: 13px;
+                line-height: 1.75;
+            }
+
+
+            .contact-hero-actions {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 24px;
+            }
+
+
+            .contact-hero-actions .contact-btn {
+                width: auto;
+                min-width: 160px;
+            }
+
+
+            .contact-hero-bottom {
+                margin-top: 38px;
+            }
+
+
+            /* SECTIONS */
+
+            .contact-routes,
+            .contact-offices,
+            .contact-enquiry,
+            .contact-process,
+            .contact-services,
+            .contact-faq {
+                padding: 62px 0;
+            }
+
+
+            .contact-route-grid,
+            .contact-office-grid,
+            .contact-process-grid,
+            .contact-service-list {
+                grid-template-columns: 1fr;
+            }
+
+
+            .contact-route-card {
+                min-height: 155px;
+            }
+
+
+            .contact-office-card {
+                min-height: auto;
+                padding: 25px 21px;
+            }
+
+
+            .contact-office-card h3 {
+                font-size: 29px;
+            }
+
+
+            .contact-office-detail {
+                grid-template-columns: 82px 1fr;
+            }
+
+
+            .contact-form {
+                padding: 24px 18px;
+            }
+
+
+            .contact-form-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .contact-field-full {
+                grid-column: auto;
+            }
+
+
+            .contact-form-submit {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+
+            .contact-form-submit button {
+                width: 100%;
+            }
+
+
+            .contact-process-card,
+            .contact-process-card + .contact-process-card {
+                padding: 25px 0;
+                border-left: 0;
+                border-bottom: 1px solid var(--contact-line);
+            }
+
+
+            .contact-process-card:last-child {
+                border-bottom: 0;
+            }
+
+
+            .contact-final {
+                padding: 65px 20px;
+            }
+
+
+            .contact-final h2 {
+                font-size: clamp(36px, 11vw, 55px);
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="contact-page">
+
+
+    <!-- =========================================
+         HEADER
+    ========================================= -->
+
+    <header class="site-header">
+
+        <div class="wrap nav">
+
+            <a class="logo logo-image"
+               href="index.html"
+               aria-label="V DO MARKETING Home">
+
+                <img src="assets/vdo-logo.png"
+                     alt="V DO MARKETING - U do Business, V do Marketing">
+
+            </a>
+
+
+            <button class="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation">
+
+                <span aria-hidden="true">☰</span>
+
+            </button>
+
+
+            <nav class="nav-links"
+                 id="primary-navigation"
+                 aria-label="Main navigation">
+
+                <a data-nav href="index.html#services">
+                    Services
+                </a>
+
+                <a data-nav href="about.html">
+                    About
+                </a>
+
+                <a class="nav-cta" href="contact.html">
+                    Let's talk
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         HERO
+    ========================================= -->
+
+    <section class="contact-hero">
+
+        <div class="contact-wrap">
+
+            <div class="contact-hero-content">
+
+                <span class="contact-eyebrow">
+                    CONTACT V DO MARKETING
+                </span>
+
+
+                <h1>
+
+                    <span class="hero-line">
+                        Every Good thing
+                    </span>
+
+                    <span class="hero-line-orange">
+                        starts with a conversation.
+                    </span>
+
+                </h1>
+
+
+                <p class="contact-hero-copy">
+                    Have a project in mind, a challenge to solve, or an idea worth exploring?
+                    We bring creative thinking, strategic direction and digital expertise
+                    together to help move your business forward.
+                </p>
+
+
+                <div class="contact-hero-actions">
+
+                    <a href="#contact-form" class="contact-btn">
+                        Start a conversation
+                    </a>
+
+                    <a href="#our-offices" class="contact-btn contact-btn-outline">
+                        Explore our offices
+                    </a>
+
+                </div>
+
+
+                <div class="contact-hero-bottom">
+
+                    <span></span>
+
+                    <span>
+                        Australia · India · Worldwide
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CONTACT OPTIONS
+    ========================================= -->
+
+    <section class="contact-routes">
+
+        <div class="contact-wrap">
+
+            <div class="contact-section-heading">
+
+                <div>
+
+                    <span class="contact-eyebrow">
+                        HOW CAN WE HELP?
+                    </span>
+
+                    <h2>
+                        Let's get the right conversation started.
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Whether you're looking to build, grow, collaborate or join our team,
+                    we'd love to hear from you.
+                </p>
+
+            </div>
+
+
+
+            <div class="contact-route-grid">
+
+                <a href="#contact-form" class="contact-route-card">
+
+                    <span class="contact-route-number">
+                        01 / PROJECTS
+                    </span>
+
+                    <h3>
+                        New Projects
+                    </h3>
+
+                    <p>
+                        Have a business goal or marketing project you'd like to discuss?
+                    </p>
+
+                </a>
+
+
+                <a href="#contact-form" class="contact-route-card">
+
+                    <span class="contact-route-number">
+                        02 / PARTNERSHIPS
+                    </span>
+
+                    <h3>
+                        Partnerships
+                    </h3>
+
+                    <p>
+                        Interested in working together or exploring a collaboration?
+                    </p>
+
+                </a>
+
+
+                <a href="#contact-form" class="contact-route-card">
+
+                    <span class="contact-route-number">
+                        03 / CAREERS
+                    </span>
+
+                    <h3>
+                        Careers
+                    </h3>
+
+                    <p>
+                        Creative minds and curious thinkers are always welcome.
+                    </p>
+
+                </a>
+
+
+                <a href="#contact-form" class="contact-route-card">
+
+                    <span class="contact-route-number">
+                        04 / GENERAL
+                    </span>
+
+                    <h3>
+                        General Enquiries
+                    </h3>
+
+                    <p>
+                        Something else on your mind? Send us a message.
+                    </p>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         OFFICES
+    ========================================= -->
+
+    <section class="contact-offices" id="our-offices">
+
+        <div class="contact-wrap">
+
+            <div class="contact-offices-intro">
+
+                <span class="contact-eyebrow">
+                    WHERE WE WORK
+                </span>
+
+                <h2>
+                    Two locations.<br>
+                    One connected team.
+                </h2>
+
+                <p>
+                    With offices in Australia and India, we bring together different
+                    perspectives, creative talent and marketing expertise to work
+                    with businesses across markets.
+                </p>
+
+            </div>
+
+
+
+            <div class="contact-office-grid">
+
+
+                <!-- AUSTRALIA -->
+
+                <article class="contact-office-card">
+
+                    <div class="contact-office-top">
+
+                        <span class="contact-office-tag">
+                            OFFICE 01 / AUSTRALIA
+                        </span>
+
+                        <div class="contact-office-symbol">
+                            🗺️
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        Australia
+                    </h3>
+
+                    <p class="contact-office-subtitle">
+                        Our Australian office
+                    </p>
+
+
+
+                    <div class="contact-office-details">
+
+                        <div class="contact-office-detail">
+
+                            <span>
+                                Address
+                            </span>
+
+                            <strong>
+                                22 Claremont Street, 3064. Craigieburn
+                            </strong>
+
+                        </div>
+
+
+                        <div class="contact-office-detail">
+
+                            <span>
+                                Phone
+                            </span>
+
+                            <a href="tel:+61451230398">
+                                +61 451 230 398
+                            </a>
+
+                        </div>
+
+
+                        <div class="contact-office-detail">
+
+                            <span>
+                                Email
+                            </span>
+
+                            <a href="mailto:office@vdomarketing.com.au">
+                                office@vdomarketing.com.au
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <a class="contact-map-link" href="#contact-form">
+                        Get in touch with our team
+                    </a>
+
+                </article>
+
+
+
+                <!-- INDIA -->
+
+                <article class="contact-office-card">
+
+                    <div class="contact-office-top">
+
+                        <span class="contact-office-tag">
+                            OFFICE 02 / INDIA
+                        </span>
+
+                        <div class="contact-office-symbol">
+                            🗺️
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        India
+                    </h3>
+
+                    <p class="contact-office-subtitle">
+                        Our Indian office
+                    </p>
+
+
+
+                    <div class="contact-office-details">
+
+                        <div class="contact-office-detail">
+
+                            <span>
+                                Address
+                            </span>
+
+                            <strong>
+                                Shop 27 &amp; 28, First Floor, Panchkula Shopping Complex,
+                                Panchkula, Haryana
+                            </strong>
+
+                        </div>
+
+
+                        <div class="contact-office-detail">
+
+                            <span>
+                                Phone
+                            </span>
+
+                            <a href="tel:+919996602227">
+                                +91 9996602227
+                            </a>
+
+                        </div>
+
+
+                        <div class="contact-office-detail">
+
+                            <span>
+                                Email
+                            </span>
+
+                            <a href="mailto:office@vdomarketing.com.au">
+                                office@vdomarketing.com.au
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <a class="contact-map-link" href="#contact-form">
+                        Get in touch with our team
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CONTACT FORM
+    ========================================= -->
+
+    <section class="contact-enquiry" id="contact-form">
+
+        <div class="contact-wrap">
+
+            <div class="contact-enquiry-grid">
+
+
+                <div class="contact-enquiry-info">
+
+                    <span class="contact-eyebrow">
+                        TELL US ABOUT IT
+                    </span>
+
+
+                    <h2>
+                        Let's turn your
+                        <span>next idea</span>
+                        into something real.
+                    </h2>
+
+
+                    <p>
+                        Tell us a little about your business, what you're looking to
+                        achieve and where you need support. Our team will review your
+                        enquiry and connect with you.
+                    </p>
+
+
+
+                    <div class="contact-response-note">
+
+                        <span class="contact-response-icon">
+                            •
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                A thoughtful first step.
+                            </strong>
+
+                            <p>
+                                Every project is different. We'll take the time to understand
+                                your requirements before recommending a direction.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FORM -->
+
+                <form class="contact-form"
+                      id="vdoContactForm"
+                      action="#"
+                      method="post">
+
+                    <div class="contact-form-heading">
+
+                        <h3>
+                            Project enquiry
+                        </h3>
+
+                        <p>
+                            Fill in the details below and tell us what you have in mind.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="contact-form-grid">
+
+
+                        <div class="contact-field">
+
+                            <label for="contact-name">
+                                YOUR NAME *
+                            </label>
+
+                            <input type="text"
+                                   id="contact-name"
+                                   name="name"
+                                   placeholder="Full name"
+                                   required>
+
+                        </div>
+
+
+
+                        <div class="contact-field">
+
+                            <label for="contact-email">
+                                EMAIL ADDRESS
+                            </label>
+
+                            <input type="email"
+                                   id="contact-email"
+                                   name="email"
+                                   placeholder="you@company.com">
+
+                        </div>
+
+
+
+                        <div class="contact-field">
+
+                            <label for="contact-phone">
+                                PHONE NUMBER *
+                            </label>
+
+                            <input type="tel"
+                                   id="contact-phone"
+                                   name="phone"
+                                   placeholder="+ Country code"
+                                   required>
+
+                        </div>
+
+
+
+                        <div class="contact-field">
+
+                            <label for="contact-company">
+                                BUSINESS / COMPANY *
+                            </label>
+
+                            <input type="text"
+                                   id="contact-company"
+                                   name="company"
+                                   placeholder="Your business name"
+                                   required>
+
+                        </div>
+
+
+
+                        <div class="contact-field">
+
+                            <label for="contact-country">
+                                YOUR LOCATION
+                            </label>
+
+                            <select id="contact-country"
+                                    name="country">
+
+                                <option value="">
+                                    Select your location
+                                </option>
+
+                                <option value="Australia">
+                                    Australia
+                                </option>
+
+                                <option value="India">
+                                    India
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="contact-field">
+
+                            <label for="contact-website">
+                                WEBSITE
+                            </label>
+
+                            <input type="text"
+                                   id="contact-website"
+                                   name="website"
+                                   placeholder="Your website URL">
+
+                        </div>
+
+
+
+                        <div class="contact-field contact-field-full">
+
+                            <label for="contact-services">
+                                WHAT DO YOU NEED HELP WITH?
+                            </label>
+
+                            <select id="contact-services"
+                                    name="service">
+
+                                <option value="">
+                                    Choose a service
+                                </option>
+
+                                <option value="Website Development">
+                                    Website Development
+                                </option>
+
+                                <option value="SEO">
+                                    SEO
+                                </option>
+
+                                <option value="Social Media Management">
+                                    Social Media Management
+                                </option>
+
+                                <option value="Paid Advertising / PPC">
+                                    Paid Advertising / PPC
+                                </option>
+
+                                <option value="Influencer Marketing">
+                                    Influencer Marketing
+                                </option>
+
+                                <option value="Affiliate Marketing">
+                                    Affiliate Marketing
+                                </option>
+
+                                <option value="Graphic Design">
+                                    Graphic Design
+                                </option>
+
+                                <option value="Video Editing & Content Creation">
+                                    Video Editing &amp; Content Creation
+                                </option>
+
+                                <option value="Multiple Services">
+                                    Multiple Services
+                                </option>
+
+                                <option value="Not Sure Yet">
+                                    Not Sure Yet
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="contact-field contact-field-full">
+
+                            <label for="contact-message">
+                                TELL US ABOUT YOUR PROJECT *
+                            </label>
+
+                            <textarea id="contact-message"
+                                      name="message"
+                                      placeholder="Share your goals, requirements or the challenge you're looking to solve..."
+                                      required></textarea>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="contact-form-submit">
+
+                        <small>
+                            By submitting this form, you agree that our team may contact
+                            you regarding your enquiry.
+                        </small>
+
+
+                        <button type="submit">
+                            Send your enquiry
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PROCESS
+    ========================================= -->
+
+    <section class="contact-process">
+
+        <div class="contact-wrap">
+
+            <div class="contact-section-heading">
+
+                <div>
+
+                    <span class="contact-eyebrow">
+                        AFTER YOU REACH OUT
+                    </span>
+
+                    <h2>
+                        A simple process. A considered approach.
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    We believe good work starts with understanding. Here's what
+                    happens after you get in touch.
+                </p>
+
+            </div>
+
+
+
+            <div class="contact-process-grid">
+
+                <article class="contact-process-card">
+
+                    <span class="contact-process-number">
+                        01 / YOU REACH OUT
+                    </span>
+
+                    <h3>
+                        We listen first.
+                    </h3>
+
+                    <p>
+                        You share your idea, goals or challenges. We take the time to
+                        understand what matters to your business.
+                    </p>
+
+                </article>
+
+
+
+                <article class="contact-process-card">
+
+                    <span class="contact-process-number">
+                        02 / WE REVIEW
+                    </span>
+
+                    <h3>
+                        We find the direction.
+                    </h3>
+
+                    <p>
+                        Our team reviews your requirements and considers the right
+                        creative and marketing approach.
+                    </p>
+
+                </article>
+
+
+
+                <article class="contact-process-card">
+
+                    <span class="contact-process-number">
+                        03 / WE CONNECT
+                    </span>
+
+                    <h3>
+                        Let's make a plan.
+                    </h3>
+
+                    <p>
+                        We connect with you to discuss the next steps, possible
+                        solutions and how we can move forward.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SERVICES
+    ========================================= -->
+
+    <section class="contact-services">
+
+        <div class="contact-wrap">
+
+            <div class="contact-section-heading">
+
+                <div>
+
+                    <span class="contact-eyebrow">
+                        WHAT WE CAN HELP WITH
+                    </span>
+
+                    <h2>
+                        One team. Different ways to move forward.
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Explore the areas where our creative, digital and marketing
+                    teams can support your business.
+                </p>
+
+            </div>
+
+
+
+            <div class="contact-service-list">
+
+                <a href="services/website-development.html"
+                   class="contact-service-item">
+
+                    <span>
+                        Web &amp; App Development
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a href="services/seo.html"
+                   class="contact-service-item">
+
+                    <span>
+                        SEO
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a href="services/social-media-management.html"
+                   class="contact-service-item">
+
+                    <span>
+                        Social Media
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a href="services/paid-ads.html"
+                   class="contact-service-item">
+
+                    <span>
+                        Performance Marketing
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a href="services/influencer-marketing.html"
+                   class="contact-service-item">
+
+                    <span>
+                        Influencer Marketing
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a href="services/affiliate-marketing.html"
+                   class="contact-service-item">
+
+                    <span>
+                        Affiliate Marketing
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a href="services/graphic-design.html"
+                   class="contact-service-item">
+
+                    <span>
+                        Graphic Design
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a href="services/video-editing.html"
+                   class="contact-service-item">
+
+                    <span>
+                        Video Editing &amp; Content Creation
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FAQ
+    ========================================= -->
+
+    <section class="contact-faq">
+
+        <div class="contact-wrap">
+
+            <div class="contact-faq-grid">
+
+
+                <div class="contact-faq-intro">
+
+                    <span class="contact-eyebrow">
+                        A FEW QUICK ANSWERS
+                    </span>
+
+                    <h2>
+                        Before we talk, here's what you might want to know.
+                    </h2>
+
+                    <p>
+                        Still have a question? Send us an enquiry and our team will
+                        be happy to help.
+                    </p>
+
+                </div>
+
+
+
+                <div class="contact-faq-list">
+
+
+                    <details>
+
+                        <summary>
+                            Which office should I contact?
+                        </summary>
+
+                        <p>
+                            You can contact either our Australia or India office.
+                            Choose the location most convenient for you, or simply
+                            submit the enquiry form and our team will direct it appropriately.
+                        </p>
+
+                    </details>
+
+
+
+                    <details>
+
+                        <summary>
+                            Can you work with businesses outside Australia and India?
+                        </summary>
+
+                        <p>
+                            Yes. We work with businesses across different markets.
+                            Our teams collaborate remotely and can discuss project
+                            requirements regardless of your location.
+                        </p>
+
+                    </details>
+
+
+
+                    <details>
+
+                        <summary>
+                            Can I enquire about multiple services?
+                        </summary>
+
+                        <p>
+                            Absolutely. We can discuss a combination of services based
+                            on your business goals, requirements and priorities.
+                        </p>
+
+                    </details>
+
+
+
+                    <details>
+
+                        <summary>
+                            Do I need to know exactly what service I need?
+                        </summary>
+
+                        <p>
+                            Not at all. Tell us about your business and what you're
+                            trying to achieve. We can explore the right direction together.
+                        </p>
+
+                    </details>
+
+
+
+                    <details>
+
+                        <summary>
+                            Can we arrange an online meeting?
+                        </summary>
+
+                        <p>
+                            Yes. If a conversation would help clarify your requirements,
+                            you can request a video meeting through the enquiry form.
+                        </p>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FINAL CTA
+    ========================================= -->
+
+    <section class="contact-final">
+
+        <div class="contact-wrap">
+
+            <h2>
+                Have something in mind? Let's make it happen.
+            </h2>
+
+            <p>
+                The next chapter of your business could start with one conversation.
+                Tell us what you're thinking.
+            </p>
+
+            <a href="#contact-form" class="contact-btn">
+                Let's talk
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer class="footer">
+
+        <div class="wrap">
+
+            <div class="footer-top">
+
+                <div>
+
+                    <a class="logo logo-image" href="index.html">
+
+                        <img src="assets/vdo-logo.png"
+                             alt="V DO MARKETING">
+
+                    </a>
+
+
+                    <p class="muted"
+                       style="max-width:260px;line-height:1.7;font-size:12px">
+
+                        Creative thinking.
+                        Considered strategy.
+                        Digital growth.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="footer-links">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            EXPLORE
+                        </span>
+
+                        <a href="about.html">
+                            About
+                        </a>
+
+                        <a href="blog.html">
+                            Blog &amp; FAQ's
+                        </a>
+
+                        <a href="contact.html">
+                            Contact
+                        </a>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <span class="eyebrow">
+                            SERVICES
+                        </span>
+
+                        <a href="services/website-development.html">
+                            Web &amp; App Development
+                        </a>
+
+                        <a href="services/seo.html">
+                            SEO (Search Engine Optimisation)
+                        </a>
+
+                        <a href="services/social-media-management.html">
+                            Social Media
+                        </a>
+
+                        <a href="services/paid-ads.html">
+                            Performance Marketing
+                        </a>
+
+                        <a href="services/influencer-marketing.html">
+                            Influencer Marketing
+                        </a>
+
+                        <a href="services/affiliate-marketing.html">
+                            Affiliate Marketing
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © <span data-year></span>
+                    V DO MARKETING. All rights reserved.
+                </span>
+
+                <span>
+                    U DO BUSINESS &nbsp; • &nbsp; CREATIVE BY DESIGN
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =========================================
+     SCRIPTS
+========================================= -->
+
+<script src="js/site-config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+<script src="js/main.js"></script>
+
+
+<!-- =========================================
+     WHATSAPP FORM SUBMISSION
+========================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("vdoContactForm");
+
+    if (!form) return;
+
+
+    form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+
+        /*
+         * Browser's built-in validation will still work
+         * for required fields and email format.
+         */
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+
+        /* =========================================
+           GET FORM VALUES
+        ========================================= */
+
+        const name =
+            document.getElementById("contact-name").value.trim();
+
+        const email =
+            document.getElementById("contact-email").value.trim();
+
+        const phone =
+            document.getElementById("contact-phone").value.trim();
+
+        const company =
+            document.getElementById("contact-company").value.trim();
+
+        const country =
+            document.getElementById("contact-country").value.trim();
+
+        const website =
+            document.getElementById("contact-website").value.trim();
+
+        const service =
+            document.getElementById("contact-services").value.trim();
+
+        const message =
+            document.getElementById("contact-message").value.trim();
+
+
+        /* =========================================
+           WHATSAPP MESSAGE
+        ========================================= */
+
+        const whatsappMessage =
+
+`Hello V DO MARKETING,
+
+I would like to enquire about a project.
+
+Name: ${name}
+
+Email: ${email || "Not provided"}
+
+Phone: ${phone}
+
+Business / Company: ${company}
+
+Location: ${country || "Not provided"}
+
+Website: ${website || "Not provided"}
+
+Service Required: ${service || "Not selected"}
+
+Project Details:
+${message}
+
+Thank you.`;
+
+
+        /* =========================================
+           WHATSAPP NUMBER
+           
+           +91 9996602227
+           
+           IMPORTANT:
+           No +, spaces or brackets here.
+        ========================================= */
+
+        const whatsappNumber = "919996602227";
+
+
+        /* =========================================
+           CREATE WHATSAPP URL
+        ========================================= */
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(whatsappMessage);
+
+
+        /* =========================================
+           OPEN WHATSAPP
+        ========================================= */
+
+        window.open(whatsappURL, "_blank");
+
+
+    });
+
+});
+
+</script>
+
+
+</body>
+
+</html>

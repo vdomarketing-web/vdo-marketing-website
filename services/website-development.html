@@ -1,0 +1,1765 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Web and app development by V DO MARKETING — UI/UX design, landing pages, e-commerce development and website optimisation.">
+
+  <meta name="theme-color" content="#090a0d">
+
+  <title>Web & App Development | V DO MARKETING</title>
+
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+
+    /* =========================================================
+       WEB & APP DEVELOPMENT PAGE
+    ========================================================= */
+
+    .dev-page{
+      overflow-x:hidden;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .dev-hero{
+      min-height:660px;
+      display:flex;
+      align-items:center;
+      padding:125px 0 65px;
+      position:relative;
+    }
+
+    .dev-hero::after{
+      content:"";
+      position:absolute;
+      width:460px;
+      height:460px;
+      right:-220px;
+      top:150px;
+      background:rgba(242,68,29,.07);
+      filter:blur(120px);
+      border-radius:50%;
+      pointer-events:none;
+    }
+
+    .dev-hero-content{
+      max-width:900px;
+      position:relative;
+      z-index:2;
+    }
+
+    .dev-hero h1{
+      margin:20px 0 25px;
+      font-size:clamp(54px,8vw,105px);
+      line-height:.92;
+      letter-spacing:-.065em;
+      max-width:900px;
+    }
+
+    .dev-hero h1 em{
+      color:var(--orange);
+      font-style:normal;
+    }
+
+    .dev-hero-text{
+      max-width:590px;
+      color:rgba(255,255,255,.58);
+      font-size:15px;
+      line-height:1.85;
+      margin:0 0 32px;
+    }
+
+    .dev-hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px 28px;
+      margin-top:32px;
+
+      font-family:'DM Mono',monospace;
+      font-size:9px;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.38);
+    }
+
+    .dev-hero-meta span{
+      display:flex;
+      align-items:center;
+      gap:9px;
+    }
+
+    .dev-hero-meta span::before{
+      content:"";
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background:var(--orange);
+    }
+
+
+    /* =========================================================
+       INTRO
+    ========================================================= */
+
+    .dev-intro{
+      padding:70px 0;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    .dev-intro-grid{
+      display:grid;
+      grid-template-columns:1fr 1.35fr;
+      gap:60px;
+      align-items:start;
+    }
+
+    .dev-intro-title{
+      margin:14px 0 0;
+      font-size:clamp(34px,5vw,61px);
+      line-height:.98;
+      letter-spacing:-.05em;
+    }
+
+    .dev-intro-title span{
+      color:rgba(255,255,255,.28);
+    }
+
+    .dev-intro-copy{
+      max-width:650px;
+      padding-top:5px;
+    }
+
+    .dev-intro-copy p{
+      margin:0 0 20px;
+      color:rgba(255,255,255,.53);
+      font-size:15px;
+      line-height:1.9;
+    }
+
+    .dev-intro-copy p:last-child{
+      margin-bottom:0;
+    }
+
+
+    /* =========================================================
+       CORE SERVICES
+    ========================================================= */
+
+    .dev-services{
+      padding:0 0 60px;
+    }
+
+    .dev-section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:40px;
+      margin-bottom:25px;
+    }
+
+    .dev-section-head h2{
+      margin:14px 0 0;
+      font-size:clamp(38px,5.5vw,68px);
+      line-height:.94;
+      letter-spacing:-.055em;
+    }
+
+    .dev-section-note{
+      max-width:310px;
+      margin:0;
+      color:rgba(255,255,255,.38);
+      font-size:12px;
+      line-height:1.8;
+    }
+
+
+    /* =========================================================
+       SERVICE CARDS
+    ========================================================= */
+
+    .dev-service-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1px;
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.1);
+    }
+
+    .dev-service-card{
+      min-height:250px;
+      padding:30px 32px;
+      background:#090a0d;
+      position:relative;
+      overflow:hidden;
+      transition:.35s ease;
+    }
+
+    .dev-service-card::after{
+      content:"";
+      position:absolute;
+      width:240px;
+      height:240px;
+      right:-160px;
+      bottom:-170px;
+      background:rgba(242,68,29,.12);
+      filter:blur(65px);
+      border-radius:50%;
+      opacity:0;
+      transition:.4s ease;
+    }
+
+    .dev-service-card:hover{
+      background:#0d0e11;
+    }
+
+    .dev-service-card:hover::after{
+      opacity:1;
+    }
+
+    .dev-service-number{
+      font-family:'DM Mono',monospace;
+      font-size:10px;
+      letter-spacing:1px;
+      color:var(--orange);
+      margin-bottom:32px;
+    }
+
+    .dev-service-card h3{
+      margin:0 0 14px;
+      font-size:25px;
+      line-height:1.05;
+      letter-spacing:-.025em;
+      position:relative;
+      z-index:2;
+    }
+
+    .dev-service-card p{
+      max-width:430px;
+      margin:0;
+      color:rgba(255,255,255,.43);
+      font-size:12px;
+      line-height:1.8;
+      position:relative;
+      z-index:2;
+    }
+
+    .dev-service-list{
+      list-style:none;
+      margin:20px 0 0;
+      padding:0;
+      position:relative;
+      z-index:2;
+    }
+
+    .dev-service-list li{
+      position:relative;
+      padding-left:16px;
+      margin:0 0 8px;
+      color:rgba(255,255,255,.46);
+      font-size:11px;
+      line-height:1.5;
+    }
+
+    .dev-service-list li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:7px;
+      width:4px;
+      height:4px;
+      border-radius:50%;
+      background:var(--orange);
+    }
+
+
+    /* =========================================================
+       WORK SHOWCASE
+    ========================================================= */
+
+    .dev-work{
+      padding:60px 0;
+      background:rgba(255,255,255,.018);
+      border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .dev-work-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:40px;
+      margin-bottom:30px;
+    }
+
+    .dev-work-header h2{
+      margin:14px 0 0;
+      font-size:clamp(40px,5.8vw,72px);
+      line-height:.94;
+      letter-spacing:-.055em;
+    }
+
+    .dev-work-header h2 span{
+      color:rgba(255,255,255,.28);
+    }
+
+    .dev-work-header p{
+      max-width:300px;
+      margin:0;
+      color:rgba(255,255,255,.38);
+      font-size:12px;
+      line-height:1.8;
+    }
+
+    .dev-work-grid{
+      display:grid;
+      grid-template-columns:1.35fr .65fr;
+      gap:14px;
+    }
+
+    .dev-work-side{
+      display:grid;
+      grid-template-rows:1fr 1fr;
+      gap:14px;
+    }
+
+    .dev-project{
+      display:block;
+      position:relative;
+      overflow:hidden;
+      min-height:450px;
+      text-decoration:none;
+      color:inherit;
+      border:1px solid rgba(255,255,255,.09);
+      background:#111216;
+    }
+
+    .dev-project-small{
+      min-height:218px;
+    }
+
+    .dev-project-visual{
+      position:absolute;
+      inset:0;
+    }
+
+    .dev-project-placeholder{
+      width:100%;
+      height:100%;
+      min-height:inherit;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      background:
+        radial-gradient(
+          circle at 55% 35%,
+          rgba(242,68,29,.16),
+          transparent 42%
+        ),
+        linear-gradient(
+          135deg,
+          #17181c 0%,
+          #0c0d10 100%
+        );
+    }
+
+    .dev-project-placeholder span{
+      font-family:'DM Mono',monospace;
+      font-size:9px;
+      letter-spacing:2px;
+      color:rgba(255,255,255,.2);
+    }
+
+    .dev-project-visual::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to bottom,
+        transparent 30%,
+        rgba(0,0,0,.9) 100%
+      );
+    }
+
+    .dev-project-content{
+      position:absolute;
+      left:27px;
+      right:27px;
+      bottom:27px;
+      z-index:3;
+    }
+
+    .dev-project-type{
+      font-family:'DM Mono',monospace;
+      font-size:8px;
+      letter-spacing:1.7px;
+      text-transform:uppercase;
+      color:var(--orange);
+      margin-bottom:8px;
+    }
+
+    .dev-project-content h3{
+      margin:0 0 7px;
+      font-size:30px;
+      letter-spacing:-.04em;
+    }
+
+    .dev-project-small .dev-project-content h3{
+      font-size:22px;
+    }
+
+    .dev-project-content p{
+      margin:0;
+      color:rgba(255,255,255,.4);
+      font-size:10px;
+    }
+
+    .dev-project-arrow{
+      position:absolute;
+      top:24px;
+      right:24px;
+      z-index:4;
+
+      width:38px;
+      height:38px;
+
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:50%;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      color:#fff;
+      font-size:13px;
+
+      transition:.3s ease;
+    }
+
+    .dev-project:hover{
+      border-color:rgba(242,68,29,.45);
+    }
+
+    .dev-project:hover .dev-project-arrow{
+      background:var(--orange);
+      border-color:var(--orange);
+      transform:rotate(45deg);
+    }
+
+
+    /* =========================================================
+       PROCESS
+    ========================================================= */
+
+    .dev-process{
+      padding:60px 0;
+    }
+
+    .dev-process-grid{
+      display:grid;
+      grid-template-columns:1fr 1.35fr;
+      gap:65px;
+    }
+
+    .dev-process-title{
+      margin:14px 0 0;
+      font-size:clamp(39px,5.5vw,68px);
+      line-height:.94;
+      letter-spacing:-.055em;
+    }
+
+    .dev-process-title span{
+      color:rgba(255,255,255,.28);
+    }
+
+    .dev-steps{
+      border-top:1px solid rgba(255,255,255,.1);
+    }
+
+    .dev-step{
+      display:grid;
+      grid-template-columns:48px 1fr;
+      gap:20px;
+      padding:22px 0;
+      border-bottom:1px solid rgba(255,255,255,.1);
+    }
+
+    .dev-step-number{
+      font-family:'DM Mono',monospace;
+      font-size:9px;
+      color:var(--orange);
+      padding-top:4px;
+    }
+
+    .dev-step h3{
+      margin:0 0 7px;
+      font-size:19px;
+      letter-spacing:-.02em;
+    }
+
+    .dev-step p{
+      max-width:570px;
+      margin:0;
+      color:rgba(255,255,255,.4);
+      font-size:12px;
+      line-height:1.8;
+    }
+
+
+    /* =========================================================
+       BLOG
+    ========================================================= */
+
+    .dev-blog{
+      padding:60px 0;
+      border-top:1px solid rgba(255,255,255,.07);
+    }
+
+    .dev-blog-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:30px;
+      margin-bottom:25px;
+    }
+
+    .dev-blog-header h2{
+      margin:14px 0 0;
+      font-size:clamp(40px,5.5vw,68px);
+      line-height:.94;
+      letter-spacing:-.055em;
+    }
+
+    .dev-blog-header h2 span{
+      color:rgba(255,255,255,.28);
+    }
+
+    .dev-blog-link{
+      color:rgba(255,255,255,.5);
+      text-decoration:none;
+      font-family:'DM Mono',monospace;
+      font-size:9px;
+      letter-spacing:1.2px;
+      text-transform:uppercase;
+      padding-bottom:5px;
+      border-bottom:1px solid rgba(255,255,255,.2);
+      white-space:nowrap;
+    }
+
+    .dev-blog-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .dev-blog-card{
+      display:block;
+      min-height:220px;
+      padding:23px 0 0;
+      border-top:1px solid rgba(255,255,255,.14);
+      text-decoration:none;
+      color:inherit;
+      transition:.3s ease;
+    }
+
+    .dev-blog-card:hover{
+      border-color:var(--orange);
+      transform:translateY(-4px);
+    }
+
+    .dev-blog-meta{
+      display:flex;
+      justify-content:space-between;
+      gap:15px;
+      font-family:'DM Mono',monospace;
+      font-size:8px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.28);
+      margin-bottom:35px;
+    }
+
+    .dev-blog-card h3{
+      max-width:370px;
+      margin:0 0 13px;
+      font-size:21px;
+      line-height:1.15;
+      letter-spacing:-.025em;
+    }
+
+    .dev-blog-card p{
+      max-width:390px;
+      margin:0;
+      color:rgba(255,255,255,.38);
+      font-size:11px;
+      line-height:1.8;
+    }
+
+
+    /* =========================================================
+       FINAL CTA
+    ========================================================= */
+
+    .dev-cta{
+      padding:60px 0 70px;
+    }
+
+    .dev-cta-box{
+      position:relative;
+      overflow:hidden;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:50px;
+
+      padding:50px 50px;
+
+      border:1px solid rgba(255,255,255,.1);
+    }
+
+    .dev-cta-box::after{
+      content:"";
+      position:absolute;
+      width:350px;
+      height:350px;
+      right:-180px;
+      bottom:-220px;
+      background:rgba(242,68,29,.1);
+      filter:blur(100px);
+      border-radius:50%;
+    }
+
+    .dev-cta-content{
+      position:relative;
+      z-index:2;
+    }
+
+    .dev-cta h2{
+      max-width:700px;
+      margin:14px 0 0;
+      font-size:clamp(39px,5.5vw,70px);
+      line-height:.94;
+      letter-spacing:-.055em;
+    }
+
+    .dev-cta h2 span{
+      color:var(--orange);
+    }
+
+    .dev-cta p{
+      max-width:500px;
+      margin:18px 0 0;
+      color:rgba(255,255,255,.4);
+      font-size:12px;
+      line-height:1.8;
+    }
+
+    .dev-cta-action{
+      position:relative;
+      z-index:3;
+      flex-shrink:0;
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media(max-width:800px){
+
+      .dev-hero{
+        min-height:600px;
+        padding:115px 0 60px;
+      }
+
+      .dev-hero h1{
+        font-size:clamp(50px,14vw,76px);
+      }
+
+      .dev-hero-text{
+        font-size:13px;
+      }
+
+      .dev-hero-meta{
+        margin-top:28px;
+        gap:14px 20px;
+      }
+
+
+      .dev-intro{
+        padding:60px 0;
+      }
+
+      .dev-intro-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+
+
+      .dev-services{
+        padding-bottom:60px;
+      }
+
+      .dev-section-head{
+        display:block;
+        margin-bottom:25px;
+      }
+
+      .dev-section-note{
+        margin-top:20px;
+      }
+
+
+      .dev-service-grid{
+        grid-template-columns:1fr;
+      }
+
+      .dev-service-card{
+        min-height:auto;
+        padding:27px 25px;
+      }
+
+      .dev-service-number{
+        margin-bottom:32px;
+      }
+
+
+      .dev-work{
+        padding:60px 0;
+      }
+
+      .dev-work-header{
+        display:block;
+        margin-bottom:28px;
+      }
+
+      .dev-work-header p{
+        margin-top:20px;
+      }
+
+      .dev-work-grid{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .dev-work-side{
+        grid-template-rows:auto auto;
+        gap:12px;
+      }
+
+      .dev-project{
+        min-height:370px;
+      }
+
+      .dev-project-small{
+        min-height:270px;
+      }
+
+
+      .dev-process{
+        padding:60px 0;
+      }
+
+      .dev-process-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+      }
+
+
+      .dev-blog{
+        padding:60px 0;
+      }
+
+      .dev-blog-header{
+        display:block;
+        margin-bottom:25px;
+      }
+
+      .dev-blog-link{
+        display:inline-block;
+        margin-top:20px;
+      }
+
+      .dev-blog-grid{
+        grid-template-columns:1fr;
+        gap:28px;
+      }
+
+      .dev-blog-card{
+        min-height:200px;
+      }
+
+
+      .dev-cta{
+        padding:60px 0 70px;
+      }
+
+      .dev-cta-box{
+        display:block;
+        padding:38px 25px;
+      }
+
+      .dev-cta-action{
+        margin-top:32px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="dev-page">
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+  <div class="wrap nav">
+
+    <a class="logo logo-image"
+       href="../index.html"
+       aria-label="V DO MARKETING Home">
+
+      <img src="../assets/vdo-logo.png"
+           alt="V DO MARKETING — U do Business, V do Marketing">
+
+    </a>
+
+
+    <button class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation">
+
+      <span aria-hidden="true">☰</span>
+
+    </button>
+
+
+    <nav class="nav-links"
+         id="primary-navigation"
+         aria-label="Main navigation">
+
+
+      <a data-nav href="../index.html#services">
+        Services
+      </a>
+
+      <a data-nav href="../about.html">
+        About
+      </a>
+
+      <a class="nav-cta" href="../contact.html">
+        Let's talk
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="dev-hero">
+
+  <div class="wrap">
+
+    <div class="dev-hero-content reveal">
+
+      <span class="eyebrow">
+        SERVICE / WEB & APP DEVELOPMENT
+      </span>
+
+      <h1>
+        Digital experiences
+        <em>built to work.</em>
+      </h1>
+
+      <p class="dev-hero-text">
+        From high-converting landing pages to custom
+        websites and e-commerce experiences, we build
+        digital products around your business.
+      </p>
+
+      <a class="btn primary"
+         href="../contact.html">
+
+        Start a project
+
+      </a>
+
+
+      <div class="dev-hero-meta">
+
+        <span>
+          UI/UX Design
+        </span>
+
+        <span>
+          Landing Pages
+        </span>
+
+        <span>
+          E-commerce
+        </span>
+
+        <span>
+          Optimisation
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="dev-intro">
+
+  <div class="wrap">
+
+    <div class="dev-intro-grid">
+
+      <div>
+
+        <span class="eyebrow">
+          THE APPROACH
+        </span>
+
+        <h2 class="dev-intro-title">
+          Your website is part of
+          <span>your business.</span>
+        </h2>
+
+      </div>
+
+
+      <div class="dev-intro-copy">
+
+        <p>
+          We don't build websites just to fill a screen.
+          We create digital experiences that communicate
+          your value, guide your audience and support
+          the way your business grows.
+        </p>
+
+        <p>
+          Whether you're launching something new,
+          improving an existing website or building
+          an e-commerce experience, we focus on making
+          every part clear, useful and easy to use.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHAT WE DO
+========================================================= -->
+
+<section class="dev-services">
+
+  <div class="wrap">
+
+    <div class="dev-section-head">
+
+      <div>
+
+        <span class="eyebrow">
+          WHAT WE DO
+        </span>
+
+        <h2>
+          Everything your
+          <em class="accent">
+            digital presence
+          </em>
+          needs.
+        </h2>
+
+      </div>
+
+
+      <p class="dev-section-note">
+
+        Focused digital solutions without
+        unnecessary complexity.
+
+      </p>
+
+    </div>
+
+
+    <div class="dev-service-grid">
+
+
+      <!-- 01 -->
+
+      <article class="dev-service-card reveal">
+
+        <div class="dev-service-number">
+          01 / UI & UX
+        </div>
+
+        <h3>
+          UI/UX Design
+        </h3>
+
+        <p>
+          Interfaces designed to feel clear,
+          intuitive and consistent with your brand.
+        </p>
+
+        <ul class="dev-service-list">
+
+          <li>
+            User journeys & wireframes
+          </li>
+
+          <li>
+            Interface design
+          </li>
+
+          <li>
+            Responsive experiences
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- 02 -->
+
+      <article class="dev-service-card reveal">
+
+        <div class="dev-service-number">
+          02 / CONVERSION
+        </div>
+
+        <h3>
+          Landing Pages & Sales Funnels
+        </h3>
+
+        <p>
+          Purpose-built pages designed around
+          one clear action and a better customer journey.
+        </p>
+
+        <ul class="dev-service-list">
+
+          <li>
+            Campaign landing pages
+          </li>
+
+          <li>
+            Lead generation journeys
+          </li>
+
+          <li>
+            Conversion-focused layouts
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- 03 -->
+
+      <article class="dev-service-card reveal">
+
+        <div class="dev-service-number">
+          03 / COMMERCE
+        </div>
+
+        <h3>
+          E-commerce Development
+        </h3>
+
+        <p>
+          Online stores designed to make browsing,
+          buying and managing products simpler.
+        </p>
+
+        <ul class="dev-service-list">
+
+          <li>
+            Storefront design
+          </li>
+
+          <li>
+            Product & checkout experience
+          </li>
+
+          <li>
+            E-commerce optimisation
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- 04 -->
+
+      <article class="dev-service-card reveal">
+
+        <div class="dev-service-number">
+          04 / SUPPORT
+        </div>
+
+        <h3>
+          Website Maintenance & Optimisation
+        </h3>
+
+        <p>
+          Keep your website secure, updated,
+          fast and working as your business evolves.
+        </p>
+
+        <ul class="dev-service-list">
+
+          <li>
+            Content & technical updates
+          </li>
+
+          <li>
+            Performance improvements
+          </li>
+
+          <li>
+            Ongoing optimisation
+          </li>
+
+        </ul>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     WORK SHOWCASE
+========================================================= -->
+
+<section class="dev-work">
+
+  <div class="wrap">
+
+    <div class="dev-work-header">
+
+      <div>
+
+        <span class="eyebrow">
+          SELECTED WORK
+        </span>
+
+        <h2>
+          Built for real
+          <span>businesses.</span>
+        </h2>
+
+      </div>
+
+
+      <p>
+        A look at selected digital experiences,
+        websites and projects.
+      </p>
+
+    </div>
+
+
+    <div class="dev-work-grid">
+
+
+      <a href="#"
+         class="dev-project reveal">
+
+        <div class="dev-project-visual">
+
+          <div class="dev-project-placeholder">
+
+            <span>
+              PROJECT IMAGE / VIDEO
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="dev-project-content">
+
+          <div class="dev-project-type">
+            Website Development
+          </div>
+
+          <h3>
+            Project One
+          </h3>
+
+          <p>
+            Strategy · UI/UX · Development
+          </p>
+
+        </div>
+
+      </a>
+
+
+      <div class="dev-work-side">
+
+
+        <a href="#"
+           class="dev-project dev-project-small reveal">
+
+          <div class="dev-project-visual">
+
+            <div class="dev-project-placeholder">
+
+              <span>
+                PROJECT IMAGE / VIDEO
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="dev-project-content">
+
+            <div class="dev-project-type">
+              E-commerce
+            </div>
+
+            <h3>
+              Project Two
+            </h3>
+
+            <p>
+              Design · Development · Optimisation
+            </p>
+
+          </div>
+
+        </a>
+
+
+        <a href="#"
+           class="dev-project dev-project-small reveal">
+
+          <div class="dev-project-visual">
+
+            <div class="dev-project-placeholder">
+
+              <span>
+                PROJECT IMAGE / VIDEO
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="dev-project-content">
+
+            <div class="dev-project-type">
+              Landing Page
+            </div>
+
+            <h3>
+              Project Three
+            </h3>
+
+            <p>
+              UX · Conversion · Development
+            </p>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section class="dev-process">
+
+  <div class="wrap">
+
+    <div class="dev-process-grid">
+
+
+      <div>
+
+        <span class="eyebrow">
+          HOW WE WORK
+        </span>
+
+        <h2 class="dev-process-title">
+          Simple process.
+          <span>Thoughtful execution.</span>
+        </h2>
+
+      </div>
+
+
+      <div class="dev-steps">
+
+
+        <article class="dev-step reveal">
+
+          <div class="dev-step-number">
+            01
+          </div>
+
+          <div>
+
+            <h3>
+              Understand
+            </h3>
+
+            <p>
+              We understand your business, audience,
+              goals and what the digital experience
+              needs to achieve.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="dev-step reveal">
+
+          <div class="dev-step-number">
+            02
+          </div>
+
+          <div>
+
+            <h3>
+              Design
+            </h3>
+
+            <p>
+              We define the structure, user journey
+              and visual direction before development.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="dev-step reveal">
+
+          <div class="dev-step-number">
+            03
+          </div>
+
+          <div>
+
+            <h3>
+              Build
+            </h3>
+
+            <p>
+              We turn the approved direction into
+              a responsive, functional digital product.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="dev-step reveal">
+
+          <div class="dev-step-number">
+            04
+          </div>
+
+          <div>
+
+            <h3>
+              Launch & Optimise
+            </h3>
+
+            <p>
+              After launch, we can continue refining
+              performance, usability and functionality.
+            </p>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     BLOG
+========================================================= -->
+
+<section class="dev-blog">
+
+  <div class="wrap">
+
+    <div class="dev-blog-header">
+
+      <div>
+
+        <span class="eyebrow">
+          FROM THE JOURNAL
+        </span>
+
+        <h2>
+          Ideas on
+          <span>digital.</span>
+        </h2>
+
+      </div>
+
+
+      <a href="../blog.html"
+         class="dev-blog-link">
+
+        View all articles
+
+      </a>
+
+    </div>
+
+
+    <div class="dev-blog-grid">
+
+
+      <a href="../blog.html"
+         class="dev-blog-card reveal">
+
+        <div class="dev-blog-meta">
+
+          <span>
+            Web Design
+          </span>
+
+          <span>
+            01
+          </span>
+
+        </div>
+
+        <h3>
+          What makes a website
+          actually work for a business?
+        </h3>
+
+        <p>
+          A look at structure, clarity, user
+          experience and what makes visitors
+          take the next step.
+        </p>
+
+      </a>
+
+
+      <a href="../blog.html"
+         class="dev-blog-card reveal">
+
+        <div class="dev-blog-meta">
+
+          <span>
+            E-commerce
+          </span>
+
+          <span>
+            02
+          </span>
+
+        </div>
+
+        <h3>
+          Building an e-commerce
+          experience people want to use.
+        </h3>
+
+        <p>
+          Why the buying experience matters just
+          as much as the products you're selling.
+        </p>
+
+      </a>
+
+
+      <a href="../blog.html"
+         class="dev-blog-card reveal">
+
+        <div class="dev-blog-meta">
+
+          <span>
+            Development
+          </span>
+
+          <span>
+            03
+          </span>
+
+        </div>
+
+        <h3>
+          When should your business
+          build a custom web application?
+        </h3>
+
+        <p>
+          Understanding when a standard website
+          is enough — and when your business needs
+          something more.
+        </p>
+
+      </a>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="dev-cta">
+
+  <div class="wrap">
+
+    <div class="dev-cta-box reveal">
+
+      <div class="dev-cta-content">
+
+        <span class="eyebrow">
+          HAVE A PROJECT?
+        </span>
+
+        <h2>
+          Let's build something
+          <span>that works.</span>
+        </h2>
+
+        <p>
+          Tell us what you're building, improving
+          or trying to solve. We'll help shape the
+          right digital approach.
+        </p>
+
+      </div>
+
+
+      <div class="dev-cta-action">
+
+        <a class="btn primary"
+           href="../contact.html">
+
+          Start a conversation
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER — UNCHANGED
+========================================================= -->
+
+<footer class="footer">
+
+  <div class="wrap">
+
+    <div class="footer-top">
+
+      <div>
+
+        <a class="logo logo-image"
+           href="../index.html">
+
+          <img src="../assets/vdo-logo.png"
+               alt="V DO MARKETING — U do Business, V do Marketing">
+
+        </a>
+
+        <p class="muted"
+           style="max-width:260px;line-height:1.7;font-size:12px">
+
+          Creative thinking. Considered strategy.
+          Digital growth.
+
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <div>
+
+          <span class="eyebrow">
+            EXPLORE
+          </span>
+
+          <a href="../about.html">
+            About
+          </a>
+
+          <a href="../blog.html">
+            Blogs & FAQ's
+          </a>
+
+          <a href="../contact.html">
+            Contact
+          </a>
+
+        </div>
+
+
+        <div>
+
+          <span class="eyebrow">
+            SERVICES
+          </span>
+
+          <a href="../services/website-development.html">
+            Web & App Development
+          </a>
+
+          <a href="../services/seo.html">
+            SEO (Search Engine Optimisation)
+          </a>
+
+          <a href="../services/social-media-management.html">
+            Social Media Management
+          </a>
+
+          <a href="../services/paid-ads.html">
+            Performance Marketing
+          </a>
+
+          <a href="../services/influencer-marketing.html">
+            Influencer Marketing
+          </a>
+
+          <a href="../services/affiliate-marketing.html">
+            Affiliate Marketing
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © <span data-year></span>
+        V DO MARKETING. All rights reserved.
+      </span>
+
+      <span>
+        U DO BUSINESS&nbsp;&nbsp; • &nbsp;&nbsp;
+        CREATIVE BY DESIGN
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<div class="page-transition"></div>
+
+
+<script src="../js/site-config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

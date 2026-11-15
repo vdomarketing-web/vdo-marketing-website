@@ -1,0 +1,2672 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#090a0d">
+
+<title>V DO MARKETING | Creative, Design & Digital Growth Agency</title>
+
+<meta name="description" content="V DO MARKETING brings strategy, creative production, video editing, graphic design and digital marketing together to help ambitious brands grow.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://vdomarketing.com.au/">
+
+<meta property="og:type" content="website">
+
+<meta property="og:title" content="V DO MARKETING | Ideas That Move Brands Forward">
+
+<meta property="og:description" content="Creative thinking, considered strategy and digital execution for ambitious brands.">
+
+<meta property="og:url" content="https://vdomarketing.com.au/">
+
+<meta property="og:image" content="https://vdomarketing.com.au/assets/vdo-logo.png">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* =========================================================
+   CINEMATIC HERO
+========================================================= */
+
+.hero.vdm-cinematic-hero{
+
+    position:relative;
+
+    min-height:clamp(640px,calc(100svh - 155px),760px);
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+    background:
+
+        radial-gradient(circle at 15% 10%,rgba(242,76,35,.13),transparent 28%),
+
+        radial-gradient(circle at 88% 82%,rgba(242,76,35,.09),transparent 30%),
+
+        #090a0d;
+
+}
+
+.vdm-hero-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-8;
+
+    pointer-events:none;
+
+    background-image:
+
+        linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+
+        linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+
+    background-size:150px 150px;
+
+    opacity:.55;
+
+    mask-image:linear-gradient(to bottom,rgba(0,0,0,.95),rgba(0,0,0,.7) 70%,transparent 100%);
+
+}
+
+.vdm-ambient{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-7;
+
+    filter:blur(75px);
+
+    background:radial-gradient(circle,rgba(242,76,35,.42) 0%,rgba(242,76,35,.16) 38%,transparent 72%);
+
+    animation:vdmAmbientFloat 7s ease-in-out infinite alternate;
+
+}
+
+.vdm-ambient-one{
+
+    width:420px;
+
+    height:420px;
+
+    top:-250px;
+
+    left:-180px;
+
+}
+
+.vdm-ambient-two{
+
+    width:480px;
+
+    height:480px;
+
+    right:-250px;
+
+    bottom:-260px;
+
+    animation-delay:-3s;
+
+    opacity:.7;
+
+}
+
+.vdm-ambient-three{
+
+    width:260px;
+
+    height:260px;
+
+    left:48%;
+
+    top:38%;
+
+    opacity:.12;
+
+    filter:blur(100px);
+
+    animation-delay:-5s;
+
+}
+
+@keyframes vdmAmbientFloat{
+
+    from{
+
+        transform:translate3d(0,0,0) scale(.95);
+
+    }
+
+    to{
+
+        transform:translate3d(25px,18px,0) scale(1.08);
+
+    }
+
+}
+
+.vdm-background-v{
+
+    position:absolute;
+
+    left:50%;
+
+    top:52%;
+
+    width:min(850px,68vw);
+
+    height:min(850px,68vw);
+
+    transform:translate(-50%,-50%);
+
+    z-index:-6;
+
+    pointer-events:none;
+
+    opacity:.5;
+
+}
+
+.vdm-background-v::before,
+.vdm-background-v::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:10%;
+
+    width:1px;
+
+    height:82%;
+
+    background:linear-gradient(
+
+        to bottom,
+
+        transparent,
+
+        rgba(242,76,35,.24) 20%,
+
+        rgba(242,76,35,.12) 75%,
+
+        transparent
+
+    );
+
+}
+
+.vdm-background-v::before{
+
+    left:32%;
+
+    transform:rotate(-25deg);
+
+}
+
+.vdm-background-v::after{
+
+    right:32%;
+
+    transform:rotate(25deg);
+
+}
+
+.vdm-orbit{
+
+    position:absolute;
+
+    border:1px solid rgba(242,76,35,.42);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-5;
+
+}
+
+.vdm-orbit-one{
+
+    width:850px;
+
+    height:350px;
+
+    top:-100px;
+
+    right:-280px;
+
+    transform:rotate(24deg);
+
+    animation:vdmOrbitOne 14s ease-in-out infinite alternate;
+
+}
+
+.vdm-orbit-two{
+
+    width:760px;
+
+    height:320px;
+
+    bottom:-170px;
+
+    left:-300px;
+
+    transform:rotate(18deg);
+
+    opacity:.8;
+
+    animation:vdmOrbitTwo 16s ease-in-out infinite alternate;
+
+}
+
+.vdm-orbit-three{
+
+    width:600px;
+
+    height:250px;
+
+    top:8%;
+
+    left:26%;
+
+    transform:rotate(-12deg);
+
+    border-color:rgba(242,76,35,.14);
+
+}
+
+@keyframes vdmOrbitOne{
+
+    from{
+
+        transform:rotate(24deg) translate3d(0,0,0);
+
+    }
+
+    to{
+
+        transform:rotate(20deg) translate3d(-15px,12px,0);
+
+    }
+
+}
+
+@keyframes vdmOrbitTwo{
+
+    from{
+
+        transform:rotate(18deg) translate3d(0,0,0);
+
+    }
+
+    to{
+
+        transform:rotate(21deg) translate3d(15px,-10px,0);
+
+    }
+
+}
+
+.vdm-node{
+
+    position:absolute;
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:#f24c23;
+
+    box-shadow:0 0 18px rgba(242,76,35,.9),0 0 35px rgba(242,76,35,.35);
+
+    z-index:-3;
+
+    pointer-events:none;
+
+    animation:vdmNodePulse 2.8s ease-in-out infinite;
+
+}
+
+.vdm-node-one{
+
+    top:18%;
+
+    right:20%;
+
+}
+
+.vdm-node-two{
+
+    top:16%;
+
+    left:20%;
+
+    animation-delay:-1s;
+
+}
+
+.vdm-node-three{
+
+    bottom:19%;
+
+    left:20%;
+
+    animation-delay:-1.8s;
+
+}
+
+.vdm-node-four{
+
+    bottom:25%;
+
+    right:17%;
+
+    animation-delay:-2.3s;
+
+}
+
+@keyframes vdmNodePulse{
+
+    0%,100%{
+
+        transform:scale(.75);
+
+        opacity:.45;
+
+    }
+
+    50%{
+
+        transform:scale(1.2);
+
+        opacity:1;
+
+    }
+
+}
+
+.vdm-hero-inner{
+
+    position:relative;
+
+    z-index:3;
+
+    width:min(1500px,92%);
+
+    margin:0 auto;
+
+    padding:20px 0 25px;
+
+    text-align:center;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    transform:translateY(-55px);
+
+}
+
+.vdm-hero-eyebrow{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:24px;
+
+    margin-bottom:12px;
+
+    color:rgba(255,255,255,.5);
+
+    font-family:"DM Mono",monospace;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    letter-spacing:.42em;
+
+    text-transform:uppercase;
+
+    transform:none;
+
+    animation:vdmHeroFade 1s .05s cubic-bezier(.16,1,.3,1) both;
+
+}
+
+.vdm-eyebrow-line{
+
+    width:75px;
+
+    height:1px;
+
+    background:linear-gradient(90deg,transparent,rgba(242,76,35,.65));
+
+}
+
+.vdm-eyebrow-line:last-child{
+
+    background:linear-gradient(90deg,rgba(242,76,35,.65),transparent);
+
+}
+
+.vdm-hero-title{
+
+    margin:0;
+
+    padding:0;
+
+    color:#f7f6f3;
+
+    font-family:"Manrope","DM Sans",sans-serif;
+
+    font-size:clamp(52px,7.8vw,132px);
+
+    font-weight:800;
+
+    line-height:.92;
+
+    letter-spacing:-.045em;
+
+    text-transform:uppercase;
+
+    white-space:nowrap;
+
+    text-align:center;
+
+    width:100%;
+
+    position:relative;
+
+    animation:vdmTitleReveal 1.15s .12s cubic-bezier(.16,1,.3,1) both;
+
+}
+
+.vdm-title-accent{
+
+    width:150px;
+
+    height:3px;
+
+    margin:20px auto 0;
+
+    border-radius:20px;
+
+    background:#f24c23;
+
+    box-shadow:0 0 25px rgba(242,76,35,.45);
+
+    animation:vdmAccentReveal 1s .65s cubic-bezier(.16,1,.3,1) both;
+
+}
+
+@keyframes vdmAccentReveal{
+
+    from{
+
+        width:0;
+
+        opacity:0;
+
+    }
+
+    to{
+
+        width:150px;
+
+        opacity:1;
+
+    }
+
+}
+
+.vdm-hero-tagline{
+
+    margin:15px 0 0;
+
+    font-family:"DM Sans",sans-serif;
+
+    font-size:clamp(18px,2vw,27px);
+
+    line-height:1.4;
+
+    font-weight:600;
+
+    color:rgba(255,255,255,.9);
+
+    animation:vdmHeroFade 1s .35s cubic-bezier(.16,1,.3,1) both;
+
+}
+
+.vdm-hero-tagline span{
+
+    display:block;
+
+    color:rgba(255,255,255,.52);
+
+    font-weight:400;
+
+}
+
+.vdm-hero-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-top:20px;
+
+    animation:vdmHeroFade 1s .48s cubic-bezier(.16,1,.3,1) both;
+
+}
+
+.vdm-hero-btn{
+
+    min-width:205px;
+
+    height:58px;
+
+    padding:0 27px;
+
+    border-radius:999px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:14px;
+
+    text-decoration:none;
+
+    font-family:"DM Sans",sans-serif;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    transition:
+
+        transform .45s cubic-bezier(.16,1,.3,1),
+
+        box-shadow .45s ease,
+
+        background .45s ease,
+
+        border-color .45s ease;
+
+}
+
+.vdm-hero-btn-primary{
+
+    color:#090a0d;
+
+    background:#f24c23;
+
+    border:1px solid #f24c23;
+
+    box-shadow:0 12px 45px rgba(242,76,35,.22);
+
+}
+
+.vdm-hero-btn-primary:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 20px 55px rgba(242,76,35,.38),
+
+        0 0 35px rgba(242,76,35,.18);
+
+}
+
+.vdm-hero-btn-secondary{
+
+    color:rgba(255,255,255,.92);
+
+    background:rgba(255,255,255,.018);
+
+    border:1px solid rgba(255,255,255,.28);
+
+    backdrop-filter:blur(15px);
+
+}
+
+.vdm-hero-btn-secondary:hover{
+
+    transform:translateY(-5px);
+
+    border-color:rgba(242,76,35,.7);
+
+    background:rgba(242,76,35,.06);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.3);
+
+}
+
+.vdm-scroll{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:18px;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    z-index:5;
+
+}
+
+.vdm-scroll-arrow{
+
+    width:40px;
+
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#f24c23;
+
+    font-size:29px;
+
+    line-height:1;
+
+    animation:vdmScrollBounce 1.7s ease-in-out infinite;
+
+}
+
+.vdm-scroll-arrow::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:20px;
+
+    height:20px;
+
+    border-bottom:2px solid rgba(242,76,35,.8);
+
+    border-right:2px solid rgba(242,76,35,.8);
+
+    transform:rotate(45deg) translate(-3px,-3px);
+
+}
+
+@keyframes vdmScrollBounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+        opacity:.55;
+
+    }
+
+    50%{
+
+        transform:translateY(10px);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes vdmHeroFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(24px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes vdmTitleReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px) scale(.985);
+
+        filter:blur(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+        filter:blur(0);
+
+    }
+
+}
+
+/* =========================================================
+   HOMEPAGE SPACING
+========================================================= */
+
+.marquee{
+
+    margin-top:0 !important;
+
+    margin-bottom:0 !important;
+
+    background:rgba(242,68,29,.15) !important;
+
+}
+
+.brand-logo{
+
+    opacity:1 !important;
+
+    transition:transform .35s ease,filter .35s ease;
+
+}
+
+.brand-logo:hover{
+
+    opacity:1 !important;
+
+    transform:scale(1.05);
+
+}
+
+main>.section{
+
+    padding-top:50px !important;
+
+    padding-bottom:50px !important;
+
+}
+
+#services{
+
+    padding-top:50px !important;
+
+}
+
+#vdo-mirror-portfolio{
+
+    margin-top:0 !important;
+
+    padding-top:50px !important;
+
+    padding-bottom:50px !important;
+
+}
+
+#vdo-mirror-portfolio+.section{
+
+    padding-top:50px !important;
+
+}
+
+.cta-section{
+
+    padding-top:50px !important;
+
+    padding-bottom:50px !important;
+
+}
+
+/* =========================================================
+   PORTFOLIO - MANUAL DRAG SUPPORT
+========================================================= */
+
+#vdo-mirror-portfolio{
+
+    position:relative;
+
+}
+
+#vdo-mirror-portfolio .vmp-gallery{
+
+    cursor:grab;
+
+    user-select:none;
+
+    -webkit-user-select:none;
+
+    touch-action:pan-y;
+
+}
+
+#vdo-mirror-portfolio .vmp-gallery.is-dragging{
+
+    cursor:grabbing;
+
+}
+
+#vdo-mirror-portfolio .vmp-card{
+
+    user-select:none;
+
+    -webkit-user-select:none;
+
+}
+
+#vdo-mirror-portfolio .vmp-card video{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    pointer-events:none;
+
+}
+
+#vdo-mirror-portfolio .vmp-card video{
+
+    opacity:1;
+
+}
+
+@media (min-width:1200px){
+
+    .hero.vdm-cinematic-hero{
+
+        min-height:clamp(640px,calc(100svh - 155px),760px);
+
+    }
+
+    .vdm-hero-inner{
+
+        padding:20px 0 25px;
+
+        transform:translateY(-55px);
+
+    }
+
+    .vdm-hero-eyebrow{
+
+        transform:none;
+
+    }
+
+    main>.section{
+
+        padding-top:50px !important;
+
+        padding-bottom:50px !important;
+
+    }
+
+    #services{
+
+        padding-top:50px !important;
+
+    }
+
+    #vdo-mirror-portfolio{
+
+        padding-top:50px !important;
+
+        padding-bottom:50px !important;
+
+    }
+
+}
+
+@media (max-width:900px){
+
+    .hero.vdm-cinematic-hero{
+
+        min-height:clamp(620px,calc(100svh - 90px),760px);
+
+    }
+
+    .vdm-hero-inner{
+
+        width:94%;
+
+        padding:30px 0 45px;
+
+        transform:none;
+
+    }
+
+    .vdm-hero-eyebrow{
+
+        transform:none;
+
+    }
+
+    .vdm-hero-title{
+
+        font-size:clamp(42px,7.8vw,78px);
+
+    }
+
+    main>.section{
+
+        padding-top:45px !important;
+
+        padding-bottom:45px !important;
+
+    }
+
+    #vdo-mirror-portfolio{
+
+        padding-top:45px !important;
+
+        padding-bottom:45px !important;
+
+    }
+
+}
+
+@media (max-width:600px){
+
+    .hero.vdm-cinematic-hero{
+
+        min-height:calc(100svh - 85px);
+
+    }
+
+    .vdm-hero-inner{
+
+        width:96%;
+
+        padding:28px 0 42px;
+
+        transform:none;
+
+    }
+
+    .vdm-hero-eyebrow{
+
+        gap:11px;
+
+        margin-bottom:14px;
+
+        font-size:9px;
+
+        letter-spacing:.27em;
+
+        transform:none;
+
+    }
+
+    .vdm-eyebrow-line{
+
+        width:27px;
+
+    }
+
+    .vdm-hero-title{
+
+        font-size:clamp(27px,7.2vw,45px);
+
+        letter-spacing:-.045em;
+
+        white-space:nowrap;
+
+    }
+
+    .vdm-title-accent{
+
+        width:90px;
+
+        height:2px;
+
+        margin-top:16px;
+
+    }
+
+    .vdm-hero-tagline{
+
+        margin-top:18px;
+
+        font-size:16px;
+
+        line-height:1.5;
+
+    }
+
+    .vdm-hero-actions{
+
+        width:100%;
+
+        flex-direction:column;
+
+        gap:10px;
+
+        margin-top:20px;
+
+    }
+
+    .vdm-hero-btn{
+
+        width:min(100%,290px);
+
+        min-width:0;
+
+        height:54px;
+
+    }
+
+    .vdm-scroll{
+
+        bottom:26px;
+
+    }
+
+    main>.section{
+
+        padding-top:40px !important;
+
+        padding-bottom:40px !important;
+
+    }
+
+    #services{
+
+        padding-top:40px !important;
+
+    }
+
+    #vdo-mirror-portfolio{
+
+        padding-top:40px !important;
+
+        padding-bottom:40px !important;
+
+    }
+
+    #vdo-mirror-portfolio+.section{
+
+        padding-top:40px !important;
+
+    }
+
+    .cta-section{
+
+        padding-top:40px !important;
+
+        padding-bottom:40px !important;
+
+    }
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+    .vdm-ambient,
+    .vdm-orbit,
+    .vdm-node,
+    .vdm-scroll-arrow,
+    .vdm-hero-eyebrow,
+    .vdm-hero-title,
+    .vdm-title-accent,
+    .vdm-hero-tagline,
+    .vdm-hero-actions{
+
+        animation:none !important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+
+    <div class="wrap nav">
+
+        <a class="logo logo-image" href="index.html" aria-label="V DO MARKETING Home">
+
+            <img src="assets/vdo-logo.png" alt="V DO MARKETING - U do Business, V do Marketing">
+
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+
+            <span aria-hidden="true">☰</span>
+
+        </button>
+
+        <nav class="nav-links" id="primary-navigation" aria-label="Main navigation">
+
+            <a data-nav href="index.html#services">Services</a>
+
+            <a data-nav href="about.html">About</a>
+
+            <a class="nav-cta" href="contact.html">Let's talk <span aria-hidden="true"></span></a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<main id="main-content">
+
+<section class="hero vdm-cinematic-hero">
+
+    <div class="vdm-hero-grid"></div>
+
+    <div class="vdm-ambient vdm-ambient-one"></div>
+
+    <div class="vdm-ambient vdm-ambient-two"></div>
+
+    <div class="vdm-ambient vdm-ambient-three"></div>
+
+    <div class="vdm-background-v"></div>
+
+    <div class="vdm-orbit vdm-orbit-one"></div>
+
+    <div class="vdm-orbit vdm-orbit-two"></div>
+
+    <div class="vdm-orbit vdm-orbit-three"></div>
+
+    <span class="vdm-node vdm-node-one"></span>
+
+    <span class="vdm-node vdm-node-two"></span>
+
+    <span class="vdm-node vdm-node-three"></span>
+
+    <span class="vdm-node vdm-node-four"></span>
+
+    <div class="vdm-hero-inner">
+
+        <div class="vdm-hero-eyebrow">
+
+            <span class="vdm-eyebrow-line"></span>
+
+            <span>U DO BUSINESS</span>
+
+            <span class="vdm-eyebrow-line"></span>
+
+        </div>
+
+        <h1 class="vdm-hero-title">V DO MARKETING</h1>
+
+        <div class="vdm-title-accent"></div>
+
+        <p class="vdm-hero-tagline">
+
+            Scalable growth. Zero guesswork.
+
+            <span>We build systems that sell.</span>
+
+        </p>
+
+        <div class="vdm-hero-actions">
+
+            <a class="vdm-hero-btn vdm-hero-btn-primary" href="contact.html">
+
+                <span>Let's Talk</span>
+
+            </a>
+
+            <a class="vdm-hero-btn vdm-hero-btn-secondary" href="index.html#services">
+
+                <span>Explore Services</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <a class="vdm-scroll" href="#services" aria-label="Scroll to services">
+
+        <span class="vdm-scroll-arrow" aria-hidden="true"></span>
+
+    </a>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" aria-labelledby="studio-heading">
+
+    <div class="wrap split">
+
+        <div class="studio-visual reveal">
+
+            <div class="studio-label">
+
+                MAKE IT<br>
+
+                <em class="accent">MATTER.</em>
+
+            </div>
+
+        </div>
+
+        <div class="reveal">
+
+            <h2 class="display" id="studio-heading" style="font-size:clamp(40px,5vw,65px);margin:18px 0">
+
+                Who <em>We Are?</em>
+
+            </h2>
+
+            <p class="muted" style="line-height:1.8">
+
+                We're a team bringing creative production and digital marketing closer together.
+
+                That means ideas don't get lost between strategy and execution — they become
+
+                thoughtful work, made for real people and real business goals.
+
+            </p>
+
+            <a class="btn" href="about.html">
+
+                Get to know us
+
+                <span class="arrow" aria-hidden="true"></span>
+
+            </a>
+
+            <div class="capability-line">
+
+                <span>DESIGN</span>
+
+                <i></i>
+
+                <span>VIDEO</span>
+
+                <i></i>
+
+                <span>STRATEGY</span>
+
+                <i></i>
+
+                <span>GROWTH</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="section" id="services" aria-labelledby="services-heading">
+
+    <div class="wrap">
+
+        <div class="section-head reveal">
+
+            <div>
+
+                <h2 id="services-heading">
+
+                    What <span class="accent">We Do?</span>
+
+                </h2>
+
+            </div>
+
+        </div>
+
+        <div class="service-grid">
+
+            <a class="service-card" href="services/website-development.html">
+
+                <span class="card-symbol" aria-hidden="true">⌘</span>
+
+                <h3>Web & App Development</h3>
+
+                <ul class="service-points">
+
+                    <li>UI/UX Design</li>
+
+                    <li>Landing Pages & Sales Funnels</li>
+
+                    <li>E-commerce Development</li>
+
+                    <li>Website Maintenance & Optimisation</li>
+
+                </ul>
+
+                <span class="card-arrow" aria-hidden="true"></span>
+
+            </a>
+
+            <a class="service-card" href="services/seo.html">
+
+                <span class="card-symbol" aria-hidden="true">◎</span>
+
+                <h3>SEO</h3>
+
+                <ul class="service-points">
+
+                    <li>Keyword & Competitor Research</li>
+
+                    <li>On-Page SEO</li>
+
+                    <li>Technical SEO</li>
+
+                    <li>Local SEO & Google Business Profile</li>
+
+                </ul>
+
+                <span class="card-arrow" aria-hidden="true"></span>
+
+            </a>
+
+            <a class="service-card" href="services/social-media-management.html">
+
+                <span class="card-symbol" aria-hidden="true">◉</span>
+
+                <h3>Social Media Management</h3>
+
+                <ul class="service-points">
+
+                    <li>Social Media Strategy</li>
+
+                    <li>Graphic Design & Creative Content</li>
+
+                    <li>Video Production</li>
+
+                </ul>
+
+                <span class="card-arrow" aria-hidden="true"></span>
+
+            </a>
+
+            <a class="service-card" href="services/paid-ads.html">
+
+                <span class="card-symbol" aria-hidden="true">◎</span>
+
+                <h3>Performance Marketing</h3>
+
+                <ul class="service-points">
+
+                    <li>Google Ads Management</li>
+
+                    <li>Meta Ads (Facebook & Instagram)</li>
+
+                    <li>Lead Generation Campaigns</li>
+
+                    <li>Conversion Tracking & Analytics</li>
+
+                </ul>
+
+                <span class="card-arrow" aria-hidden="true"></span>
+
+            </a>
+
+            <a class="service-card" href="services/influencer-marketing.html">
+
+                <span class="card-symbol" aria-hidden="true">✳</span>
+
+                <h3>Influencer Marketing</h3>
+
+                <ul class="service-points">
+
+                    <li>Influencer Discovery & Selection</li>
+
+                    <li>Influencer Campaign Strategy</li>
+
+                    <li>Creator Outreach & Collaborations</li>
+
+                    <li>User-Generated Content (UGC)</li>
+
+                </ul>
+
+                <span class="card-arrow" aria-hidden="true"></span>
+
+            </a>
+
+            <a class="service-card" href="services/affiliate-marketing.html">
+
+                <span class="card-symbol" aria-hidden="true">⇄</span>
+
+                <h3>Affiliate Marketing</h3>
+
+                <ul class="service-points">
+
+                    <li>Affiliate Programme Strategy</li>
+
+                    <li>Affiliate Tracking & Attribution</li>
+
+                    <li>Partnership Campaign Management</li>
+
+                </ul>
+
+                <span class="card-arrow" aria-hidden="true"></span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MARQUEE -->
+
+<div class="marquee" aria-label="Brands we work with">
+
+    <div class="marquee-track">
+
+        <div class="marquee-set">
+
+            <span class="brand-logo">
+
+                <img src="assets/bdv-logo.png" alt="Big Dream Visa">
+
+            </span>
+
+            <span class="brand-logo">
+
+                <img src="assets/an2-logo.png" alt="Brand 2">
+
+            </span>
+
+            <span class="brand-logo">
+
+                <img src="assets/solar-logo.png" alt="Brand 3">
+
+            </span>
+
+            <span class="brand-logo">
+
+                <img src="assets/acn-logo.png" alt="Brand 4">
+
+            </span>
+
+            <span class="brand-logo">
+
+                <img src="assets/IFC-logo.png" alt="Brand 5">
+
+            </span>
+
+            <span class="brand-logo">
+
+                <img src="assets/Rasam-logo.png" alt="Brand 6">
+
+            </span>
+
+        </div>
+
+        <div class="marquee-set">
+
+            <span class="brand-logo">
+
+                <img src="assets/bdv-logo.png" alt="Big Dream Visa">
+
+            </span>
+
+            <span class="brand-logo">
+
+                <img src="assets/an2-logo.png" alt="AN2 Windows">
+
+            </span>
+
+            <span class="brand-logo">
+
+                <img src="assets/solar-logo.png" alt="Brand 3">
+
+            </span>
+
+            <span class="brand-logo">
+
+                <img src="assets/acn-logo.png" alt="Brand 4">
+
+            </span>
+
+            <span class="brand-logo">
+
+                <img src="assets/IFC-logo.png" alt="Brand 5">
+
+            </span>
+
+            <span class="brand-logo">
+
+                <img src="assets/Rasam-logo.png" alt="Brand 6">
+
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- PORTFOLIO -->
+
+<section id="vdo-mirror-portfolio">
+
+    <div class="vmp-frame">
+
+        <div class="vmp-heading">
+
+            <span class="vmp-kicker">V DO MARKETING</span>
+
+            <h2>Our Work<span>.</span></h2>
+
+            <p>A collection of ideas brought to life.</p>
+
+        </div>
+
+        <div class="vmp-stage">
+
+            <div class="vmp-gallery" id="vmpGallery">
+
+                <!-- PROJECT 01 -->
+
+                <div class="vmp-card"
+
+                     data-title="Brand Campaign"
+
+                     data-category="VIDEO PRODUCTION">
+
+                    <video
+
+                        src="assets/Videos/BDV_485.mp4"
+
+                        muted
+
+                        loop
+
+                        playsinline
+
+                        autoplay
+
+                        preload="metadata">
+
+                    </video>
+
+                    <span class="vmp-card-label">
+
+                        01 / BRAND CAMPAIGN
+
+                    </span>
+
+                </div>
+
+                <!-- PROJECT 02 -->
+
+                <a class="vmp-card"
+
+                   href="https://www.instagram.com/"
+
+                   target="_blank"
+
+                   rel="noopener noreferrer"
+
+                   data-title="Social Stories"
+
+                   data-category="SOCIAL MEDIA">
+
+                    <video
+
+                        src="assets/videos/BDV_485.mp4"
+
+                        muted
+
+                        loop
+
+                        playsinline
+
+                        autoplay
+
+                        preload="metadata">
+
+                    </video>
+
+                    <span class="vmp-card-label">
+
+                        02 / SOCIAL STORIES
+
+                    </span>
+
+                </a>
+
+                <!-- PROJECT 03 -->
+
+                <a class="vmp-card"
+
+                   href="https://www.instagram.com/"
+
+                   target="_blank"
+
+                   rel="noopener noreferrer"
+
+                   data-title="Motion Design"
+
+                   data-category="MOTION GRAPHICS">
+
+                    <video
+
+                        src="assets/videos/BDV_485.mp4"
+
+                        muted
+
+                        loop
+
+                        playsinline
+
+                        autoplay
+
+                        preload="metadata">
+
+                    </video>
+
+                    <span class="vmp-card-label">
+
+                        03 / MOTION DESIGN
+
+                    </span>
+
+                </a>
+
+                <!-- PROJECT 04 -->
+
+                <a class="vmp-card"
+
+                   href="https://www.instagram.com/"
+
+                   target="_blank"
+
+                   rel="noopener noreferrer"
+
+                   data-title="Creative Direction"
+
+                   data-category="CREATIVE">
+
+                    <video
+
+                        src="assets/videos/BDV_485.mp4"
+
+                        muted
+
+                        loop
+
+                        playsinline
+
+                        autoplay
+
+                        preload="metadata">
+
+                    </video>
+
+                    <span class="vmp-card-label">
+
+                        04 / CREATIVE DIRECTION
+
+                    </span>
+
+                </a>
+
+                <!-- PROJECT 05 -->
+
+                <a class="vmp-card"
+
+                   href="https://www.instagram.com/"
+
+                   target="_blank"
+
+                   rel="noopener noreferrer"
+
+                   data-title="Visual Identity"
+
+                   data-category="GRAPHIC DESIGN">
+
+                    <video
+
+                        src="assets/Videos/BDV_485.mp4"
+
+                        muted
+
+                        loop
+
+                        playsinline
+
+                        autoplay
+
+                        preload="metadata">
+
+                    </video>
+
+                    <span class="vmp-card-label">
+
+                        05 / VISUAL IDENTITY
+
+                    </span>
+
+                </a>
+
+                <!-- PROJECT 06 -->
+
+                <a class="vmp-card"
+
+                   href="https://www.instagram.com/"
+
+                   target="_blank"
+
+                   rel="noopener noreferrer"
+
+                   data-title="Digital Experience"
+
+                   data-category="DIGITAL">
+
+                    <video
+
+                        src="assets/videos/BDV_485.mp4"
+
+                        type="video/mp4"
+
+                        autoplay
+
+                        muted
+
+                        loop
+
+                        playsinline
+
+                        preload="metadata">
+
+                    </video>
+
+                    <span class="vmp-card-label">
+
+                        06 / DIGITAL EXPERIENCE
+
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="vmp-bottom">
+
+            <div class="vmp-project-info">
+
+                <span id="vmpCategory">
+
+                    VIDEO PRODUCTION
+
+                </span>
+
+                <h3 id="vmpTitle">
+
+                    Brand Campaign
+
+                </h3>
+
+            </div>
+
+            <div class="vmp-progress" id="vmpProgress">
+
+                <span class="vmp-progress-fill"></span>
+
+            </div>
+
+            <a class="vmp-instagram"
+
+               href="https://www.instagram.com/v_do_marketing/"
+
+               target="_blank"
+
+               rel="noopener noreferrer">
+
+                EXPLORE MORE ON INSTAGRAM
+
+                <span></span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="section cta-section">
+
+    <div class="wrap">
+
+        <div class="cta-band reveal">
+
+            <div>
+
+                <span class="eyebrow">
+
+                    LET'S MAKE SOMETHING MATTER
+
+                </span>
+
+                <h2>
+
+                    Ready to move your brand
+
+                    <span class="accent">forward?</span>
+
+                </h2>
+
+                <p class="muted">
+
+                    Bring us the ambition.
+
+                    We'll bring the ideas and the execution.
+
+                </p>
+
+            </div>
+
+            <a class="btn primary" href="contact.html">
+
+                Start a conversation
+
+                <span class="arrow" aria-hidden="true"></span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="wrap">
+
+        <div class="footer-top">
+
+            <div>
+
+                <a class="logo logo-image" href="index.html">
+
+                    <img src="assets/vdo-logo.png" alt="V DO MARKETING">
+
+                </a>
+
+                <p class="muted" style="max-width:260px;line-height:1.7;font-size:12px">
+
+                    Creative thinking.
+
+                    Considered strategy.
+
+                    Digital growth.
+
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <div>
+
+                    <span class="eyebrow">EXPLORE</span>
+
+                    <a href="about.html">About</a>
+
+                    <a href="blog.html">Blog & FAQ's</a>
+
+                    <a href="contact.html">Contact</a>
+
+                </div>
+
+                <div>
+
+                    <span class="eyebrow">SERVICES</span>
+
+                    <a href="services/website-development.html">
+
+                        Web & App Development
+
+                    </a>
+
+                    <a href="services/seo.html">
+
+                        SEO (Search Engine Optimisation)
+
+                    </a>
+
+                    <a href="services/social-media-management.html">
+
+                        Social Media
+
+                    </a>
+
+                    <a href="services/paid-ads.html">
+
+                        Performance Marketing
+
+                    </a>
+
+                    <a href="services/influencer-marketing.html">
+
+                        Influencer Marketing
+
+                    </a>
+
+                    <a href="services/affiliate-marketing.html">
+
+                        Affiliate Marketing
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+
+                © <span data-year></span>
+
+                V DO MARKETING.
+
+                All rights reserved.
+
+            </span>
+
+            <span>
+
+                U DO BUSINESS
+
+                •
+
+                CREATIVE BY DESIGN
+
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<div class="page-transition"></div>
+
+<script src="js/site-config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+<script src="js/main.js"></script>
+
+<script>
+
+/* =========================================================
+   CREATIVE ADVANTAGE REVEAL
+========================================================= */
+
+(() => {
+
+    const items = document.querySelectorAll('.vdo-reveal');
+
+    if (
+
+        !('IntersectionObserver' in window) ||
+
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    ) {
+
+        items.forEach(item => item.classList.add('vdo-visible'));
+
+        return;
+
+    }
+
+    const observer = new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add('vdo-visible');
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+
+        { threshold:0.12 }
+
+    );
+
+    items.forEach(item => observer.observe(item));
+
+})();
+
+/* =========================================================
+   HERO MOUSE PARALLAX
+========================================================= */
+
+(() => {
+
+    const hero = document.querySelector('.vdm-cinematic-hero');
+
+    if (!hero) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+
+        return;
+
+    }
+
+    const ambient = hero.querySelectorAll('.vdm-ambient');
+
+    const orbit = hero.querySelectorAll('.vdm-orbit');
+
+    const nodes = hero.querySelectorAll('.vdm-node');
+
+    let pointerX = 0;
+
+    let pointerY = 0;
+
+    let animationFrame = null;
+
+    const updateParallax = () => {
+
+        animationFrame = null;
+
+        ambient.forEach((item,index) => {
+
+            const strength =
+
+                index === 0 ? 10 :
+
+                index === 1 ? -12 :
+
+                7;
+
+            item.style.transform =
+
+                `translate3d(${pointerX * strength}px,${pointerY * strength}px,0)`;
+
+        });
+
+        orbit.forEach((item,index) => {
+
+            const strength =
+
+                index === 0 ? 6 :
+
+                index === 1 ? -8 :
+
+                4;
+
+            item.style.marginLeft =
+
+                `${pointerX * strength}px`;
+
+            item.style.marginTop =
+
+                `${pointerY * strength}px`;
+
+        });
+
+        nodes.forEach((item,index) => {
+
+            const strength = 4 + index * 1.5;
+
+            item.style.marginLeft =
+
+                `${pointerX * strength}px`;
+
+            item.style.marginTop =
+
+                `${pointerY * strength}px`;
+
+        });
+
+    };
+
+    hero.addEventListener('mousemove', event => {
+
+        const rect = hero.getBoundingClientRect();
+
+        pointerX =
+
+            (event.clientX - rect.left) /
+
+            rect.width -
+
+            0.5;
+
+        pointerY =
+
+            (event.clientY - rect.top) /
+
+            rect.height -
+
+            0.5;
+
+        if (!animationFrame) {
+
+            animationFrame = requestAnimationFrame(updateParallax);
+
+        }
+
+    });
+
+    hero.addEventListener('mouseleave',() => {
+
+        pointerX = 0;
+
+        pointerY = 0;
+
+        if (!animationFrame) {
+
+            animationFrame = requestAnimationFrame(updateParallax);
+
+        }
+
+    });
+
+})();
+
+/* =========================================================
+   VMP PORTFOLIO VIDEO AUTOPLAY
+========================================================= */
+
+(() => {
+
+    const portfolio =
+
+        document.getElementById('vdo-mirror-portfolio');
+
+    if (!portfolio) return;
+
+    const videos =
+
+        portfolio.querySelectorAll('video');
+
+    const playVideo = video => {
+
+        video.muted = true;
+
+        video.setAttribute('muted','');
+
+        video.setAttribute('playsinline','');
+
+        video.setAttribute('autoplay','');
+
+        video.setAttribute('loop','');
+
+        const promise = video.play();
+
+        if (promise && typeof promise.catch === 'function') {
+
+            promise.catch(() => {});
+
+        }
+
+    };
+
+    const pauseVideo = video => {
+
+        if (!video.paused) {
+
+            video.pause();
+
+        }
+
+    };
+
+    if ('IntersectionObserver' in window) {
+
+        const observer = new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    const video = entry.target;
+
+                    if (entry.isIntersecting) {
+
+                        playVideo(video);
+
+                    } else {
+
+                        pauseVideo(video);
+
+                    }
+
+                });
+
+            },
+
+            {
+
+                threshold:0.15
+
+            }
+
+        );
+
+        videos.forEach(video => {
+
+            observer.observe(video);
+
+        });
+
+    } else {
+
+        videos.forEach(video => {
+
+            playVideo(video);
+
+        });
+
+    }
+
+    document.addEventListener('visibilitychange',() => {
+
+        if (document.hidden) {
+
+            videos.forEach(video => {
+
+                pauseVideo(video);
+
+            });
+
+        } else {
+
+            videos.forEach(video => {
+
+                const rect =
+
+                    video.getBoundingClientRect();
+
+                const visible =
+
+                    rect.bottom > 0 &&
+
+                    rect.top < window.innerHeight;
+
+                if (visible) {
+
+                    playVideo(video);
+
+                }
+
+            });
+
+        }
+
+    });
+
+})();
+
+/* =========================================================
+   VMP MANUAL MOUSE / TOUCH DRAG
+========================================================= */
+
+(() => {
+
+    const gallery =
+
+        document.getElementById('vmpGallery');
+
+    if (!gallery) return;
+
+    let isDragging = false;
+
+    let startX = 0;
+
+    let lastX = 0;
+
+    let dragDistance = 0;
+
+    const threshold = 45;
+
+    const getCards = () =>
+
+        Array.from(
+
+            gallery.querySelectorAll('.vmp-card')
+
+        );
+
+    const moveGallery = direction => {
+
+        const cards = getCards();
+
+        if (!cards.length) return;
+
+        let activeIndex =
+
+            cards.findIndex(card =>
+
+                card.classList.contains('is-active')
+
+            );
+
+        if (activeIndex === -1) {
+
+            activeIndex = 0;
+
+        }
+
+        let nextIndex =
+
+            activeIndex + direction;
+
+        if (nextIndex < 0) {
+
+            nextIndex = cards.length - 1;
+
+        }
+
+        if (nextIndex >= cards.length) {
+
+            nextIndex = 0;
+
+        }
+
+        cards.forEach(card => {
+
+            card.classList.remove('is-active');
+
+        });
+
+        cards[nextIndex].classList.add('is-active');
+
+        cards[nextIndex].dispatchEvent(
+
+            new MouseEvent('mouseenter',{
+
+                bubbles:true,
+
+                clientX:window.innerWidth / 2,
+
+                clientY:window.innerHeight / 2
+
+            })
+
+        );
+
+        cards[nextIndex].scrollIntoView({
+
+            behavior:'smooth',
+
+            block:'nearest',
+
+            inline:'center'
+
+        });
+
+    };
+
+    const startDrag = x => {
+
+        isDragging = true;
+
+        startX = x;
+
+        lastX = x;
+
+        dragDistance = 0;
+
+        gallery.classList.add('is-dragging');
+
+    };
+
+    const moveDrag = x => {
+
+        if (!isDragging) return;
+
+        const difference =
+
+            x - lastX;
+
+        lastX = x;
+
+        dragDistance += Math.abs(difference);
+
+    };
+
+    const endDrag = () => {
+
+        if (!isDragging) return;
+
+        isDragging = false;
+
+        gallery.classList.remove('is-dragging');
+
+        if (dragDistance < threshold) {
+
+            return;
+
+        }
+
+        const totalDistance =
+
+            lastX - startX;
+
+        if (totalDistance < 0) {
+
+            moveGallery(1);
+
+        } else {
+
+            moveGallery(-1);
+
+        }
+
+    };
+
+    gallery.addEventListener(
+
+        'mousedown',
+
+        event => {
+
+            startDrag(event.clientX);
+
+        }
+
+    );
+
+    window.addEventListener(
+
+        'mousemove',
+
+        event => {
+
+            moveDrag(event.clientX);
+
+        }
+
+    );
+
+    window.addEventListener(
+
+        'mouseup',
+
+        () => {
+
+            endDrag();
+
+        }
+
+    );
+
+    gallery.addEventListener(
+
+        'touchstart',
+
+        event => {
+
+            if (!event.touches.length) return;
+
+            startDrag(
+
+                event.touches[0].clientX
+
+            );
+
+        },
+
+        { passive:true }
+
+    );
+
+    gallery.addEventListener(
+
+        'touchmove',
+
+        event => {
+
+            if (!event.touches.length) return;
+
+            moveDrag(
+
+                event.touches[0].clientX
+
+            );
+
+        },
+
+        { passive:true }
+
+    );
+
+    gallery.addEventListener(
+
+        'touchend',
+
+        () => {
+
+            endDrag();
+
+        },
+
+        { passive:true }
+
+    );
+
+    gallery.addEventListener(
+
+        'click',
+
+        event => {
+
+            if (dragDistance >= threshold) {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+            }
+
+            dragDistance = 0;
+
+        },
+
+        true
+
+    );
+
+})();
+
+</script>
+
+</body>
+
+</html>

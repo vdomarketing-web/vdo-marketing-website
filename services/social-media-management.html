@@ -1,0 +1,2140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="description"
+content="Build a recognisable social presence with strategy, creative content and consistent social media management designed around your brand.">
+
+<meta name="theme-color" content="#090a0d">
+
+<title>Social Media Management | V DO MARKETING</title>
+
+<link rel="icon" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+/* =========================================================
+   SOCIAL MEDIA PAGE
+========================================================= */
+
+.social-page{
+  overflow-x:hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.social-hero{
+  min-height:660px;
+  display:flex;
+  align-items:center;
+  padding:125px 0 65px;
+  position:relative;
+}
+
+.social-hero::after{
+  content:"";
+  position:absolute;
+  width:460px;
+  height:460px;
+  right:-220px;
+  top:150px;
+  background:rgba(242,68,29,.07);
+  filter:blur(120px);
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.social-hero-content{
+  max-width:900px;
+  position:relative;
+  z-index:2;
+}
+
+.social-hero h1{
+  margin:20px 0 25px;
+  font-size:clamp(54px,8vw,105px);
+  line-height:.92;
+  letter-spacing:-.065em;
+  max-width:900px;
+}
+
+.social-hero h1 em{
+  color:var(--orange);
+  font-style:normal;
+}
+
+.social-hero-text{
+  max-width:610px;
+  color:rgba(255,255,255,.58);
+  font-size:15px;
+  line-height:1.85;
+  margin:0 0 32px;
+}
+
+.social-hero-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px 28px;
+  margin-top:32px;
+
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.38);
+}
+
+.social-hero-meta span{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.social-hero-meta span::before{
+  content:"";
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--orange);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.social-intro{
+  padding:70px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+.social-intro-grid{
+  display:grid;
+  grid-template-columns:1fr 1.35fr;
+  gap:60px;
+  align-items:start;
+}
+
+.social-intro-title{
+  margin:14px 0 0;
+  font-size:clamp(34px,5vw,61px);
+  line-height:.98;
+  letter-spacing:-.05em;
+}
+
+.social-intro-title span{
+  color:rgba(255,255,255,.28);
+}
+
+.social-intro-copy{
+  max-width:650px;
+  padding-top:5px;
+}
+
+.social-intro-copy p{
+  margin:0 0 20px;
+  color:rgba(255,255,255,.53);
+  font-size:15px;
+  line-height:1.9;
+}
+
+.social-intro-copy p:last-child{
+  margin-bottom:0;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.social-services{
+  padding:0 0 60px;
+}
+
+.social-section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:40px;
+  margin-bottom:25px;
+}
+
+.social-section-head h2{
+  margin:14px 0 0;
+  font-size:clamp(38px,5.5vw,68px);
+  line-height:.94;
+  letter-spacing:-.055em;
+}
+
+.social-section-note{
+  max-width:310px;
+  margin:0;
+  color:rgba(255,255,255,.38);
+  font-size:12px;
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+
+.social-service-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.social-service-card{
+  min-height:250px;
+  padding:30px 32px;
+  background:#090a0d;
+  position:relative;
+  overflow:hidden;
+  transition:.35s ease;
+}
+
+.social-service-card::after{
+  content:"";
+  position:absolute;
+  width:240px;
+  height:240px;
+  right:-160px;
+  bottom:-170px;
+  background:rgba(242,68,29,.12);
+  filter:blur(65px);
+  border-radius:50%;
+  opacity:0;
+  transition:.4s ease;
+}
+
+.social-service-card:hover{
+  background:#0d0e11;
+}
+
+.social-service-card:hover::after{
+  opacity:1;
+}
+
+.social-service-number{
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  letter-spacing:1px;
+  color:var(--orange);
+  margin-bottom:32px;
+}
+
+.social-service-card h3{
+  margin:0 0 14px;
+  font-size:25px;
+  line-height:1.05;
+  letter-spacing:-.025em;
+  position:relative;
+  z-index:2;
+}
+
+.social-service-card p{
+  max-width:430px;
+  margin:0;
+  color:rgba(255,255,255,.43);
+  font-size:12px;
+  line-height:1.8;
+  position:relative;
+  z-index:2;
+}
+
+.social-service-list{
+  list-style:none;
+  margin:20px 0 0;
+  padding:0;
+  position:relative;
+  z-index:2;
+}
+
+.social-service-list li{
+  position:relative;
+  padding-left:16px;
+  margin:0 0 8px;
+  color:rgba(255,255,255,.46);
+  font-size:11px;
+  line-height:1.5;
+}
+
+.social-service-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:7px;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:var(--orange);
+}
+
+
+/* =========================================================
+   WORK SHOWCASE
+========================================================= */
+
+.social-work{
+  padding:60px 0;
+  background:rgba(255,255,255,.018);
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.social-work-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:40px;
+  margin-bottom:30px;
+}
+
+.social-work-header h2{
+  margin:14px 0 0;
+  font-size:clamp(40px,5.8vw,72px);
+  line-height:.94;
+  letter-spacing:-.055em;
+}
+
+.social-work-header h2 span{
+  color:rgba(255,255,255,.28);
+}
+
+.social-work-header p{
+  max-width:310px;
+  margin:0;
+  color:rgba(255,255,255,.38);
+  font-size:12px;
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   CREATIVE SHOWCASE
+========================================================= */
+
+.social-showcase-grid{
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+  gap:14px;
+}
+
+.social-showcase-side{
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  gap:14px;
+}
+
+.social-work-card{
+  position:relative;
+  overflow:hidden;
+  min-height:450px;
+  border:1px solid rgba(255,255,255,.09);
+  background:#111216;
+  text-decoration:none;
+  color:inherit;
+}
+
+.social-work-card.small{
+  min-height:218px;
+}
+
+.social-work-visual{
+  position:absolute;
+  inset:0;
+}
+
+.social-work-placeholder{
+  width:100%;
+  height:100%;
+  min-height:inherit;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+    radial-gradient(
+      circle at 55% 35%,
+      rgba(242,68,29,.16),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      #17181c 0%,
+      #0c0d10 100%
+    );
+}
+
+.social-work-placeholder span{
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:2px;
+  color:rgba(255,255,255,.2);
+}
+
+.social-work-visual::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    transparent 30%,
+    rgba(0,0,0,.92) 100%
+  );
+}
+
+.social-work-content{
+  position:absolute;
+  left:27px;
+  right:27px;
+  bottom:27px;
+  z-index:3;
+}
+
+.social-work-type{
+  font-family:'DM Mono',monospace;
+  font-size:8px;
+  letter-spacing:1.7px;
+  text-transform:uppercase;
+  color:var(--orange);
+  margin-bottom:8px;
+}
+
+.social-work-content h3{
+  margin:0 0 7px;
+  font-size:30px;
+  letter-spacing:-.04em;
+}
+
+.social-work-card.small .social-work-content h3{
+  font-size:22px;
+}
+
+.social-work-content p{
+  margin:0;
+  color:rgba(255,255,255,.4);
+  font-size:10px;
+}
+
+.social-work-arrow{
+  position:absolute;
+  top:24px;
+  right:24px;
+  z-index:4;
+
+  width:38px;
+  height:38px;
+
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+  font-size:13px;
+
+  transition:.3s ease;
+}
+
+.social-work-card:hover{
+  border-color:rgba(242,68,29,.45);
+}
+
+.social-work-card:hover .social-work-arrow{
+  background:var(--orange);
+  border-color:var(--orange);
+  transform:rotate(45deg);
+}
+
+
+/* =========================================================
+   CONTENT FORMAT STRIP
+========================================================= */
+
+.social-formats{
+  padding:55px 0 60px;
+}
+
+.social-formats-head{
+  display:grid;
+  grid-template-columns:1fr 1.3fr;
+  gap:60px;
+  margin-bottom:30px;
+}
+
+.social-formats-head h2{
+  margin:14px 0 0;
+  font-size:clamp(38px,5.3vw,65px);
+  line-height:.95;
+  letter-spacing:-.05em;
+}
+
+.social-formats-head h2 span{
+  color:rgba(255,255,255,.28);
+}
+
+.social-formats-head p{
+  max-width:590px;
+  margin:5px 0 0;
+  color:rgba(255,255,255,.42);
+  font-size:13px;
+  line-height:1.9;
+}
+
+.social-format-list{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.social-format{
+  min-height:150px;
+  padding:25px;
+  background:#090a0d;
+}
+
+.social-format-number{
+  font-family:'DM Mono',monospace;
+  color:var(--orange);
+  font-size:9px;
+}
+
+.social-format h3{
+  margin:35px 0 0;
+  font-size:17px;
+  letter-spacing:-.02em;
+}
+
+.social-format p{
+  margin:8px 0 0;
+  color:rgba(255,255,255,.35);
+  font-size:10px;
+  line-height:1.6;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.social-process{
+  padding:60px 0;
+}
+
+.social-process-grid{
+  display:grid;
+  grid-template-columns:1fr 1.35fr;
+  gap:65px;
+}
+
+.social-process-title{
+  margin:14px 0 0;
+  font-size:clamp(39px,5.5vw,68px);
+  line-height:.94;
+  letter-spacing:-.055em;
+}
+
+.social-process-title span{
+  color:rgba(255,255,255,.28);
+}
+
+.social-steps{
+  border-top:1px solid rgba(255,255,255,.1);
+}
+
+.social-step{
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:20px;
+  padding:22px 0;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.social-step-number{
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  color:var(--orange);
+  padding-top:4px;
+}
+
+.social-step h3{
+  margin:0 0 7px;
+  font-size:19px;
+  letter-spacing:-.02em;
+}
+
+.social-step p{
+  max-width:570px;
+  margin:0;
+  color:rgba(255,255,255,.4);
+  font-size:12px;
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   BLOG
+========================================================= */
+
+.social-blog{
+  padding:60px 0;
+  border-top:1px solid rgba(255,255,255,.07);
+}
+
+.social-blog-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:30px;
+  margin-bottom:25px;
+}
+
+.social-blog-header h2{
+  margin:14px 0 0;
+  font-size:clamp(40px,5.5vw,68px);
+  line-height:.94;
+  letter-spacing:-.055em;
+}
+
+.social-blog-header h2 span{
+  color:rgba(255,255,255,.28);
+}
+
+.social-blog-link{
+  color:rgba(255,255,255,.5);
+  text-decoration:none;
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  padding-bottom:5px;
+  border-bottom:1px solid rgba(255,255,255,.2);
+  white-space:nowrap;
+}
+
+.social-blog-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.social-blog-card{
+  display:block;
+  min-height:220px;
+  padding:23px 0 0;
+  border-top:1px solid rgba(255,255,255,.14);
+  text-decoration:none;
+  color:inherit;
+  transition:.3s ease;
+}
+
+.social-blog-card:hover{
+  border-color:var(--orange);
+  transform:translateY(-4px);
+}
+
+.social-blog-meta{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+
+  font-family:'DM Mono',monospace;
+  font-size:8px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.28);
+
+  margin-bottom:35px;
+}
+
+.social-blog-card h3{
+  max-width:370px;
+  margin:0 0 13px;
+  font-size:21px;
+  line-height:1.15;
+  letter-spacing:-.025em;
+}
+
+.social-blog-card p{
+  max-width:390px;
+  margin:0;
+  color:rgba(255,255,255,.38);
+  font-size:11px;
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.social-cta{
+  padding:60px 0 70px;
+}
+
+.social-cta-box{
+  position:relative;
+  overflow:hidden;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:50px;
+
+  padding:50px 50px;
+
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.social-cta-box::after{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  right:-180px;
+  bottom:-220px;
+  background:rgba(242,68,29,.1);
+  filter:blur(100px);
+  border-radius:50%;
+}
+
+.social-cta-content{
+  position:relative;
+  z-index:2;
+}
+
+.social-cta h2{
+  max-width:700px;
+  margin:14px 0 0;
+  font-size:clamp(39px,5.5vw,70px);
+  line-height:.94;
+  letter-spacing:-.055em;
+}
+
+.social-cta h2 span{
+  color:var(--orange);
+}
+
+.social-cta p{
+  max-width:500px;
+  margin:18px 0 0;
+  color:rgba(255,255,255,.4);
+  font-size:12px;
+  line-height:1.8;
+}
+
+.social-cta-action{
+  position:relative;
+  z-index:3;
+  flex-shrink:0;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:800px){
+
+  .social-hero{
+    min-height:600px;
+    padding:115px 0 60px;
+  }
+
+  .social-hero h1{
+    font-size:clamp(50px,14vw,76px);
+  }
+
+  .social-hero-text{
+    font-size:13px;
+  }
+
+  .social-hero-meta{
+    margin-top:28px;
+    gap:14px 20px;
+  }
+
+
+  .social-intro{
+    padding:60px 0;
+  }
+
+  .social-intro-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+
+  .social-services{
+    padding-bottom:60px;
+  }
+
+  .social-section-head{
+    display:block;
+    margin-bottom:25px;
+  }
+
+  .social-section-note{
+    margin-top:20px;
+  }
+
+
+  .social-service-grid{
+    grid-template-columns:1fr;
+  }
+
+  .social-service-card{
+    min-height:auto;
+    padding:27px 25px;
+  }
+
+  .social-service-number{
+    margin-bottom:30px;
+  }
+
+
+  .social-work{
+    padding:60px 0;
+  }
+
+  .social-work-header{
+    display:block;
+    margin-bottom:28px;
+  }
+
+  .social-work-header p{
+    margin-top:20px;
+  }
+
+  .social-showcase-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .social-showcase-side{
+    grid-template-rows:auto auto;
+    gap:12px;
+  }
+
+  .social-work-card{
+    min-height:370px;
+  }
+
+  .social-work-card.small{
+    min-height:270px;
+  }
+
+
+  .social-formats{
+    padding:60px 0;
+  }
+
+  .social-formats-head{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .social-format-list{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+
+  .social-process{
+    padding:60px 0;
+  }
+
+  .social-process-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+
+  .social-blog{
+    padding:60px 0;
+  }
+
+  .social-blog-header{
+    display:block;
+    margin-bottom:25px;
+  }
+
+  .social-blog-link{
+    display:inline-block;
+    margin-top:20px;
+  }
+
+  .social-blog-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .social-blog-card{
+    min-height:200px;
+  }
+
+
+  .social-cta{
+    padding:60px 0 70px;
+  }
+
+  .social-cta-box{
+    display:block;
+    padding:38px 25px;
+  }
+
+  .social-cta-action{
+    margin-top:32px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="social-page">
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+<div class="wrap nav">
+
+<a class="logo logo-image"
+href="../index.html"
+aria-label="V DO MARKETING Home">
+
+<img src="../assets/vdo-logo.png"
+alt="V DO MARKETING — U do Business, V do Marketing">
+
+</a>
+
+
+<button class="menu-toggle"
+type="button"
+aria-label="Open navigation menu"
+aria-expanded="false"
+aria-controls="primary-navigation">
+
+<span aria-hidden="true">☰</span>
+
+</button>
+
+
+<nav class="nav-links"
+id="primary-navigation"
+aria-label="Main navigation">
+
+<a data-nav href="../index.html#services">
+Services
+</a>
+
+<a data-nav href="../about.html">
+About
+</a>
+
+<a class="nav-cta"
+href="../contact.html">
+
+Let's talk
+
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="social-hero">
+
+<div class="wrap">
+
+<div class="social-hero-content reveal">
+
+<span class="eyebrow">
+SERVICE / SOCIAL MEDIA MANAGEMENT
+</span>
+
+<h1>
+Stay relevant.
+<em>Stay remembered.</em>
+</h1>
+
+<p class="social-hero-text">
+
+A social presence with a point of view.
+We bring strategy, creative direction and consistent
+execution together to make your social channels
+feel unmistakably yours.
+
+</p>
+
+
+<a class="btn primary"
+href="../contact.html">
+
+Start a social project
+
+</a>
+
+
+<div class="social-hero-meta">
+
+<span>
+Strategy
+</span>
+
+<span>
+Creative Content
+</span>
+
+<span>
+Video
+</span>
+
+<span>
+Community
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="social-intro">
+
+<div class="wrap">
+
+<div class="social-intro-grid">
+
+
+<div>
+
+<span class="eyebrow">
+THE APPROACH
+</span>
+
+<h2 class="social-intro-title">
+
+Show up consistently.
+<span>Stay memorable.</span>
+
+</h2>
+
+</div>
+
+
+<div class="social-intro-copy">
+
+<p>
+
+Good social media is not about posting for the sake
+of it. It is about creating a recognisable presence,
+building connection and giving people a reason to remember
+your brand.
+
+</p>
+
+<p>
+
+We shape the work around your business, your audience
+and the platforms that matter — combining strategy,
+creative production and consistent execution.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="social-services">
+
+<div class="wrap">
+
+
+<div class="social-section-head">
+
+<div>
+
+<span class="eyebrow">
+WHAT WE DO
+</span>
+
+<h2>
+
+Social that feels
+<em class="accent">
+like your brand.
+</em>
+
+</h2>
+
+</div>
+
+
+<p class="social-section-note">
+
+A connected approach to strategy,
+content, publishing and growth.
+
+</p>
+
+</div>
+
+
+
+<div class="social-service-grid">
+
+
+<!-- 01 -->
+
+<article class="social-service-card reveal">
+
+<div class="social-service-number">
+01 / STRATEGY
+</div>
+
+<h3>
+Social Media Strategy
+</h3>
+
+<p>
+
+Build a clear direction for what your brand
+should say, show and stand for online.
+
+</p>
+
+<ul class="social-service-list">
+
+<li>
+Channel strategy
+</li>
+
+<li>
+Audience & competitor research
+</li>
+
+<li>
+Content pillars
+</li>
+
+</ul>
+
+</article>
+
+
+
+<!-- 02 -->
+
+<article class="social-service-card reveal">
+
+<div class="social-service-number">
+02 / CONTENT
+</div>
+
+<h3>
+Creative Content
+</h3>
+
+<p>
+
+Turn ideas into content that looks consistent,
+feels relevant and gives your audience something
+worth stopping for.
+
+</p>
+
+<ul class="social-service-list">
+
+<li>
+Graphic design
+</li>
+
+<li>
+Reels & short-form video
+</li>
+
+<li>
+Creative concepts
+</li>
+
+</ul>
+
+</article>
+
+
+
+<!-- 03 -->
+
+<article class="social-service-card reveal">
+
+<div class="social-service-number">
+03 / COPY
+</div>
+
+<h3>
+Copywriting & Content Planning
+</h3>
+
+<p>
+
+Give every post a purpose with stronger messaging,
+captions and a content calendar built around your
+brand.
+
+</p>
+
+<ul class="social-service-list">
+
+<li>
+Captions & social copy
+</li>
+
+<li>
+Content calendars
+</li>
+
+<li>
+Campaign messaging
+</li>
+
+</ul>
+
+</article>
+
+
+
+<!-- 04 -->
+
+<article class="social-service-card reveal">
+
+<div class="social-service-number">
+04 / MANAGEMENT
+</div>
+
+<h3>
+Publishing & Community
+</h3>
+
+<p>
+
+Keep your channels active and consistent while
+creating meaningful interaction with your audience.
+
+</p>
+
+<ul class="social-service-list">
+
+<li>
+Publishing & scheduling
+</li>
+
+<li>
+Community management
+</li>
+
+<li>
+Comment & message support
+</li>
+
+</ul>
+
+</article>
+
+
+
+<!-- 05 -->
+
+<article class="social-service-card reveal">
+
+<div class="social-service-number">
+05 / PLATFORM
+</div>
+
+<h3>
+Platform-Specific Optimisation
+</h3>
+
+<p>
+
+Adapt the creative, format and messaging to
+fit how people actually use each platform.
+
+</p>
+
+<ul class="social-service-list">
+
+<li>
+Instagram
+</li>
+
+<li>
+Facebook
+</li>
+
+<li>
+LinkedIn & other platforms
+</li>
+
+</ul>
+
+</article>
+
+
+
+<!-- 06 -->
+
+<article class="social-service-card reveal">
+
+<div class="social-service-number">
+06 / REPORTING
+</div>
+
+<h3>
+Insights & Refinement
+</h3>
+
+<p>
+
+Understand what is working, what needs
+improvement and where the next opportunity lies.
+
+</p>
+
+<ul class="social-service-list">
+
+<li>
+Monthly reporting
+</li>
+
+<li>
+Content performance
+</li>
+
+<li>
+Ongoing refinement
+</li>
+
+</ul>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WORK SHOWCASE
+========================================================= -->
+
+<section class="social-work">
+
+<div class="wrap">
+
+
+<div class="social-work-header">
+
+<div>
+
+<span class="eyebrow">
+OUR WORK
+</span>
+
+<h2>
+
+Ideas made
+<span>visible.</span>
+
+</h2>
+
+</div>
+
+
+<p>
+
+A look at the kind of creative,
+content and social work we can build
+for brands.
+
+</p>
+
+</div>
+
+
+
+<div class="social-showcase-grid">
+
+
+<!-- FEATURED -->
+
+<a href="#"
+class="social-work-card reveal">
+
+<div class="social-work-visual">
+
+<div class="social-work-placeholder">
+
+<span>
+FEATURED SOCIAL PROJECT
+</span>
+
+</div>
+
+</div>
+
+
+
+<div class="social-work-content">
+
+<div class="social-work-type">
+SOCIAL / CREATIVE
+</div>
+
+<h3>
+Featured Social Campaign
+</h3>
+
+<p>
+Strategy · Creative · Content Production
+</p>
+
+</div>
+
+</a>
+
+
+
+<div class="social-showcase-side">
+
+
+<!-- SECOND -->
+
+<a href="#"
+class="social-work-card small reveal">
+
+<div class="social-work-visual">
+
+<div class="social-work-placeholder">
+
+<span>
+CONTENT PROJECT
+</span>
+
+</div>
+
+</div>
+
+
+<div class="social-work-content">
+
+<div class="social-work-type">
+CONTENT CREATION
+</div>
+
+<h3>
+Creative Content Project
+</h3>
+
+<p>
+Design · Video · Social Content
+</p>
+
+</div>
+
+</a>
+
+
+
+<!-- THIRD -->
+
+<a href="#"
+class="social-work-card small reveal">
+
+<div class="social-work-visual">
+
+<div class="social-work-placeholder">
+
+<span>
+SOCIAL CAMPAIGN
+</span>
+
+</div>
+
+</div>
+
+
+<div class="social-work-content">
+
+<div class="social-work-type">
+SOCIAL STRATEGY
+</div>
+
+<h3>
+Brand Social Presence
+</h3>
+
+<p>
+Strategy · Planning · Execution
+</p>
+
+</div>
+
+</a>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTENT FORMATS
+========================================================= -->
+
+<section class="social-formats">
+
+<div class="wrap">
+
+
+<div class="social-formats-head">
+
+<div>
+
+<span class="eyebrow">
+CONTENT SYSTEM
+</span>
+
+<h2>
+
+More than posts.
+<span>A content ecosystem.</span>
+
+</h2>
+
+</div>
+
+
+<p>
+
+Your social presence can do more than fill a feed.
+We create a connected mix of formats that helps
+your brand communicate consistently across channels.
+
+</p>
+
+</div>
+
+
+
+<div class="social-format-list">
+
+
+<article class="social-format reveal">
+
+<div class="social-format-number">
+01
+</div>
+
+<h3>
+Short-form Video
+</h3>
+
+<p>
+Reels, short videos and motion-led content.
+</p>
+
+</article>
+
+
+<article class="social-format reveal">
+
+<div class="social-format-number">
+02
+</div>
+
+<h3>
+Static Creative
+</h3>
+
+<p>
+Carousels, graphics, announcements and campaigns.
+</p>
+
+</article>
+
+
+<article class="social-format reveal">
+
+<div class="social-format-number">
+03
+</div>
+
+<h3>
+Stories & Engagement
+</h3>
+
+<p>
+Content designed for regular audience interaction.
+</p>
+
+</article>
+
+
+<article class="social-format reveal">
+
+<div class="social-format-number">
+04
+</div>
+
+<h3>
+Campaign Content
+</h3>
+
+<p>
+Creative built around launches, offers and moments.
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section class="social-process">
+
+<div class="wrap">
+
+<div class="social-process-grid">
+
+
+<div>
+
+<span class="eyebrow">
+HOW WE WORK
+</span>
+
+<h2 class="social-process-title">
+
+A clearer way
+to build your
+<span>presence.</span>
+
+</h2>
+
+</div>
+
+
+
+<div class="social-steps">
+
+
+<article class="social-step reveal">
+
+<div class="social-step-number">
+01
+</div>
+
+<div>
+
+<h3>
+Understand
+</h3>
+
+<p>
+
+We get clear on your brand, audience,
+goals and the role social media needs
+to play in your wider marketing.
+
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="social-step reveal">
+
+<div class="social-step-number">
+02
+</div>
+
+<div>
+
+<h3>
+Plan
+</h3>
+
+<p>
+
+We build the content direction, themes,
+formats and publishing rhythm around
+your business.
+
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="social-step reveal">
+
+<div class="social-step-number">
+03
+</div>
+
+<div>
+
+<h3>
+Create
+</h3>
+
+<p>
+
+Our creative team turns the strategy into
+graphics, video, copy and content designed
+to feel distinctly yours.
+
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="social-step reveal">
+
+<div class="social-step-number">
+04
+</div>
+
+<div>
+
+<h3>
+Publish & Refine
+</h3>
+
+<p>
+
+We keep the system moving, monitor
+performance and refine the content based
+on what your audience responds to.
+
+</p>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BLOG
+========================================================= -->
+
+<section class="social-blog">
+
+<div class="wrap">
+
+
+<div class="social-blog-header">
+
+<div>
+
+<span class="eyebrow">
+FROM THE JOURNAL
+</span>
+
+<h2>
+
+Ideas on
+<span>social.</span>
+
+</h2>
+
+</div>
+
+
+<a href="../blog.html"
+class="social-blog-link">
+
+View all articles
+
+</a>
+
+</div>
+
+
+
+<div class="social-blog-grid">
+
+
+<a href="../blog.html"
+class="social-blog-card reveal">
+
+<div class="social-blog-meta">
+
+<span>
+SOCIAL MEDIA
+</span>
+
+<span>
+01
+</span>
+
+</div>
+
+<h3>
+Why consistency matters more
+than posting every day.
+</h3>
+
+<p>
+
+A strong social presence is built around
+clarity, consistency and content people
+actually want to engage with.
+
+</p>
+
+</a>
+
+
+
+<a href="../blog.html"
+class="social-blog-card reveal">
+
+<div class="social-blog-meta">
+
+<span>
+CONTENT
+</span>
+
+<span>
+02
+</span>
+
+</div>
+
+<h3>
+What makes people stop scrolling
+and pay attention?
+</h3>
+
+<p>
+
+From the first frame to the final message,
+creative needs to earn attention before
+it can create action.
+
+</p>
+
+</a>
+
+
+
+<a href="../blog.html"
+class="social-blog-card reveal">
+
+<div class="social-blog-meta">
+
+<span>
+STRATEGY
+</span>
+
+<span>
+03
+</span>
+
+</div>
+
+<h3>
+Building a social media strategy
+that actually has a purpose.
+</h3>
+
+<p>
+
+Your content should connect to your
+brand, your audience and the bigger
+business goal.
+
+</p>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="social-cta">
+
+<div class="wrap">
+
+<div class="social-cta-box reveal">
+
+
+<div class="social-cta-content">
+
+<span class="eyebrow">
+READY TO SHOW UP DIFFERENTLY?
+</span>
+
+<h2>
+
+Let's make your social
+presence <span>matter.</span>
+
+</h2>
+
+<p>
+
+Bring us the brand, the ambition and the goal.
+We'll bring the strategy, creative thinking and
+execution to move it forward.
+
+</p>
+
+</div>
+
+
+<div class="social-cta-action">
+
+<a class="btn primary"
+href="../contact.html">
+
+Start a conversation
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER — UNCHANGED
+========================================================= -->
+
+<footer class="footer">
+
+<div class="wrap">
+
+<div class="footer-top">
+
+<div>
+
+<a class="logo logo-image"
+href="../index.html">
+
+<img src="../assets/vdo-logo.png"
+alt="V DO MARKETING — U do Business, V do Marketing">
+
+</a>
+
+<p class="muted"
+style="max-width:260px;line-height:1.7;font-size:12px">
+
+Creative thinking. Considered strategy. Digital growth.
+
+</p>
+
+</div>
+
+
+<div class="footer-links">
+
+<div>
+
+<span class="eyebrow">
+EXPLORE
+</span>
+
+<a href="../about.html">
+About
+</a>
+
+<a href="../blog.html">
+Blogs & FAQ's
+</a>
+
+<a href="../contact.html">
+Contact
+</a>
+
+</div>
+
+
+<div>
+
+<span class="eyebrow">
+SERVICES
+</span>
+
+<a href="../services/website-development.html">
+Web & App Development
+</a>
+
+<a href="../services/seo.html">
+SEO (Search Engine Optimisation)
+</a>
+
+<a href="../services/social-media-management.html">
+Social Media Management
+</a>
+
+<a href="../services/paid-ads.html">
+Performance Marketing
+</a>
+
+<a href="../services/influencer-marketing.html">
+Influencer Marketing
+</a>
+
+<a href="../services/affiliate-marketing.html">
+Affiliate Marketing
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+© <span data-year></span>
+V DO MARKETING. All rights reserved.
+</span>
+
+<span>
+U DO BUSINESS&nbsp;&nbsp; • &nbsp;&nbsp;
+CREATIVE BY DESIGN
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<div class="page-transition"></div>
+
+<script src="../js/site-config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+<script src="../js/main.js"></script>
+
+</body>
+
+</html>
