@@ -880,398 +880,108 @@ main>.section{
 }
 
 /* =========================================================
-   PORTFOLIO - RESPONSIVE / RELIABLE VIDEO CAROUSEL
+   PORTFOLIO - MANUAL DRAG SUPPORT
 ========================================================= */
 
 #vdo-mirror-portfolio{
+
     position:relative;
-    width:100%;
-    overflow:hidden;
-    margin-top:0 !important;
-    padding:56px 0 54px !important;
-}
 
-#vdo-mirror-portfolio .vmp-frame{
-    width:min(1440px,94%);
-    margin:0 auto;
-}
-
-#vdo-mirror-portfolio .vmp-heading{
-    width:min(760px,100%);
-    margin:0 auto 34px;
-    text-align:center;
-}
-
-#vdo-mirror-portfolio .vmp-kicker{
-    display:block;
-    margin-bottom:10px;
-    color:rgba(242,76,35,.95);
-    font-family:"DM Mono",monospace;
-    font-size:11px;
-    font-weight:500;
-    letter-spacing:.28em;
-    text-transform:uppercase;
-}
-
-#vdo-mirror-portfolio .vmp-heading h2{
-    margin:0;
-    color:#f7f6f3;
-    font-family:"Manrope","DM Sans",sans-serif;
-    font-size:clamp(42px,6vw,78px);
-    font-weight:800;
-    line-height:.95;
-    letter-spacing:-.045em;
-}
-
-#vdo-mirror-portfolio .vmp-heading h2 span{
-    color:#f24c23;
-}
-
-#vdo-mirror-portfolio .vmp-heading p{
-    margin:14px 0 0;
-    color:rgba(255,255,255,.48);
-    font-size:15px;
-    line-height:1.6;
-}
-
-#vdo-mirror-portfolio .vmp-stage{
-    width:100%;
-    overflow:hidden;
-    padding:10px 0 18px;
 }
 
 #vdo-mirror-portfolio .vmp-gallery{
-    display:flex;
-    align-items:stretch;
-    gap:22px;
-    width:100%;
-    overflow-x:auto;
-    overflow-y:hidden;
-    padding:0 6vw 12px;
-    margin:0;
-    scroll-snap-type:x mandatory;
-    scroll-behavior:smooth;
-    scrollbar-width:none;
-    -webkit-overflow-scrolling:touch;
-    cursor:grab;
-    user-select:none;
-    -webkit-user-select:none;
-    touch-action:pan-y;
-}
 
-#vdo-mirror-portfolio .vmp-gallery::-webkit-scrollbar{
-    display:none;
+    cursor:grab;
+
+    user-select:none;
+
+    -webkit-user-select:none;
+
+    touch-action:pan-y;
+
 }
 
 #vdo-mirror-portfolio .vmp-gallery.is-dragging{
+
     cursor:grabbing;
-    scroll-behavior:auto;
+
 }
 
 #vdo-mirror-portfolio .vmp-card{
-    position:relative;
-    flex:0 0 clamp(300px,31vw,430px);
-    width:clamp(300px,31vw,430px);
-    aspect-ratio:16 / 10;
-    min-height:0;
-    display:block;
-    overflow:hidden;
-    border-radius:20px;
-    background:#111318;
-    border:1px solid rgba(255,255,255,.10);
-    scroll-snap-align:center;
-    scroll-snap-stop:always;
-    text-decoration:none;
-    color:inherit;
-    box-shadow:0 18px 55px rgba(0,0,0,.18);
-    transform:translateZ(0);
-    transition:
-        transform .45s cubic-bezier(.16,1,.3,1),
-        border-color .45s ease,
-        box-shadow .45s ease,
-        opacity .45s ease;
-}
 
-#vdo-mirror-portfolio .vmp-card:hover{
-    transform:translateY(-5px);
-    border-color:rgba(242,76,35,.55);
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.35),
-        0 0 0 1px rgba(242,76,35,.08);
-}
+    user-select:none;
 
-#vdo-mirror-portfolio .vmp-card.is-active{
-    border-color:rgba(242,76,35,.65);
-    box-shadow:
-        0 24px 70px rgba(0,0,0,.38),
-        0 0 0 1px rgba(242,76,35,.10);
-}
+    -webkit-user-select:none;
 
-#vdo-mirror-portfolio .vmp-card::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:1;
-    pointer-events:none;
-    background:
-        linear-gradient(
-            180deg,
-            transparent 48%,
-            rgba(0,0,0,.18) 66%,
-            rgba(0,0,0,.78) 100%
-        );
 }
 
 #vdo-mirror-portfolio .vmp-card video{
+
     display:block;
+
     width:100%;
+
     height:100%;
-    min-width:100%;
-    min-height:100%;
+
     object-fit:cover;
-    object-position:center;
+
     pointer-events:none;
-    background:#111318;
+
+}
+
+#vdo-mirror-portfolio .vmp-card video{
+
     opacity:1;
-    visibility:visible;
+
 }
 
-#vdo-mirror-portfolio .vmp-card-label{
-    position:absolute;
-    left:20px;
-    right:20px;
-    bottom:18px;
-    z-index:3;
-    color:#fff;
-    font-family:"DM Mono",monospace;
-    font-size:10px;
-    font-weight:500;
-    letter-spacing:.14em;
-    line-height:1.4;
-    text-transform:uppercase;
-}
-
-#vdo-mirror-portfolio .vmp-bottom{
-    width:100%;
-    max-width:1180px;
-    margin:22px auto 0;
-    display:grid;
-    grid-template-columns:minmax(180px,1fr) minmax(180px,1.6fr) auto;
-    align-items:center;
-    gap:28px;
-}
-
-#vdo-mirror-portfolio .vmp-project-info{
-    min-width:0;
-}
-
-#vdo-mirror-portfolio .vmp-project-info > span{
-    display:block;
-    margin-bottom:7px;
-    color:rgba(242,76,35,.95);
-    font-family:"DM Mono",monospace;
-    font-size:10px;
-    font-weight:500;
-    letter-spacing:.16em;
-}
-
-#vdo-mirror-portfolio .vmp-project-info h3{
-    margin:0;
-    color:#f7f6f3;
-    font-family:"Manrope","DM Sans",sans-serif;
-    font-size:clamp(20px,2vw,28px);
-    font-weight:700;
-    line-height:1.1;
-}
-
-#vdo-mirror-portfolio .vmp-progress{
-    position:relative;
-    width:100%;
-    height:2px;
-    overflow:hidden;
-    background:rgba(255,255,255,.12);
-}
-
-#vdo-mirror-portfolio .vmp-progress-fill{
-    display:block;
-    width:16.666%;
-    height:100%;
-    background:#f24c23;
-    transform-origin:left center;
-    transition:width .35s ease;
-}
-
-#vdo-mirror-portfolio .vmp-instagram{
-    display:inline-flex;
-    align-items:center;
-    gap:12px;
-    justify-content:flex-end;
-    white-space:nowrap;
-    color:rgba(255,255,255,.72);
-    font-family:"DM Mono",monospace;
-    font-size:9px;
-    font-weight:500;
-    letter-spacing:.13em;
-    text-decoration:none;
-    transition:color .25s ease;
-}
-
-#vdo-mirror-portfolio .vmp-instagram span{
-    position:relative;
-    width:28px;
-    height:1px;
-    background:#f24c23;
-    transition:width .25s ease;
-}
-
-#vdo-mirror-portfolio .vmp-instagram span::after{
-    content:"";
-    position:absolute;
-    right:0;
-    top:-3px;
-    width:7px;
-    height:7px;
-    border-top:1px solid #f24c23;
-    border-right:1px solid #f24c23;
-    transform:rotate(45deg);
-}
-
-#vdo-mirror-portfolio .vmp-instagram:hover{
-    color:#fff;
-}
-
-#vdo-mirror-portfolio .vmp-instagram:hover span{
-    width:38px;
-}
-
-@media (max-width:900px){
-    #vdo-mirror-portfolio{
-        padding:48px 0 46px !important;
-    }
-
-    #vdo-mirror-portfolio .vmp-frame{
-        width:min(94%,720px);
-    }
-
-    #vdo-mirror-portfolio .vmp-heading{
-        margin-bottom:26px;
-    }
-
-    #vdo-mirror-portfolio .vmp-heading h2{
-        font-size:clamp(38px,9vw,60px);
-    }
-
-    #vdo-mirror-portfolio .vmp-gallery{
-        gap:18px;
-        padding-left:8vw;
-        padding-right:8vw;
-    }
-
-    #vdo-mirror-portfolio .vmp-card{
-        flex-basis:min(72vw,410px);
-        width:min(72vw,410px);
-    }
-
-    #vdo-mirror-portfolio .vmp-bottom{
-        grid-template-columns:1fr;
-        gap:18px;
-        margin-top:18px;
-    }
-
-    #vdo-mirror-portfolio .vmp-instagram{
-        justify-content:flex-start;
-    }
-}
-
+/* Keep the original portfolio format; only improve small-screen fit. */
 @media (max-width:600px){
-    #vdo-mirror-portfolio{
-        padding:40px 0 38px !important;
-    }
 
     #vdo-mirror-portfolio .vmp-frame{
         width:100%;
-    }
-
-    #vdo-mirror-portfolio .vmp-heading{
-        width:calc(100% - 36px);
-        margin:0 auto 22px;
-        text-align:left;
-    }
-
-    #vdo-mirror-portfolio .vmp-kicker{
-        font-size:9px;
-        letter-spacing:.23em;
-    }
-
-    #vdo-mirror-portfolio .vmp-heading h2{
-        font-size:clamp(36px,12vw,52px);
-        line-height:.95;
-    }
-
-    #vdo-mirror-portfolio .vmp-heading p{
-        max-width:300px;
-        margin-top:11px;
-        font-size:13px;
+        overflow:hidden;
     }
 
     #vdo-mirror-portfolio .vmp-stage{
-        padding:4px 0 10px;
+        width:100%;
+        overflow:hidden;
     }
 
     #vdo-mirror-portfolio .vmp-gallery{
-        gap:14px;
-        padding-left:18px;
-        padding-right:18px;
-        padding-bottom:8px;
+        width:100%;
+        overflow-x:auto;
+        overflow-y:hidden;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+        padding-left:0;
+        padding-right:0;
+    }
+
+    #vdo-mirror-portfolio .vmp-gallery::-webkit-scrollbar{
+        display:none;
     }
 
     #vdo-mirror-portfolio .vmp-card{
-        flex:0 0 calc(100vw - 44px);
-        width:calc(100vw - 44px);
-        aspect-ratio:4 / 3;
-        border-radius:16px;
-    }
-
-    #vdo-mirror-portfolio .vmp-card:hover{
-        transform:none;
-    }
-
-    #vdo-mirror-portfolio .vmp-card-label{
-        left:15px;
-        right:15px;
-        bottom:14px;
-        font-size:8px;
-        letter-spacing:.11em;
+        flex:0 0 auto;
+        max-width:100%;
     }
 
     #vdo-mirror-portfolio .vmp-bottom{
-        width:calc(100% - 36px);
-        margin:16px auto 0;
-        gap:16px;
+        gap:18px;
+        align-items:flex-start;
+        flex-wrap:wrap;
     }
 
-    #vdo-mirror-portfolio .vmp-project-info h3{
-        font-size:22px;
-    }
-
-    #vdo-mirror-portfolio .vmp-project-info > span{
-        font-size:9px;
+    #vdo-mirror-portfolio .vmp-project-info{
+        min-width:0;
+        max-width:100%;
     }
 
     #vdo-mirror-portfolio .vmp-instagram{
-        font-size:8px;
-        letter-spacing:.10em;
-    }
-}
-
-@media (prefers-reduced-motion:reduce){
-    #vdo-mirror-portfolio .vmp-gallery{
-        scroll-behavior:auto;
+        white-space:normal;
     }
 
-    #vdo-mirror-portfolio .vmp-card{
-        transition:none;
-    }
 }
 
 @media (min-width:1200px){
@@ -2599,368 +2309,387 @@ main>.section{
 })();
 
 /* =========================================================
-   VMP PORTFOLIO - VIDEO + CAROUSEL CONTROLLER
+   VMP PORTFOLIO VIDEO AUTOPLAY
+   Keeps the original portfolio layout + functionality
 ========================================================= */
 
 (() => {
+
     const portfolio = document.getElementById('vdo-mirror-portfolio');
-    const gallery = document.getElementById('vmpGallery');
+    if (!portfolio) return;
 
-    if (!portfolio || !gallery) return;
-
-    const cards = Array.from(gallery.querySelectorAll('.vmp-card'));
-    const videos = Array.from(gallery.querySelectorAll('video'));
-    const titleEl = document.getElementById('vmpTitle');
-    const categoryEl = document.getElementById('vmpCategory');
-    const progressFill = document.querySelector('.vmp-progress-fill');
-
-    if (!cards.length) return;
-
-    let activeIndex = 0;
-    let isPointerDown = false;
-    let startX = 0;
-    let lastX = 0;
-    let dragDistance = 0;
-    let suppressClick = false;
-    let autoplayTimer = null;
-
-    const videoAlternates = {
-        'assets/videos/vdm.mp4': [
-            'assets/videos/vdm.mp4',
-            'assets/Videos/vdm.mp4'
-        ],
-        'assets/videos/Rasam.mp4': [
-            'assets/videos/Rasam.mp4',
-            'assets/Videos/Rasam.mp4'
-        ],
-        'assets/videos/BDV_485.mp4': [
-            'assets/videos/BDV_485.mp4',
-            'assets/Videos/BDV_485.mp4'
-        ]
-    };
+    const videos = Array.from(portfolio.querySelectorAll('video'));
 
     const playVideo = video => {
-        if (!video) return;
 
         video.muted = true;
         video.defaultMuted = true;
-        video.setAttribute('muted', '');
-        video.setAttribute('playsinline', '');
-        video.setAttribute('webkit-playsinline', '');
-        video.setAttribute('autoplay', '');
-        video.setAttribute('loop', '');
+        video.setAttribute('muted','');
+        video.setAttribute('playsinline','');
+        video.setAttribute('webkit-playsinline','');
+        video.setAttribute('autoplay','');
+        video.setAttribute('loop','');
+        video.playsInline = true;
+
+        try {
+            if (video.readyState < 2) {
+                video.load();
+            }
+        } catch (e) {}
 
         const promise = video.play();
 
         if (promise && typeof promise.catch === 'function') {
-            promise.catch(() => {});
+            promise.catch(() => {
+                // Retry once metadata/data is available.
+                const retry = () => {
+                    video.play().catch(() => {});
+                };
+                video.addEventListener('loadeddata', retry, { once:true });
+                video.addEventListener('canplay', retry, { once:true });
+            });
         }
     };
 
     const pauseVideo = video => {
-        if (!video) return;
-
-        try {
-            video.pause();
-        } catch (error) {}
-    };
-
-    const setActive = (index, shouldScroll = false) => {
-        if (!cards.length) return;
-
-        activeIndex = (index + cards.length) % cards.length;
-
-        cards.forEach((card, i) => {
-            card.classList.toggle('is-active', i === activeIndex);
-        });
-
-        const activeCard = cards[activeIndex];
-
-        if (titleEl) {
-            titleEl.textContent = activeCard.dataset.title || '';
-        }
-
-        if (categoryEl) {
-            categoryEl.textContent = activeCard.dataset.category || '';
-        }
-
-        if (progressFill) {
-            const percentage = ((activeIndex + 1) / cards.length) * 100;
-            progressFill.style.width = `${percentage}%`;
-        }
-
-        if (shouldScroll) {
-            activeCard.scrollIntoView({
-                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-                    ? 'auto'
-                    : 'smooth',
-                block:'nearest',
-                inline:'center'
-            });
-        }
-
-        playVideo(activeCard.querySelector('video'));
-    };
-
-    const updateActiveFromPosition = () => {
-        const galleryRect = gallery.getBoundingClientRect();
-        const galleryCenter = galleryRect.left + galleryRect.width / 2;
-
-        let closestIndex = activeIndex;
-        let closestDistance = Infinity;
-
-        cards.forEach((card, index) => {
-            const rect = card.getBoundingClientRect();
-
-            if (rect.right < galleryRect.left ||
-                rect.left > galleryRect.right) {
-                return;
-            }
-
-            const cardCenter = rect.left + rect.width / 2;
-            const distance = Math.abs(cardCenter - galleryCenter);
-
-            if (distance < closestDistance) {
-                closestDistance = distance;
-                closestIndex = index;
-            }
-        });
-
-        if (closestIndex !== activeIndex) {
-            setActive(closestIndex, false);
-        }
-    };
-
-    const preloadVideo = video => {
-        if (!video) return;
-
-        video.muted = true;
-        video.defaultMuted = true;
-        video.setAttribute('muted', '');
-        video.setAttribute('playsinline', '');
-        video.setAttribute('preload', 'auto');
-
-        if (video.readyState < 2) {
-            try {
-                video.load();
-            } catch (error) {}
-        }
+        if (!video.paused) video.pause();
     };
 
     videos.forEach(video => {
-        preloadVideo(video);
 
-        video.addEventListener('error', () => {
-            const original = video.getAttribute('src') || '';
-            const alternatives = videoAlternates[original];
-
-            if (!alternatives) return;
-
-            const currentIndex = alternatives.indexOf(original);
-            const next = alternatives[currentIndex + 1];
-
-            if (!next || video.dataset.fallbackTried === 'true') return;
-
-            video.dataset.fallbackTried = 'true';
-            video.src = next;
-            video.load();
-            playVideo(video);
-        });
+        video.muted = true;
+        video.defaultMuted = true;
+        video.setAttribute('muted','');
+        video.setAttribute('playsinline','');
+        video.setAttribute('autoplay','');
+        video.setAttribute('loop','');
 
         video.addEventListener('loadeddata', () => {
-            if (video.closest('.vmp-card') === cards[activeIndex]) {
-                playVideo(video);
-            }
-        });
+            const rect = video.getBoundingClientRect();
+            const visible = rect.bottom > 0 && rect.top < window.innerHeight;
+            if (visible && !document.hidden) playVideo(video);
+        }, { once:false });
 
-        video.addEventListener('canplay', () => {
-            if (video.closest('.vmp-card') === cards[activeIndex]) {
-                playVideo(video);
-            }
+        video.addEventListener('error', () => {
+            // Keep the original card/functionality intact; retry after a short delay.
+            setTimeout(() => {
+                if (!document.hidden) playVideo(video);
+            }, 350);
         });
     });
 
-    setActive(0, false);
-
-    let positionTick = null;
-
-    gallery.addEventListener('scroll', () => {
-        if (positionTick) return;
-
-        positionTick = requestAnimationFrame(() => {
-            positionTick = null;
-            updateActiveFromPosition();
-        });
-    }, { passive:true });
-
     if ('IntersectionObserver' in window) {
-        const portfolioObserver = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                        videos.forEach(pauseVideo);
-                        return;
-                    }
 
-                    playVideo(cards[activeIndex]?.querySelector('video'));
-                });
-            },
-            { threshold:0.18 }
-        );
+        const observer = new IntersectionObserver(entries => {
 
-        portfolioObserver.observe(portfolio);
+            entries.forEach(entry => {
+
+                const video = entry.target;
+
+                if (entry.isIntersecting) {
+                    playVideo(video);
+                } else {
+                    pauseVideo(video);
+                }
+
+            });
+
+        }, {
+            threshold:0.08
+        });
+
+        videos.forEach(video => observer.observe(video));
+
     } else {
-        playVideo(cards[activeIndex]?.querySelector('video'));
+        videos.forEach(video => playVideo(video));
     }
 
+    // Browsers can stop muted inline video after tab changes or page visibility changes.
     document.addEventListener('visibilitychange', () => {
+
         if (document.hidden) {
             videos.forEach(pauseVideo);
             return;
         }
-
-        playVideo(cards[activeIndex]?.querySelector('video'));
-    });
-
-    /* ---------------------------------------------------------
-       DRAG / SWIPE
-    --------------------------------------------------------- */
-
-    const moveToNext = direction => {
-        setActive(activeIndex + direction, true);
-    };
-
-    const startDrag = x => {
-        isPointerDown = true;
-        startX = x;
-        lastX = x;
-        dragDistance = 0;
-        suppressClick = false;
-        gallery.classList.add('is-dragging');
-    };
-
-    const moveDrag = x => {
-        if (!isPointerDown) return;
-
-        const delta = x - lastX;
-        lastX = x;
-        dragDistance += Math.abs(delta);
-
-        if (dragDistance > 8) {
-            suppressClick = true;
-        }
-    };
-
-    const endDrag = () => {
-        if (!isPointerDown) return;
-
-        isPointerDown = false;
-        gallery.classList.remove('is-dragging');
-
-        if (dragDistance >= 45) {
-            const direction = lastX < startX ? 1 : -1;
-            moveToNext(direction);
-        }
-
-        window.setTimeout(() => {
-            suppressClick = false;
-            dragDistance = 0;
-        }, 80);
-    };
-
-    gallery.addEventListener('mousedown', event => {
-        if (event.button !== 0) return;
-        startDrag(event.clientX);
-    });
-
-    window.addEventListener('mousemove', event => {
-        moveDrag(event.clientX);
-    });
-
-    window.addEventListener('mouseup', endDrag);
-
-    gallery.addEventListener('touchstart', event => {
-        if (!event.touches.length) return;
-        startDrag(event.touches[0].clientX);
-    }, { passive:true });
-
-    gallery.addEventListener('touchmove', event => {
-        if (!event.touches.length) return;
-        moveDrag(event.touches[0].clientX);
-    }, { passive:true });
-
-    gallery.addEventListener('touchend', endDrag, { passive:true });
-
-    gallery.addEventListener('click', event => {
-        if (suppressClick) {
-            event.preventDefault();
-            event.stopPropagation();
-        }
-
-        dragDistance = 0;
-    }, true);
-
-    cards.forEach((card, index) => {
-        card.addEventListener('click', event => {
-            if (suppressClick) return;
-
-            if (index !== activeIndex) {
-                event.preventDefault();
-                setActive(index, true);
-            }
+        videos.forEach(video => {
+            const rect = video.getBoundingClientRect();
+            const visible = rect.bottom > 0 && rect.top < window.innerHeight;
+            if (visible) playVideo(video);
         });
     });
 
-    /* Auto-advance while the portfolio is actually visible. */
-    const startAutoAdvance = () => {
-        if (autoplayTimer) return;
+})();
 
-        autoplayTimer = window.setInterval(() => {
-            const rect = portfolio.getBoundingClientRect();
+/* =========================================================
+   VMP MANUAL MOUSE / TOUCH DRAG
+========================================================= */
 
-            const visible =
-                rect.bottom > 0 &&
-                rect.top < window.innerHeight;
+(() => {
 
-            if (!visible || document.hidden) return;
+    const gallery =
 
-            moveToNext(1);
-        }, 4500);
-    };
+        document.getElementById('vmpGallery');
 
-    const stopAutoAdvance = () => {
-        if (!autoplayTimer) return;
+    if (!gallery) return;
 
-        window.clearInterval(autoplayTimer);
-        autoplayTimer = null;
-    };
+    let isDragging = false;
 
-    if ('IntersectionObserver' in window) {
-        const autoObserver = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        startAutoAdvance();
-                    } else {
-                        stopAutoAdvance();
-                    }
-                });
-            },
-            { threshold:0.08 }
+    let startX = 0;
+
+    let lastX = 0;
+
+    let dragDistance = 0;
+
+    const threshold = 45;
+
+    const getCards = () =>
+
+        Array.from(
+
+            gallery.querySelectorAll('.vmp-card')
+
         );
 
-        autoObserver.observe(portfolio);
-    } else {
-        startAutoAdvance();
-    }
+    const moveGallery = direction => {
 
-    window.addEventListener('resize', () => {
-        window.clearTimeout(window.__vmpResizeTimer);
+        const cards = getCards();
 
-        window.__vmpResizeTimer = window.setTimeout(() => {
-            updateActiveFromPosition();
-        }, 120);
-    }, { passive:true });
+        if (!cards.length) return;
+
+        let activeIndex =
+
+            cards.findIndex(card =>
+
+                card.classList.contains('is-active')
+
+            );
+
+        if (activeIndex === -1) {
+
+            activeIndex = 0;
+
+        }
+
+        let nextIndex =
+
+            activeIndex + direction;
+
+        if (nextIndex < 0) {
+
+            nextIndex = cards.length - 1;
+
+        }
+
+        if (nextIndex >= cards.length) {
+
+            nextIndex = 0;
+
+        }
+
+        cards.forEach(card => {
+
+            card.classList.remove('is-active');
+
+        });
+
+        cards[nextIndex].classList.add('is-active');
+
+        cards[nextIndex].dispatchEvent(
+
+            new MouseEvent('mouseenter',{
+
+                bubbles:true,
+
+                clientX:window.innerWidth / 2,
+
+                clientY:window.innerHeight / 2
+
+            })
+
+        );
+
+        cards[nextIndex].scrollIntoView({
+
+            behavior:'smooth',
+
+            block:'nearest',
+
+            inline:'center'
+
+        });
+
+    };
+
+    const startDrag = x => {
+
+        isDragging = true;
+
+        startX = x;
+
+        lastX = x;
+
+        dragDistance = 0;
+
+        gallery.classList.add('is-dragging');
+
+    };
+
+    const moveDrag = x => {
+
+        if (!isDragging) return;
+
+        const difference =
+
+            x - lastX;
+
+        lastX = x;
+
+        dragDistance += Math.abs(difference);
+
+    };
+
+    const endDrag = () => {
+
+        if (!isDragging) return;
+
+        isDragging = false;
+
+        gallery.classList.remove('is-dragging');
+
+        if (dragDistance < threshold) {
+
+            return;
+
+        }
+
+        const totalDistance =
+
+            lastX - startX;
+
+        if (totalDistance < 0) {
+
+            moveGallery(1);
+
+        } else {
+
+            moveGallery(-1);
+
+        }
+
+    };
+
+    gallery.addEventListener(
+
+        'mousedown',
+
+        event => {
+
+            startDrag(event.clientX);
+
+        }
+
+    );
+
+    window.addEventListener(
+
+        'mousemove',
+
+        event => {
+
+            moveDrag(event.clientX);
+
+        }
+
+    );
+
+    window.addEventListener(
+
+        'mouseup',
+
+        () => {
+
+            endDrag();
+
+        }
+
+    );
+
+    gallery.addEventListener(
+
+        'touchstart',
+
+        event => {
+
+            if (!event.touches.length) return;
+
+            startDrag(
+
+                event.touches[0].clientX
+
+            );
+
+        },
+
+        { passive:true }
+
+    );
+
+    gallery.addEventListener(
+
+        'touchmove',
+
+        event => {
+
+            if (!event.touches.length) return;
+
+            moveDrag(
+
+                event.touches[0].clientX
+
+            );
+
+        },
+
+        { passive:true }
+
+    );
+
+    gallery.addEventListener(
+
+        'touchend',
+
+        () => {
+
+            endDrag();
+
+        },
+
+        { passive:true }
+
+    );
+
+    gallery.addEventListener(
+
+        'click',
+
+        event => {
+
+            if (dragDistance >= threshold) {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+            }
+
+            dragDistance = 0;
+
+        },
+
+        true
+
+    );
+
 })();
 
 </script>
