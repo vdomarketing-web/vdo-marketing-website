@@ -413,7 +413,10 @@
         );
 
 
-        if (window.Lenis) {
+        const isTouchDevice =
+            window.matchMedia('(pointer: coarse)').matches;
+
+        if (window.Lenis && !isTouchDevice) {
 
             const lenis =
                 new Lenis({
@@ -1609,56 +1612,28 @@
 
     function playAllVideos() {
 
-        cards.forEach(
-            card => {
+        cards.forEach((card, index) => {
 
-                const video =
-                    card.querySelector(
-                        "video"
-                    );
+            const video = card.querySelector('video');
+            if (!video) return;
 
+            video.muted = true;
+            video.defaultMuted = true;
+            video.loop = true;
+            video.playsInline = true;
 
-                if (!video) {
-                    return;
-                }
-
-
-                video.muted =
-                    true;
-
-                video.defaultMuted =
-                    true;
-
-                video.loop =
-                    true;
-
-                video.playsInline =
-                    true;
-
-
-                if (
-                    video.paused
-                ) {
-
-                    const promise =
-                        video.play();
-
-
-                    if (
-                        promise &&
-                        promise.catch
-                    ) {
-
-                        promise.catch(
-                            () => {}
-                        );
-
-                    }
-
-                }
-
+            /* Keep all features/cards, but decode/play only the active slide. */
+            if (index !== active || document.hidden) {
+                if (!video.paused) video.pause();
+                return;
             }
-        );
+
+            if (video.paused) {
+                const promise = video.play();
+                if (promise && promise.catch) promise.catch(() => {});
+            }
+
+        });
 
     }
 
@@ -1718,6 +1693,11 @@
             video.addEventListener(
                 "loadeddata",
                 () => {
+
+                    if (cards.indexOf(card) !== active || document.hidden) {
+                        video.pause();
+                        return;
+                    }
 
                     const promise =
                         video.play();
