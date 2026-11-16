@@ -935,55 +935,6 @@ main>.section{
 
 }
 
-/* Keep the original portfolio format; only improve small-screen fit. */
-@media (max-width:600px){
-
-    #vdo-mirror-portfolio .vmp-frame{
-        width:100%;
-        overflow:hidden;
-    }
-
-    #vdo-mirror-portfolio .vmp-stage{
-        width:100%;
-        overflow:hidden;
-    }
-
-    #vdo-mirror-portfolio .vmp-gallery{
-        width:100%;
-        overflow-x:auto;
-        overflow-y:hidden;
-        -webkit-overflow-scrolling:touch;
-        scrollbar-width:none;
-        padding-left:0;
-        padding-right:0;
-    }
-
-    #vdo-mirror-portfolio .vmp-gallery::-webkit-scrollbar{
-        display:none;
-    }
-
-    #vdo-mirror-portfolio .vmp-card{
-        flex:0 0 auto;
-        max-width:100%;
-    }
-
-    #vdo-mirror-portfolio .vmp-bottom{
-        gap:18px;
-        align-items:flex-start;
-        flex-wrap:wrap;
-    }
-
-    #vdo-mirror-portfolio .vmp-project-info{
-        min-width:0;
-        max-width:100%;
-    }
-
-    #vdo-mirror-portfolio .vmp-instagram{
-        white-space:normal;
-    }
-
-}
-
 @media (min-width:1200px){
 
     .hero.vdm-cinematic-hero{
@@ -1690,7 +1641,7 @@ main>.section{
 
                     <video
 
-                        src="assets/videos/Rasam.mp4"
+                        src="assets/Videos/vdm.mp4"
 
                         muted
 
@@ -1842,7 +1793,7 @@ main>.section{
 
                     <video
 
-                        src="assets/videos/BDV_485.mp4"
+                        src="assets/Videos/BDV_485.mp4"
 
                         muted
 
@@ -2310,113 +2261,403 @@ main>.section{
 
 /* =========================================================
    VMP PORTFOLIO VIDEO AUTOPLAY
-   Keeps the original portfolio layout + functionality
+   FIXED: autoplay reliability + mixed-case asset paths
+   Portfolio layout / drag behaviour is unchanged.
 ========================================================= */
 
 (() => {
 
-    const portfolio = document.getElementById('vdo-mirror-portfolio');
+    const portfolio =
+        document.getElementById('vdo-mirror-portfolio');
+
     if (!portfolio) return;
 
-    const videos = Array.from(portfolio.querySelectorAll('video'));
+    const videos = Array.from(
+        portfolio.querySelectorAll('.vmp-card video')
+    );
 
-    const playVideo = video => {
+    /*
+     * Some hosts are case-sensitive.
+     * The original portfolio uses both:
+     * assets/videos/
+     * assets/Videos/
+     *
+     * We keep the original source first, then automatically
+     * try the alternate folder casing if the first request fails.
+     */
+    const buildFallbackSources = video => {
+
+        const original = video.getAttribute('src');
+
+        if (!original) return [];
+
+        const sources = [original];
+
+        const alternate = original.replace(
+            /assets\/videos\//i,
+            match =>
+                match === 'assets/videos/'
+                    ? 'assets/Videos/'
+                    : 'assets/videos/'
+        );
+
+        if (
+            alternate !== original &&
+            !sources.includes(alternate)
+        ) {
+            sources.push(alternate);
+        }
+
+        return sources;
+    };
+
+    const sourceIndex = new WeakMap();
+
+    const setPlaybackAttributes = video => {
 
         video.muted = true;
         video.defaultMuted = true;
+
         video.setAttribute('muted','');
         video.setAttribute('playsinline','');
         video.setAttribute('webkit-playsinline','');
         video.setAttribute('autoplay','');
         video.setAttribute('loop','');
-        video.playsInline = true;
 
-        try {
-            if (video.readyState < 2) {
-                video.load();
+        video.removeAttribute('controls');
+    };
+
+    const tryPlay = video => {
+
+        if (!video) return;
+
+        setPlaybackAttributes(video);
+
+        const start = () => {
+
+            if (
+                document.hidden ||
+                video.readyState < 2
+            ) {
+                return;
             }
-        } catch (e) {}
 
-        const promise = video.play();
+            const promise = video.play();
 
-        if (promise && typeof promise.catch === 'function') {
-            promise.catch(() => {
-                // Retry once metadata/data is available.
-                const retry = () => {
-                    video.play().catch(() => {});
-                };
-                video.addEventListener('loadeddata', retry, { once:true });
-                video.addEventListener('canplay', retry, { once:true });
-            });
+            if (
+                promise &&
+                typeof promise.catch === 'function'
+            ) {
+
+                promise.catch(() => {
+
+                    /*
+                     * Browser autoplay can occasionally reject
+                     * the first play() call even for muted video.
+                     * Retry shortly after the browser settles.
+                     */
+                    setTimeout(() => {
+
+                        if (!document.hidden) {
+
+                            video.muted = true;
+
+                            const retry = video.play();
+
+                            if (
+                                retry &&
+                                typeof retry.catch === 'function'
+                            ) {
+                                retry.catch(() => {});
+                            }
+
+                        }
+
+                    }, 250);
+
+                });
+
+            }
+
+        };
+
+        if (video.readyState >= 2) {
+
+            start();
+
+        } else {
+
+            const onReady = () => {
+
+                video.removeEventListener(
+                    'loadeddata',
+                    onReady
+                );
+
+                video.removeEventListener(
+                    'canplay',
+                    onReady
+                );
+
+                start();
+
+            };
+
+            video.addEventListener(
+                'loadeddata',
+                onReady
+            );
+
+            video.addEventListener(
+                'canplay',
+                onReady
+            );
+
+            video.load();
+
         }
+
+    };
+
+    const tryNextSource = video => {
+
+        const sources = buildFallbackSources(video);
+
+        if (!sources.length) return;
+
+        let index = sourceIndex.get(video) || 0;
+
+        index += 1;
+
+        if (index >= sources.length) {
+
+            /*
+             * No alternate path left.
+             * Leave the browser's normal error state in place.
+             */
+            return;
+
+        }
+
+        sourceIndex.set(video, index);
+
+        video.src = sources[index];
+        video.load();
+
+        setTimeout(() => {
+            tryPlay(video);
+        }, 100);
+
     };
 
     const pauseVideo = video => {
-        if (!video.paused) video.pause();
+
+        if (!video.paused) {
+            video.pause();
+        }
+
     };
 
     videos.forEach(video => {
 
-        video.muted = true;
-        video.defaultMuted = true;
-        video.setAttribute('muted','');
-        video.setAttribute('playsinline','');
-        video.setAttribute('autoplay','');
-        video.setAttribute('loop','');
+        setPlaybackAttributes(video);
 
-        video.addEventListener('loadeddata', () => {
-            const rect = video.getBoundingClientRect();
-            const visible = rect.bottom > 0 && rect.top < window.innerHeight;
-            if (visible && !document.hidden) playVideo(video);
-        }, { once:false });
+        sourceIndex.set(video, 0);
 
+        /*
+         * If the original path is unavailable because of
+         * folder-name casing, automatically retry the alternate.
+         */
         video.addEventListener('error', () => {
-            // Keep the original card/functionality intact; retry after a short delay.
+
             setTimeout(() => {
-                if (!document.hidden) playVideo(video);
-            }, 350);
+                tryNextSource(video);
+            }, 150);
+
         });
+
+        /*
+         * If metadata/data becomes available after the initial
+         * request, try playback again.
+         */
+        video.addEventListener(
+            'loadedmetadata',
+            () => tryPlay(video)
+        );
+
+        video.addEventListener(
+            'canplay',
+            () => tryPlay(video)
+        );
+
+        video.addEventListener(
+            'stalled',
+            () => {
+
+                setTimeout(() => {
+                    tryPlay(video);
+                }, 500);
+
+            }
+        );
+
+        tryPlay(video);
+
     });
 
+    /*
+     * Keep the original behaviour:
+     * videos play while visible and pause when outside the viewport.
+     * The lower threshold + rootMargin makes mobile scrolling
+     * more reliable without changing the portfolio interaction.
+     */
     if ('IntersectionObserver' in window) {
 
-        const observer = new IntersectionObserver(entries => {
+        const observer =
+            new IntersectionObserver(
 
-            entries.forEach(entry => {
+                entries => {
 
-                const video = entry.target;
+                    entries.forEach(entry => {
 
-                if (entry.isIntersecting) {
-                    playVideo(video);
-                } else {
-                    pauseVideo(video);
+                        const video =
+                            entry.target;
+
+                        if (
+                            entry.isIntersecting ||
+                            entry.intersectionRatio > 0
+                        ) {
+
+                            tryPlay(video);
+
+                        } else {
+
+                            pauseVideo(video);
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold:0.05,
+                    rootMargin:'150px 0px 150px 0px'
                 }
 
-            });
+            );
 
-        }, {
-            threshold:0.08
+        videos.forEach(video => {
+            observer.observe(video);
         });
-
-        videos.forEach(video => observer.observe(video));
 
     } else {
-        videos.forEach(video => playVideo(video));
+
+        videos.forEach(video => {
+            tryPlay(video);
+        });
+
     }
 
-    // Browsers can stop muted inline video after tab changes or page visibility changes.
-    document.addEventListener('visibilitychange', () => {
+    /*
+     * Retry visible videos when the page becomes active again.
+     */
+    document.addEventListener(
+        'visibilitychange',
+        () => {
 
-        if (document.hidden) {
-            videos.forEach(pauseVideo);
-            return;
+            if (document.hidden) {
+
+                videos.forEach(video => {
+                    pauseVideo(video);
+                });
+
+            } else {
+
+                videos.forEach(video => {
+
+                    const rect =
+                        video.getBoundingClientRect();
+
+                    const visible =
+                        rect.bottom > 0 &&
+                        rect.top < window.innerHeight;
+
+                    if (visible) {
+                        tryPlay(video);
+                    }
+
+                });
+
+            }
+
         }
+    );
+
+    /*
+     * Browsers are more willing to resume media after a real
+     * user interaction. This is only a playback retry and does
+     * not change the portfolio UI or drag behaviour.
+     */
+    const resumeOnInteraction = () => {
+
         videos.forEach(video => {
-            const rect = video.getBoundingClientRect();
-            const visible = rect.bottom > 0 && rect.top < window.innerHeight;
-            if (visible) playVideo(video);
+
+            const rect =
+                video.getBoundingClientRect();
+
+            const visible =
+                rect.bottom > 0 &&
+                rect.top < window.innerHeight;
+
+            if (
+                visible &&
+                video.paused
+            ) {
+                tryPlay(video);
+            }
+
         });
-    });
+
+    };
+
+    document.addEventListener(
+        'pointerdown',
+        resumeOnInteraction,
+        { passive:true }
+    );
+
+    document.addEventListener(
+        'touchstart',
+        resumeOnInteraction,
+        { passive:true }
+    );
+
+    window.addEventListener(
+        'pageshow',
+        () => {
+
+            setTimeout(() => {
+
+                videos.forEach(video => {
+
+                    const rect =
+                        video.getBoundingClientRect();
+
+                    const visible =
+                        rect.bottom > 0 &&
+                        rect.top < window.innerHeight;
+
+                    if (visible) {
+                        tryPlay(video);
+                    }
+
+                });
+
+            }, 200);
+
+        }
+    );
 
 })();
 
