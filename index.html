@@ -1651,7 +1651,7 @@ main>.section{
 
                         autoplay
 
-                        preload="metadata">
+                        preload="auto">
 
                     </video>
 
@@ -1689,7 +1689,7 @@ main>.section{
 
                         autoplay
 
-                        preload="metadata">
+                        preload="auto">
 
                     </video>
 
@@ -1727,7 +1727,7 @@ main>.section{
 
                         autoplay
 
-                        preload="metadata">
+                        preload="auto">
 
                     </video>
 
@@ -1765,7 +1765,7 @@ main>.section{
 
                         autoplay
 
-                        preload="metadata">
+                        preload="auto">
 
                     </video>
 
@@ -1803,7 +1803,7 @@ main>.section{
 
                         autoplay
 
-                        preload="metadata">
+                        preload="auto">
 
                     </video>
 
@@ -1843,7 +1843,7 @@ main>.section{
 
                         playsinline
 
-                        preload="metadata">
+                        preload="auto">
 
                     </video>
 
@@ -2261,8 +2261,8 @@ main>.section{
 
 /* =========================================================
    VMP PORTFOLIO VIDEO AUTOPLAY
-   FIXED: autoplay reliability + mixed-case asset paths
-   Portfolio layout / drag behaviour is unchanged.
+   ROBUST VIDEO LOADING + AUTOPLAY FIX
+   Portfolio layout and drag functionality remain unchanged.
 ========================================================= */
 
 (() => {
@@ -2277,43 +2277,55 @@ main>.section{
     );
 
     /*
-     * Some hosts are case-sensitive.
-     * The original portfolio uses both:
+     * The original portfolio contains both:
+     *
      * assets/videos/
      * assets/Videos/
      *
-     * We keep the original source first, then automatically
-     * try the alternate folder casing if the first request fails.
+     * Some hosting servers are case-sensitive, so the browser
+     * treats those as different folders. We keep the original
+     * URL first and automatically try the other casing.
      */
-    const buildFallbackSources = video => {
+    const getVideoCandidates = video => {
 
-        const original = video.getAttribute('src');
+        const original =
+            video.getAttribute('src') ||
+            video.dataset.videoSrc;
 
         if (!original) return [];
 
-        const sources = [original];
+        const candidates = [original];
 
-        const alternate = original.replace(
-            /assets\/videos\//i,
-            match =>
-                match === 'assets/videos/'
-                    ? 'assets/Videos/'
-                    : 'assets/videos/'
-        );
+        const folderVariants = [
+            original.replace(
+                /assets\/videos\//i,
+                'assets/videos/'
+            ),
 
-        if (
-            alternate !== original &&
-            !sources.includes(alternate)
-        ) {
-            sources.push(alternate);
-        }
+            original.replace(
+                /assets\/videos\//i,
+                'assets/Videos/'
+            )
+        ];
 
-        return sources;
+        folderVariants.forEach(url => {
+
+            if (
+                url &&
+                !candidates.includes(url)
+            ) {
+                candidates.push(url);
+            }
+
+        });
+
+        return candidates;
+
     };
 
-    const sourceIndex = new WeakMap();
+    const currentIndex = new WeakMap();
 
-    const setPlaybackAttributes = video => {
+    const prepareVideo = video => {
 
         video.muted = true;
         video.defaultMuted = true;
@@ -2324,25 +2336,33 @@ main>.section{
         video.setAttribute('autoplay','');
         video.setAttribute('loop','');
 
-        video.removeAttribute('controls');
+        video.setAttribute('preload','auto');
+
+        video.setAttribute(
+            'aria-hidden',
+            'true'
+        );
+
     };
 
-    const tryPlay = video => {
+    const playWhenReady = video => {
 
-        if (!video) return;
+        if (!video || document.hidden) {
+            return;
+        }
 
-        setPlaybackAttributes(video);
+        prepareVideo(video);
 
-        const start = () => {
+        const play = () => {
 
-            if (
-                document.hidden ||
-                video.readyState < 2
-            ) {
+            if (document.hidden) {
                 return;
             }
 
-            const promise = video.play();
+            video.muted = true;
+
+            const promise =
+                video.play();
 
             if (
                 promise &&
@@ -2351,18 +2371,17 @@ main>.section{
 
                 promise.catch(() => {
 
-                    /*
-                     * Browser autoplay can occasionally reject
-                     * the first play() call even for muted video.
-                     * Retry shortly after the browser settles.
-                     */
                     setTimeout(() => {
 
-                        if (!document.hidden) {
+                        if (
+                            !document.hidden &&
+                            video.paused
+                        ) {
 
                             video.muted = true;
 
-                            const retry = video.play();
+                            const retry =
+                                video.play();
 
                             if (
                                 retry &&
@@ -2373,7 +2392,7 @@ main>.section{
 
                         }
 
-                    }, 250);
+                    }, 350);
 
                 });
 
@@ -2381,9 +2400,11 @@ main>.section{
 
         };
 
-        if (video.readyState >= 2) {
+        if (
+            video.readyState >= 2
+        ) {
 
-            start();
+            play();
 
         } else {
 
@@ -2399,7 +2420,7 @@ main>.section{
                     onReady
                 );
 
-                start();
+                play();
 
             };
 
@@ -2419,40 +2440,117 @@ main>.section{
 
     };
 
-    const tryNextSource = video => {
+    /*
+     * Try each possible URL until the browser successfully
+     * loads one. This is more reliable than changing the
+     * visible portfolio markup or relying only on autoplay JS.
+     */
+    const loadVideo = video => {
 
-        const sources = buildFallbackSources(video);
+        const candidates =
+            getVideoCandidates(video);
 
-        if (!sources.length) return;
-
-        let index = sourceIndex.get(video) || 0;
-
-        index += 1;
-
-        if (index >= sources.length) {
-
-            /*
-             * No alternate path left.
-             * Leave the browser's normal error state in place.
-             */
+        if (!candidates.length) {
             return;
-
         }
 
-        sourceIndex.set(video, index);
+        let index =
+            currentIndex.get(video) || 0;
 
-        video.src = sources[index];
-        video.load();
+        const tryCurrent = () => {
 
-        setTimeout(() => {
-            tryPlay(video);
-        }, 100);
+            if (index >= candidates.length) {
+                return;
+            }
+
+            currentIndex.set(
+                video,
+                index
+            );
+
+            const url =
+                candidates[index];
+
+            const onLoaded = () => {
+
+                cleanup();
+
+                playWhenReady(video);
+
+            };
+
+            const onError = () => {
+
+                cleanup();
+
+                index += 1;
+
+                currentIndex.set(
+                    video,
+                    index
+                );
+
+                if (
+                    index < candidates.length
+                ) {
+
+                    video.src =
+                        candidates[index];
+
+                    video.load();
+
+                    setTimeout(() => {
+                        tryCurrent();
+                    }, 80);
+
+                }
+
+            };
+
+            const cleanup = () => {
+
+                video.removeEventListener(
+                    'loadedmetadata',
+                    onLoaded
+                );
+
+                video.removeEventListener(
+                    'error',
+                    onError
+                );
+
+            };
+
+            video.addEventListener(
+                'loadedmetadata',
+                onLoaded,
+                { once:true }
+            );
+
+            video.addEventListener(
+                'error',
+                onError,
+                { once:true }
+            );
+
+            video.src = url;
+
+            prepareVideo(video);
+
+            video.load();
+
+        };
+
+        tryCurrent();
 
     };
 
     const pauseVideo = video => {
 
-        if (!video.paused) {
+        if (
+            video &&
+            !video.paused
+        ) {
             video.pause();
         }
 
@@ -2460,58 +2558,52 @@ main>.section{
 
     videos.forEach(video => {
 
-        setPlaybackAttributes(video);
-
-        sourceIndex.set(video, 0);
+        prepareVideo(video);
 
         /*
-         * If the original path is unavailable because of
-         * folder-name casing, automatically retry the alternate.
+         * Store the original source separately so the JS
+         * can safely test alternate folder casing.
          */
-        video.addEventListener('error', () => {
+        if (
+            !video.dataset.videoSrc
+        ) {
 
-            setTimeout(() => {
-                tryNextSource(video);
-            }, 150);
+            const original =
+                video.getAttribute('src');
 
-        });
+            if (original) {
 
-        /*
-         * If metadata/data becomes available after the initial
-         * request, try playback again.
-         */
-        video.addEventListener(
-            'loadedmetadata',
-            () => tryPlay(video)
-        );
-
-        video.addEventListener(
-            'canplay',
-            () => tryPlay(video)
-        );
-
-        video.addEventListener(
-            'stalled',
-            () => {
-
-                setTimeout(() => {
-                    tryPlay(video);
-                }, 500);
+                video.dataset.videoSrc =
+                    original;
 
             }
+
+        }
+
+        /*
+         * Remove the original src before assigning it again.
+         * This prevents the browser from getting stuck on a
+         * failed first request.
+         */
+        video.removeAttribute('src');
+
+        currentIndex.set(
+            video,
+            0
         );
 
-        tryPlay(video);
+        loadVideo(video);
 
     });
 
     /*
-     * Keep the original behaviour:
-     * videos play while visible and pause when outside the viewport.
-     * The lower threshold + rootMargin makes mobile scrolling
-     * more reliable without changing the portfolio interaction.
+     * Play videos when they are actually near the viewport.
+     * This preserves the original portfolio behaviour while
+     * making mobile scrolling more reliable.
      */
-    if ('IntersectionObserver' in window) {
+    if (
+        'IntersectionObserver' in window
+    ) {
 
         const observer =
             new IntersectionObserver(
@@ -2528,7 +2620,17 @@ main>.section{
                             entry.intersectionRatio > 0
                         ) {
 
-                            tryPlay(video);
+                            if (
+                                !video.currentSrc
+                            ) {
+
+                                loadVideo(video);
+
+                            } else {
+
+                                playWhenReady(video);
+
+                            }
 
                         } else {
 
@@ -2542,25 +2644,31 @@ main>.section{
 
                 {
                     threshold:0.05,
-                    rootMargin:'150px 0px 150px 0px'
+                    rootMargin:
+                        '180px 0px 180px 0px'
                 }
 
             );
 
         videos.forEach(video => {
+
             observer.observe(video);
+
         });
 
     } else {
 
         videos.forEach(video => {
-            tryPlay(video);
+
+            playWhenReady(video);
+
         });
 
     }
 
     /*
-     * Retry visible videos when the page becomes active again.
+     * If the browser pauses/rejects autoplay temporarily,
+     * retry when the page becomes visible again.
      */
     document.addEventListener(
         'visibilitychange',
@@ -2568,38 +2676,50 @@ main>.section{
 
             if (document.hidden) {
 
-                videos.forEach(video => {
-                    pauseVideo(video);
-                });
+                videos.forEach(
+                    pauseVideo
+                );
 
-            } else {
-
-                videos.forEach(video => {
-
-                    const rect =
-                        video.getBoundingClientRect();
-
-                    const visible =
-                        rect.bottom > 0 &&
-                        rect.top < window.innerHeight;
-
-                    if (visible) {
-                        tryPlay(video);
-                    }
-
-                });
+                return;
 
             }
+
+            videos.forEach(video => {
+
+                const rect =
+                    video.getBoundingClientRect();
+
+                const visible =
+                    rect.bottom > 0 &&
+                    rect.top <
+                        window.innerHeight;
+
+                if (visible) {
+
+                    if (
+                        !video.currentSrc
+                    ) {
+
+                        loadVideo(video);
+
+                    } else {
+
+                        playWhenReady(video);
+
+                    }
+
+                }
+
+            });
 
         }
     );
 
     /*
-     * Browsers are more willing to resume media after a real
-     * user interaction. This is only a playback retry and does
-     * not change the portfolio UI or drag behaviour.
+     * A real user interaction gives the browser another safe
+     * opportunity to resume muted playback.
      */
-    const resumeOnInteraction = () => {
+    const retryVisibleVideos = () => {
 
         videos.forEach(video => {
 
@@ -2608,13 +2728,26 @@ main>.section{
 
             const visible =
                 rect.bottom > 0 &&
-                rect.top < window.innerHeight;
+                rect.top <
+                    window.innerHeight;
 
             if (
                 visible &&
                 video.paused
             ) {
-                tryPlay(video);
+
+                if (
+                    !video.currentSrc
+                ) {
+
+                    loadVideo(video);
+
+                } else {
+
+                    playWhenReady(video);
+
+                }
+
             }
 
         });
@@ -2623,13 +2756,13 @@ main>.section{
 
     document.addEventListener(
         'pointerdown',
-        resumeOnInteraction,
+        retryVisibleVideos,
         { passive:true }
     );
 
     document.addEventListener(
         'touchstart',
-        resumeOnInteraction,
+        retryVisibleVideos,
         { passive:true }
     );
 
@@ -2637,27 +2770,72 @@ main>.section{
         'pageshow',
         () => {
 
-            setTimeout(() => {
-
-                videos.forEach(video => {
-
-                    const rect =
-                        video.getBoundingClientRect();
-
-                    const visible =
-                        rect.bottom > 0 &&
-                        rect.top < window.innerHeight;
-
-                    if (visible) {
-                        tryPlay(video);
-                    }
-
-                });
-
-            }, 200);
+            setTimeout(
+                retryVisibleVideos,
+                200
+            );
 
         }
     );
+
+    /*
+     * Final safety retry for browsers that temporarily stall
+     * media loading.
+     */
+    videos.forEach(video => {
+
+        video.addEventListener(
+            'stalled',
+            () => {
+
+                setTimeout(() => {
+
+                    if (
+                        !document.hidden
+                    ) {
+
+                        if (
+                            !video.currentSrc
+                        ) {
+
+                            loadVideo(video);
+
+                        } else {
+
+                            playWhenReady(video);
+
+                        }
+
+                    }
+
+                }, 700);
+
+            }
+        );
+
+        video.addEventListener(
+            'waiting',
+            () => {
+
+                setTimeout(() => {
+
+                    if (
+                        !document.hidden &&
+                        video.paused
+                    ) {
+
+                        playWhenReady(
+                            video
+                        );
+
+                    }
+
+                }, 500);
+
+            }
+        );
+
+    });
 
 })();
 
