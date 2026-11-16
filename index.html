@@ -2336,7 +2336,7 @@ main>.section{
         video.setAttribute('autoplay','');
         video.setAttribute('loop','');
 
-        video.setAttribute('preload','auto');
+        video.setAttribute('preload','metadata');
 
         video.setAttribute(
             'aria-hidden',
@@ -2592,7 +2592,7 @@ main>.section{
             0
         );
 
-        loadVideo(video);
+        /* Video source is loaded by IntersectionObserver only when needed. */
 
     });
 
@@ -2645,7 +2645,9 @@ main>.section{
                 {
                     threshold:0.05,
                     rootMargin:
-                        '180px 0px 180px 0px'
+                        window.matchMedia('(max-width: 768px)').matches
+                            ? '0px'
+                            : '180px 0px 180px 0px'
                 }
 
             );
