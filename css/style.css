@@ -3409,3 +3409,43 @@ a.button,
     left: -3px !important;
     transform: translateX(-45px) !important;
 }
+
+/* =========================================================
+   MOBILE-ONLY RESPONSIVENESS + PERFORMANCE FIXES
+   Existing desktop layout and visual design are unchanged.
+========================================================= */
+@media (max-width: 768px) {
+    /* Let long hero headings fit smaller phone screens. */
+    .vdm-hero-title {
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        max-width: 100%;
+        padding-inline: 12px;
+        box-sizing: border-box;
+        font-size: clamp(30px, 9vw, 58px);
+        line-height: 1.02;
+    }
+
+    /* Remove an old fixed horizontal offset that pushes portfolio labels sideways. */
+    #vdo-mirror-portfolio #vmpCategory,
+    #vdo-mirror-portfolio #vmpTitle {
+        left: 0 !important;
+        transform: none !important;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-wrap: anywhere;
+    }
+
+    /* Avoid accidental page-width overflow on narrow devices. */
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+    .vdm-hero-title {
+        font-size: clamp(27px, 8.5vw, 42px);
+        letter-spacing: -0.035em;
+    }
+}
